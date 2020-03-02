@@ -1,13 +1,6 @@
 #include "mbed.h"
 #include "Crypto.h"
-
-//SHA256 hashing algorithm
-#ifndef SHA2_256_H
-#define SHA2_256_H
-
-#include "HashAlgorithm.h"
-#include "SHA2_32.h"
-
+#include "SHA256.h"
 //Photointerrupter input pins
 #define I1pin D3
 #define I2pin D6
@@ -57,6 +50,22 @@ const int8_t stateMap[] = {0x07,0x05,0x03,0x04,0x01,0x00,0x02,0x07};
 
 //Phase lead to make motor spin
 const int8_t lead = 2;  //2 for forwards, -2 for backwards
+
+// Declare and initialise the input sequency, key, nonce and hash
+uint8_t sequence[] = {0x45,0x6D,0x62,0x65,0x64,0x64,0x65,0x64,
+0x20,0x53,0x79,0x73,0x74,0x65,0x6D,0x73,
+0x20,0x61,0x72,0x65,0x20,0x66,0x75,0x6E,
+0x20,0x61,0x6E,0x64,0x20,0x64,0x6F,0x20,
+0x61,0x77,0x65,0x73,0x6F,0x6D,0x65,0x20,
+0x74,0x68,0x69,0x6E,0x67,0x73,0x21,0x20,
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+uint64_t* key = (uint64_t*)&sequence[48];
+uint64_t* nonce = (uint64_t*)&sequence[56];
+uint8_t hash[32];
+
+//initiate pointer
+int pointer = 0;
 
 //Status LED
 DigitalOut led1(LED1);
@@ -167,24 +176,8 @@ private:
     
 InterruptClass interruptClass(I1pin, I2pin, I3pin);
 
-class SHA256 : public HashAlgorithm
-{
-    public :
-        
-        SHA256();
-        
-        virtual uint8_t outputSize() const;
-        virtual void update(uint8_t * data, uint32_t length);
-        virtual void finalize(uint8_t * hash);
-        
-        static void computeHash(uint8_t * hash, uint8_t * data, uint32_t length);
-    
-    private :
-        
-        SHA2_32 algo;
-        
-};
-    
+SHA256 sha;
+
 
 //Main
 int main()
@@ -207,10 +200,24 @@ int main()
     interruptClass.setOrState(orState);
     //orState is subtracted from future rotor state inputs to align rotor and motor states
     //Poll the rotor state and set the motor outputs accordingly to spin the motor
+    SHA256 sha;
+    
+    
+    
     while (1) {
-        
+        sha.computeHash(hash, sequence, 64);
+        if ((hash[0]==0) && (hash[1]==0)) {
+                pc.printf('%d \n',(uint32_t)((*nonce>>32)&0xFFFFFFFF));
+                pc.printf('%d \n',(uint32_t)(*nonce&0xFFFFFFFF));
+        }
+        *nonce+=1;
+        /*
+        computeHash(hash, sequence[pointer], 64);
+        pointer += 1;
+        if (pointer == sequence.size()){
+            pointer = 0;
+            }
+    */
     }
 }
-
-
 
