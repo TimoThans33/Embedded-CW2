@@ -1,0 +1,2 @@
+BUILD/NUCLEO_L432KC/GCC_ARM/Crypto/SHA2_32.o: Crypto/SHA2_32.cpp \
+ BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h Crypto/SHA2_32.h

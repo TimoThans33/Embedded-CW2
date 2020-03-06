@@ -1,6 +1,7 @@
 #include "mbed.h"
-#include "Crypto.h"
 #include "SHA256.h"
+#include <Thread.h>
+
 //Photointerrupter input pins
 #define I1pin D3
 #define I2pin D6
@@ -53,16 +54,18 @@ const int8_t lead = 2;  //2 for forwards, -2 for backwards
 
 // Declare and initialise the input sequency, key, nonce and hash
 uint8_t sequence[] = {0x45,0x6D,0x62,0x65,0x64,0x64,0x65,0x64,
-0x20,0x53,0x79,0x73,0x74,0x65,0x6D,0x73,
-0x20,0x61,0x72,0x65,0x20,0x66,0x75,0x6E,
-0x20,0x61,0x6E,0x64,0x20,0x64,0x6F,0x20,
-0x61,0x77,0x65,0x73,0x6F,0x6D,0x65,0x20,
-0x74,0x68,0x69,0x6E,0x67,0x73,0x21,0x20,
-0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+                      0x20,0x53,0x79,0x73,0x74,0x65,0x6D,0x73,
+                      0x20,0x61,0x72,0x65,0x20,0x66,0x75,0x6E,
+                      0x20,0x61,0x6E,0x64,0x20,0x64,0x6F,0x20,
+                      0x61,0x77,0x65,0x73,0x6F,0x6D,0x65,0x20,
+                      0x74,0x68,0x69,0x6E,0x67,0x73,0x21,0x20,
+                      0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+                      0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+
 uint64_t* key = (uint64_t*)&sequence[48];
 uint64_t* nonce = (uint64_t*)&sequence[56];
-uint8_t hash[32];
+uint8_t hash2[32];
+
 
 //initiate pointer
 int pointer = 0;
@@ -86,13 +89,84 @@ DigitalOut L3H(L3Hpin);
 DigitalOut TP1(TP1pin);
 PwmOut MotorPWM(PWMpin);
 
-// Function prototype
+// Declarations
+volatile int _count;
+int8_t orState = 0;
+int8_t intState = 0;
+int8_t intStateOld = 0;
 
+//**************************Function prototypes********************************
+void motorOut(void);
+int8_t motorHome();
+inline int8_t readRotorstate();
+void drive(void);
+void setOrState(int8_t state);
+//*****************************************************************************
 
+class InterruptClass{
+public:
+    InterruptClass(PinName pin1, PinName pin2, PinName pin3): I1(I1pin), I2(I2pin), I3(I3pin){
+    I1.rise(&drive);
+    I2.rise(&drive);
+    I3.rise(&drive);
+    I1.fall(&drive);
+    I2.fall(&drive);
+    I3.fall(&drive);
+  }
+private:
+  InterruptIn I1;
+  InterruptIn I2;
+  InterruptIn I3;
+  };
 
+//Main
+int main()
+{
+    //
+    InterruptClass interruptClass(I1pin, I2pin, I3pin);
+    drive();
 
-    
-    
+    const int32_t PWM_PRD = 2500;
+    MotorPWM.period_us(PWM_PRD);
+    MotorPWM.pulsewidth_us(PWM_PRD);
+
+    //Initialise the serial port
+    Serial pc(SERIAL_TX, SERIAL_RX);
+    pc.printf("Hello\n\r");
+
+    //Run the motor synchronisation
+    orState = motorHome();
+    pc.printf("Rotor origin: %x\n\r",orState);
+    setOrState(orState);
+    //orState is subtracted from future rotor state inputs to align rotor and motor states
+    //Poll the rotor state and set the motor outputs accordingly to spin the motor
+
+    Timer t;
+    t.start();
+    int HashCount = 0;
+    *nonce = 0;
+    *key = 0;
+    while (true) {
+        SHA256::computeHash(hash2, sequence, 64);
+        if ((hash2[0]==0) && (hash2[1]==0)) {
+                pc.printf("%d \n",(int)(*nonce));
+        }
+        HashCount += 1;
+        if (t >= 1){
+          pc.printf("%d \n",HashCount);
+          t.reset();
+          HashCount = 0;
+        }
+        *nonce+=1;
+        /*
+        computeHash(hash, sequence[pointer], 64);
+        pointer += 1;
+        if (pointer == sequence.size()){
+            pointer = 0;
+            }
+    */
+    }
+}
 
 
 
@@ -137,87 +211,15 @@ int8_t motorHome()
     //Get the rotor state
     return readRotorState();
 }
-
-class InterruptClass{
-public: 
-    InterruptClass(PinName pin1, PinName pin2, PinName pin3): I1(I1pin), I2(I2pin), I3(I3pin){        
-    I1.rise(callback(this, &InterruptClass::drive)); 
-    I2.rise(callback(this, &InterruptClass::drive));
-    I3.rise(callback(this, &InterruptClass::drive));
-    I1.fall(callback(this, &InterruptClass::drive)); 
-    I2.fall(callback(this, &InterruptClass::drive));
-    I3.fall(callback(this, &InterruptClass::drive));
+void drive() {
+    intState = readRotorState();
+    if (intState != intStateOld) {
+        motorOut((intState-orState+lead+6)%6); //+6 to make sure the remainder is positive
+        intStateOld = intState;
     }
-    
-    void drive() {
-        intState = readRotorState();
-        if (intState != intStateOld) {
-            motorOut((intState-orState+lead+6)%6); //+6 to make sure the remainder is positive
-            intStateOld = intState;
-        }
-        _count++;
-    }
-    
-    void setOrState(int8_t state){
-        orState = state;
-    }
-    
-
-private:
-    InterruptIn I1;
-    InterruptIn I2;
-    InterruptIn I3;
-    volatile int _count;
-    int8_t orState = 0;
-    int8_t intState = 0;
-    int8_t intStateOld = 0;
-};   
-    
-    
-InterruptClass interruptClass(I1pin, I2pin, I3pin);
-
-SHA256 sha;
-
-
-//Main
-int main()
-{
-    int8_t orState = 0;    //Rotot offset at motor state 0
-    int8_t intState = 0;
-    int8_t intStateOld = 0;
-
-    const int32_t PWM_PRD = 2500;
-    MotorPWM.period_us(PWM_PRD);
-    MotorPWM.pulsewidth_us(PWM_PRD);
-
-    //Initialise the serial port
-    Serial pc(SERIAL_TX, SERIAL_RX);
-    pc.printf("Hello\n\r");
-
-    //Run the motor synchronisation
-    orState = motorHome();
-    pc.printf("Rotor origin: %x\n\r",orState);
-    interruptClass.setOrState(orState);
-    //orState is subtracted from future rotor state inputs to align rotor and motor states
-    //Poll the rotor state and set the motor outputs accordingly to spin the motor
-    SHA256 sha;
-    
-    
-    
-    while (1) {
-        sha.computeHash(hash, sequence, 64);
-        if ((hash[0]==0) && (hash[1]==0)) {
-                pc.printf('%d \n',(uint32_t)((*nonce>>32)&0xFFFFFFFF));
-                pc.printf('%d \n',(uint32_t)(*nonce&0xFFFFFFFF));
-        }
-        *nonce+=1;
-        /*
-        computeHash(hash, sequence[pointer], 64);
-        pointer += 1;
-        if (pointer == sequence.size()){
-            pointer = 0;
-            }
-    */
-    }
+    _count++;
 }
 
+void setOrState(int8_t state){
+    orState = state;
+}
