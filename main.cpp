@@ -89,6 +89,12 @@ DigitalOut L3H(L3Hpin);
 DigitalOut TP1(TP1pin);
 PwmOut MotorPWM(PWMpin);
 
+typedef struct {
+  int8_t nounce;
+  int8_t hashCount;
+  int8_t state;
+}mail_t;
+
 // Declarations
 volatile int _count;
 int8_t orState = 0;
@@ -101,7 +107,14 @@ int8_t motorHome();
 inline int8_t readRotorstate();
 void drive(void);
 void setOrState(int8_t state);
+void send_thread (void);
 //*****************************************************************************
+
+
+Mail<mail_t, 16> mail_box;
+Thread thread;
+
+
 
 
 //Main
@@ -112,6 +125,8 @@ int main()
     const int32_t PWM_PRD = 2500;
     MotorPWM.period_us(PWM_PRD);
     MotorPWM.pulsewidth_us(PWM_PRD);
+
+    thread.start(callback(send_thread));
 
     //Initialise the serial port
     Serial pc(SERIAL_TX, SERIAL_RX);
@@ -136,6 +151,9 @@ int main()
     *nonce = 0;
     *key = 0;
     while (true) {
+
+
+
         SHA256::computeHash(hash2, sequence, 64);
         if ((hash2[0]==0) && (hash2[1]==0)) {
                 pc.printf("%d \n",(int)(*nonce));
@@ -154,6 +172,15 @@ int main()
             pointer = 0;
             }
     */
+        osEvent evt = mail_box.get();
+        if (evt.status == osEventMail) {
+            mail_t *mail = (mail_t*)evt.value.p;
+            pc.printf(" %.2d V\n\r"   , mail->nounce);
+            pc.printf(" %.2d A\n\r"     , mail->hashCount);
+            pc.printf(" %d\n\r", mail->state);
+
+            mail_box.free(mail);
+        }
     }
 }
 
@@ -209,4 +236,17 @@ void drive() {
 
 void setOrState(int8_t state){
     orState = state;
+}
+
+
+void send_thread (void){
+  while (true) {
+    mail_t *mail = mail_box.alloc();
+    mail->nounce = 42;
+    mail->hashCount = 0;
+    mail->state = 1;
+    mail_box.put(mail);
+    wait(0.1);
+
+  }
 }
