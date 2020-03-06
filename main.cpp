@@ -103,28 +103,11 @@ void drive(void);
 void setOrState(int8_t state);
 //*****************************************************************************
 
-class InterruptClass{
-public:
-    InterruptClass(PinName pin1, PinName pin2, PinName pin3): I1(I1pin), I2(I2pin), I3(I3pin){
-    I1.rise(&drive);
-    I2.rise(&drive);
-    I3.rise(&drive);
-    I1.fall(&drive);
-    I2.fall(&drive);
-    I3.fall(&drive);
-  }
-private:
-  InterruptIn I1;
-  InterruptIn I2;
-  InterruptIn I3;
-  };
 
 //Main
 int main()
 {
     //
-    InterruptClass interruptClass(I1pin, I2pin, I3pin);
-    drive();
 
     const int32_t PWM_PRD = 2500;
     MotorPWM.period_us(PWM_PRD);
@@ -140,6 +123,12 @@ int main()
     setOrState(orState);
     //orState is subtracted from future rotor state inputs to align rotor and motor states
     //Poll the rotor state and set the motor outputs accordingly to spin the motor
+    I1.rise(&drive);
+    I2.rise(&drive);
+    I3.rise(&drive);
+    I1.fall(&drive);
+    I2.fall(&drive);
+    I3.fall(&drive);
 
     Timer t;
     t.start();
@@ -212,12 +201,10 @@ int8_t motorHome()
     return readRotorState();
 }
 void drive() {
+    static int8_t intStateOld;
     intState = readRotorState();
-    if (intState != intStateOld) {
-        motorOut((intState-orState+lead+6)%6); //+6 to make sure the remainder is positive
-        intStateOld = intState;
-    }
-    _count++;
+    motorOut((intState-orState+lead+6)%6); //+6 to make sure the remainder is positive
+    intStateOld = intState;
 }
 
 void setOrState(int8_t state){
