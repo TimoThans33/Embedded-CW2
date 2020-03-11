@@ -109,11 +109,15 @@ void drive(void);
 void setOrState(int8_t state);
 void update(uint64_t nonce, uint8_t hashCount, bool state);
 void pull_thread(void);
+void serialISR(void);
+void serial_queue(void);
 //*****************************************************************************
 
 
 Mail<mail_t, 16> mail_box;
-//Thread inthread;
+Mail<uint8_t, 8> inCharQ;
+
+Thread inthread;
 Thread outthread;
 
 
@@ -127,8 +131,12 @@ int main()
     MotorPWM.pulsewidth_us(PWM_PRD);
 
     outthread.start(callback(pull_thread));
+    inthread.start(callback(serial_queue));
     //Initialise the serial port
-    Serial pc(SERIAL_TX, SERIAL_RX);
+    RawSerial pc(SERIAL_TX, SERIAL_RX);
+
+    pc.attach(&serialISR);
+
     pc.printf("Hello\n\r");
 
     //Run the motor synchronisation
@@ -153,12 +161,16 @@ int main()
     *key = 0;
     while (true) {
 
+        osEvent newEvent = inCharQ.get();
+        uint8_t* newChar = (uint8_t*)newEvent.value.p;
+        inCharQ.free(newChar);
+
+        newKey_mutex.lock();
+        *key = newKey;
+        newKey_mutex.unlock();
         SHA256::computeHash(hash2, sequence, 64);
         if ((hash2[0]==0) && (hash2[1]==0)) {
                 update(*nonce, HashCount, true);
-                for (int i=0; i<32; i++){
-                  printf("  %d",(int)(hash2[i]));
-                }
         }
         HashCount += 1;
         if (t >= 1){
@@ -253,5 +265,19 @@ void pull_thread (void){
       }
       mail_box.free(mail);
     }
+  }
+}
+
+void serialISR(){
+  uint8_t* newChar = inCharQ.alloc();
+  *newChar = pc.getc();
+  inCharQ.put(newChar);
+}
+
+void serial_queue(void){
+  while (true){
+    osEvent newEvent = inCharQ.get();
+    uint8_t* newChar = (uint8_t*)newEvent.value.p;
+    inCharQ.free(newChar);
   }
 }
