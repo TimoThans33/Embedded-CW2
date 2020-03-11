@@ -90,9 +90,9 @@ DigitalOut TP1(TP1pin);
 PwmOut MotorPWM(PWMpin);
 
 typedef struct {
-  int8_t nounce;
-  int8_t hashCount;
-  int8_t state;
+  int nounce;
+  uint8_t hashCount;
+  bool state;
 }mail_t;
 
 // Declarations
@@ -107,29 +107,36 @@ int8_t motorHome();
 inline int8_t readRotorstate();
 void drive(void);
 void setOrState(int8_t state);
-void send_thread (void);
+void update(uint64_t nonce, uint8_t hashCount, bool state);
+void pull_thread(void);
+void serialISR(void);
+void serial_queue(void);
 //*****************************************************************************
 
 
 Mail<mail_t, 16> mail_box;
-Thread thread;
+Mail<uint8_t, 8> inCharQ;
+
+Thread inthread;
+Thread outthread;
 
 
 
 
-//Main
 int main()
 {
-    //
 
     const int32_t PWM_PRD = 2500;
     MotorPWM.period_us(PWM_PRD);
     MotorPWM.pulsewidth_us(PWM_PRD);
 
-    thread.start(callback(send_thread));
-
+    outthread.start(callback(pull_thread));
+    inthread.start(callback(serial_queue));
     //Initialise the serial port
-    Serial pc(SERIAL_TX, SERIAL_RX);
+    RawSerial pc(SERIAL_TX, SERIAL_RX);
+
+    pc.attach(&serialISR);
+
     pc.printf("Hello\n\r");
 
     //Run the motor synchronisation
@@ -145,42 +152,34 @@ int main()
     I2.fall(&drive);
     I3.fall(&drive);
 
+    drive();
+
     Timer t;
     t.start();
-    int HashCount = 0;
+    uint8_t HashCount = 0;
     *nonce = 0;
     *key = 0;
     while (true) {
 
+        osEvent newEvent = inCharQ.get();
+        uint8_t* newChar = (uint8_t*)newEvent.value.p;
+        inCharQ.free(newChar);
 
-
+        newKey_mutex.lock();
+        *key = newKey;
+        newKey_mutex.unlock();
         SHA256::computeHash(hash2, sequence, 64);
         if ((hash2[0]==0) && (hash2[1]==0)) {
-                pc.printf("%d \n",(int)(*nonce));
+                update(*nonce, HashCount, true);
         }
         HashCount += 1;
         if (t >= 1){
-          pc.printf("%d \n",HashCount);
-          t.reset();
+          update(*nonce, HashCount, false);
           HashCount = 0;
+          t.reset();
         }
         *nonce+=1;
-        /*
-        computeHash(hash, sequence[pointer], 64);
-        pointer += 1;
-        if (pointer == sequence.size()){
-            pointer = 0;
-            }
-    */
-        osEvent evt = mail_box.get();
-        if (evt.status == osEventMail) {
-            mail_t *mail = (mail_t*)evt.value.p;
-            pc.printf(" %.2d V\n\r"   , mail->nounce);
-            pc.printf(" %.2d A\n\r"     , mail->hashCount);
-            pc.printf(" %d\n\r", mail->state);
 
-            mail_box.free(mail);
-        }
     }
 }
 
@@ -238,15 +237,47 @@ void setOrState(int8_t state){
     orState = state;
 }
 
-
-void send_thread (void){
-  while (true) {
+// This function adds message to the queue
+void update (uint64_t nonce, uint8_t hashCount, bool state){
+    // Returns a pointer to the memory that will be used to store the message
     mail_t *mail = mail_box.alloc();
-    mail->nounce = 42;
-    mail->hashCount = 0;
-    mail->state = 1;
+    //The code and data are written into that data structure
+    mail->nounce = (int)(nonce);
+    mail->hashCount = hashCount;
+    mail->state = state;
+    // This places the message pointer in the que
     mail_box.put(mail);
-    wait(0.1);
+    //wait(0.1);
+  }
 
+void pull_thread (void){
+  while (true) {
+    osEvent evt = mail_box.get();
+    if (evt.status == osEventMail) {
+      mail_t *mail = (mail_t*)evt.value.p;
+      if (mail->state == true){
+        printf("(HIT!) ");
+        printf("hashcount: %d   " , mail->hashCount);
+        printf("nonce: %d \n", mail->nounce);
+      }
+      else{
+        printf("hashcount: %d \n", mail->hashCount);
+      }
+      mail_box.free(mail);
+    }
+  }
+}
+
+void serialISR(){
+  uint8_t* newChar = inCharQ.alloc();
+  *newChar = pc.getc();
+  inCharQ.put(newChar);
+}
+
+void serial_queue(void){
+  while (true){
+    osEvent newEvent = inCharQ.get();
+    uint8_t* newChar = (uint8_t*)newEvent.value.p;
+    inCharQ.free(newChar);
   }
 }
