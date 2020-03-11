@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/mbedtls/src/ssl_cookie.o: \
- mbed-os/features/mbedtls/src/ssl_cookie.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\mbedtls\src\ssl_cookie.o: \
+ mbed-os\features\mbedtls\src\ssl_cookie.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/mbedtls/inc/mbedtls/config.h \
  mbed-os/features/mbedtls/platform/inc/platform_mbed.h \
  mbed-os/features/mbedtls/inc/mbedtls/check_config.h \
@@ -24,5 +24,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/mbedtls/src/ssl_cookie.o: \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/ecdh.h \
  mbed-os/features/mbedtls/inc/mbedtls/ssl_internal.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/sha256.h \
- mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/sha512.h \
- mbed-os/features/mbedtls/inc/mbedtls/error.h
+ mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/sha512.h

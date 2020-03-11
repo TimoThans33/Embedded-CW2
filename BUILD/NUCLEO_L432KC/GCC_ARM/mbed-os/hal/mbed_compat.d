@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/hal/mbed_compat.o: \
- mbed-os/hal/mbed_compat.c BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/hal/analogin_api.h mbed-os/targets/TARGET_STM/device.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\hal\mbed_compat.o: \
+ mbed-os\hal\mbed_compat.c BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\hal\analogin_api.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
@@ -104,6 +104,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/hal/mbed_compat.o: \
  mbed-os/targets/TARGET_STM/us_ticker_defines.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/hal/pinmap.h mbed-os/hal/i2c_api.h mbed-os/hal/buffer.h \
- mbed-os/hal/dma_api.h mbed-os/hal/spi_api.h mbed-os/hal/gpio_api.h \
- mbed-os/hal/reset_reason_api.h mbed-os/platform/mbed_toolchain.h
+ mbed-os\hal\pinmap.h mbed-os\hal\i2c_api.h mbed-os/hal/buffer.h \
+ mbed-os/hal/dma_api.h mbed-os\hal\spi_api.h mbed-os\hal\gpio_api.h \
+ mbed-os/platform/mbed_toolchain.h

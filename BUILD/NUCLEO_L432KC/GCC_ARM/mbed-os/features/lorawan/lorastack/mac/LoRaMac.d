@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lorawan/lorastack/mac/LoRaMac.o: \
- mbed-os/features/lorawan/lorastack/mac/LoRaMac.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/lorawan/lorastack/mac/LoRaMac.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\lorawan\lorastack\mac\LoRaMac.o: \
+ mbed-os\features\lorawan\lorastack\mac\LoRaMac.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\lorawan\lorastack\mac\LoRaMac.h \
  mbed-os/events/EventQueue.h mbed-os/events/equeue.h \
  mbed-os/events/internal/equeue_platform.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
@@ -107,13 +107,13 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lorawan/lorastack/mac/LoRaMac.o: \
  mbed-os/targets/TARGET_STM/PinNamesTypes.h \
  mbed-os/features/lorawan/lorastack/phy/lora_phy_ds.h \
  mbed-os/features/lorawan/system/lorawan_data_structures.h \
- mbed-os/features/lorawan/lorastack/mac/LoRaMacChannelPlan.h \
- mbed-os/features/lorawan/lorastack/mac/LoRaMacCommand.h \
- mbed-os/features/lorawan/lorastack/mac/LoRaMacCrypto.h \
- mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/aes.h \
+ mbed-os\features\lorawan\lorastack\mac\LoRaMacChannelPlan.h \
+ mbed-os\features\lorawan\lorastack\mac\LoRaMacCommand.h \
+ mbed-os\features\lorawan\lorastack\mac\LoRaMacCrypto.h \
  mbed-os/features/mbedtls/inc/mbedtls/config.h \
  mbed-os/features/mbedtls/platform/inc/platform_mbed.h \
  mbed-os/features/mbedtls/inc/mbedtls/check_config.h \
+ mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/aes.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/cmac.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/cipher.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/platform_util.h \

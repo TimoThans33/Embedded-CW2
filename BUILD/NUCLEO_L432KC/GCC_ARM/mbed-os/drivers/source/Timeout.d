@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/Timeout.o: \
- mbed-os/drivers/source/Timeout.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/drivers/Timeout.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\Timeout.o: \
+ mbed-os\drivers\source\Timeout.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/drivers/Timeout.h \
  mbed-os/drivers/Ticker.h mbed-os/platform/cxxsupport/mstd_utility \
  mbed-os/drivers/TimerEvent.h mbed-os/hal/ticker_api.h \
  mbed-os/targets/TARGET_STM/device.h \

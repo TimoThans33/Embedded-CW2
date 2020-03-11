@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/Thread/thread_bbr_commercial.o: \
- mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/Thread/thread_bbr_commercial.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\nanostack\sal-stack-nanostack\source\6LoWPAN\Thread\thread_bbr_commercial.o: \
+ mbed-os\features\nanostack\sal-stack-nanostack\source\6LoWPAN\Thread\thread_bbr_commercial.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/nanostack/sal-stack-nanostack/source/nsconfig.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \
  mbed-os/features/nanostack/sal-stack-nanostack/source/configs/cfg_nanostack_full.h \
@@ -24,8 +24,8 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/sal-stack-nanostack/sourc
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h \
  mbed-os/features/frameworks/mbed-client-randlib/mbed-client-randlib/randLIB.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/common_functions.h \
- mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/Thread/thread_config.h \
- mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/Thread/thread_constants.h \
+ mbed-os\features\nanostack\sal-stack-nanostack\source\6LoWPAN\Thread\thread_config.h \
+ mbed-os\features\nanostack\sal-stack-nanostack\source\6LoWPAN\Thread\thread_constants.h \
  mbed-os/features/nanostack/coap-service/coap-service/coap_service_api.h \
  mbed-os/features/frameworks/mbed-coap/mbed-coap/sn_coap_header.h \
  mbed-os/features/nanostack/sal-stack-nanostack/nanostack/ns_address.h \
@@ -54,6 +54,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/sal-stack-nanostack/sourc
  mbed-os/features/nanostack/sal-stack-nanostack/source/Service_Libs/mac_neighbor_table/mac_neighbor_table.h \
  mbed-os/features/nanostack/sal-stack-nanostack/nanostack/net_polling_api.h \
  mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/Thread/thread_network_data_storage.h \
+ mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/Thread/thread_constants.h \
  mbed-os/features/nanostack/sal-stack-nanostack/nanostack/thread_management_if.h \
  mbed-os/features/nanostack/sal-stack-nanostack/nanostack/thread_commissioning_api.h \
  mbed-os/features/nanostack/sal-stack-nanostack/nanostack/thread_border_router_api.h \

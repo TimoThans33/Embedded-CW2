@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/gpio_irq_api.o: \
- mbed-os/targets/TARGET_STM/gpio_irq_api.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\gpio_irq_api.o: \
+ mbed-os\targets\TARGET_STM\gpio_irq_api.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/stm32l432xx.h \
@@ -108,5 +108,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/gpio_irq_api.o: \
  mbed-os/hal/pinmap.h mbed-os/hal/pinmap.h mbed-os/platform/mbed_error.h \
  mbed-os/platform/mbed_retarget.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/gpio_irq_device.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_exti.h \
- mbed-os/platform/mbed_critical.h
+ mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_exti.h

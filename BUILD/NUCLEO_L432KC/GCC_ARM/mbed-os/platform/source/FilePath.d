@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/FilePath.o: \
- mbed-os/platform/source/FilePath.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/platform/FilePath.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\platform\source\FilePath.o: \
+ mbed-os\platform\source\FilePath.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/platform/FilePath.h \
  mbed-os/platform/platform.h mbed-os/platform/mbed_retarget.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/targets/TARGET_STM/device.h \

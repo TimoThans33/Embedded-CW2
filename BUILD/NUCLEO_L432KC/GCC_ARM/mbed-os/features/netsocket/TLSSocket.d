@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/TLSSocket.o: \
- mbed-os/features/netsocket/TLSSocket.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/netsocket/TLSSocket.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\TLSSocket.o: \
+ mbed-os\features\netsocket\TLSSocket.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\netsocket\TLSSocket.h \
  mbed-os/features/netsocket/TCPSocket.h \
  mbed-os/features/netsocket/InternetSocket.h \
  mbed-os/features/netsocket/Socket.h \
@@ -159,6 +159,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/TLSSocket.o: \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/ctr_drbg.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/aes.h \
  mbed-os/features/mbedtls/inc/mbedtls/error.h \
- mbed-os/features/netsocket/TLSSocketWrapper.h \
+ mbed-os\features\netsocket\TLSSocketWrapper.h \
  mbed-os/platform/Callback.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h

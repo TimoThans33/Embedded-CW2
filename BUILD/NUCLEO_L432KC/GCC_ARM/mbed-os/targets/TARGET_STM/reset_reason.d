@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/reset_reason.o: \
- mbed-os/targets/TARGET_STM/reset_reason.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/hal/reset_reason_api.h \
- mbed-os/targets/TARGET_STM/device.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\reset_reason.o: \
+ mbed-os\targets\TARGET_STM\reset_reason.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/hal/reset_reason_api.h \
+ mbed-os\targets\TARGET_STM\device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
@@ -102,6 +102,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/reset_reason.o: \
  mbed-os/targets/TARGET_STM/gpio_object.h mbed-os/platform/mbed_assert.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/targets/TARGET_STM/PortNames.h \
- mbed-os/targets/TARGET_STM/us_ticker_defines.h \
+ mbed-os\targets\TARGET_STM\us_ticker_defines.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h

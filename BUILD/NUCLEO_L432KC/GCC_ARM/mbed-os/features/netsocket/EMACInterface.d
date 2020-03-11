@@ -1,10 +1,11 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/EMACInterface.o: \
- mbed-os/features/netsocket/EMACInterface.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/netsocket/EMACInterface.h \
- mbed-os/features/netsocket/nsapi.h \
- mbed-os/features/netsocket/nsapi_types.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\EMACInterface.o: \
+ mbed-os\features\netsocket\EMACInterface.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\netsocket\EMACInterface.h \
+ mbed-os\features\netsocket\nsapi.h \
+ mbed-os\features\netsocket\nsapi_types.h \
  mbed-os/features/netsocket/SocketAddress.h \
+ mbed-os/features/netsocket/nsapi_types.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/features/netsocket/NetworkStack.h \
  mbed-os/features/netsocket/NetworkInterface.h \
@@ -14,6 +15,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/EMACInterface.o: \
  mbed-os/features/netsocket/EthInterface.h \
  mbed-os/features/netsocket/WiFiInterface.h \
  mbed-os/features/netsocket/WiFiAccessPoint.h \
+ mbed-os/features/netsocket/CellularBase.h \
  mbed-os/features/netsocket/CellularInterface.h \
  mbed-os/features/netsocket/MeshInterface.h \
  mbed-os/features/netsocket/Socket.h \
@@ -175,11 +177,13 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/EMACInterface.o: \
  mbed-os/features/netsocket/TLSSocket.h \
  mbed-os/features/netsocket/DTLSSocket.h \
  mbed-os/features/netsocket/DTLSSocketWrapper.h \
- mbed-os/features/netsocket/UDPSocket.h mbed-os/features/netsocket/EMAC.h \
- mbed-os/features/netsocket/EMACMemoryManager.h \
- mbed-os/features/netsocket/NetStackMemoryManager.h \
- mbed-os/features/netsocket/OnboardNetworkStack.h \
- mbed-os/features/netsocket/NetworkStack.h \
- mbed-os/features/netsocket/L3IP.h mbed-os/features/netsocket/PPP.h \
- mbed-os/platform/FileHandle.h mbed-os/platform/mbed_poll.h \
- mbed-os/platform/platform.h mbed-os/platform/mbed_retarget.h
+ mbed-os/features/netsocket/UDPSocket.h mbed-os\features\netsocket\EMAC.h \
+ mbed-os\features\netsocket\EMACMemoryManager.h \
+ mbed-os\features\netsocket\NetStackMemoryManager.h \
+ mbed-os\features\netsocket\OnboardNetworkStack.h \
+ mbed-os\features\netsocket\NetworkStack.h \
+ mbed-os\features\netsocket\L3IP.h \
+ mbed-os\features\netsocket\SocketAddress.h \
+ mbed-os\features\netsocket\PPP.h mbed-os/platform/FileHandle.h \
+ mbed-os/platform/mbed_poll.h mbed-os/platform/platform.h \
+ mbed-os/platform/mbed_retarget.h

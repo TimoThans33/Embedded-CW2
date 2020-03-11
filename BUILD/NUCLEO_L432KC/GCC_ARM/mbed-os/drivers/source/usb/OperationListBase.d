@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/usb/OperationListBase.o: \
- mbed-os/drivers/source/usb/OperationListBase.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\usb\OperationListBase.o: \
+ mbed-os\drivers\source\usb\OperationListBase.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/drivers/internal/OperationListBase.h \
  mbed-os/drivers/internal/LinkedListBase.h \
  mbed-os/drivers/internal/LinkEntry.h mbed-os/drivers/internal/AsyncOp.h \

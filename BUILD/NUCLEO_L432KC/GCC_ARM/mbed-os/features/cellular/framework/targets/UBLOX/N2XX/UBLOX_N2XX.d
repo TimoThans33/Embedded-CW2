@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/N2XX/UBLOX_N2XX.o: \
- mbed-os/features/cellular/framework/targets/UBLOX/N2XX/UBLOX_N2XX.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/cellular/framework/targets/UBLOX/N2XX/UBLOX_N2XX.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\cellular\framework\targets\UBLOX\N2XX\UBLOX_N2XX.o: \
+ mbed-os\features\cellular\framework\targets\UBLOX\N2XX\UBLOX_N2XX.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\cellular\framework\targets\UBLOX\N2XX\UBLOX_N2XX.h \
  mbed-os/mbed.h mbed-os/platform/mbed_version.h mbed-os/rtos/rtos.h \
  mbed-os/rtos/mbed_rtos_storage.h \
  mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_storage.h \
@@ -32,6 +32,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/N2
  mbed-os/features/netsocket/EthInterface.h \
  mbed-os/features/netsocket/WiFiInterface.h \
  mbed-os/features/netsocket/WiFiAccessPoint.h \
+ mbed-os/features/netsocket/CellularBase.h \
  mbed-os/features/netsocket/CellularInterface.h \
  mbed-os/features/netsocket/MeshInterface.h \
  mbed-os/features/netsocket/Socket.h \
@@ -223,13 +224,13 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/N2
  mbed-os/hal/spi_api.h mbed-os/platform/CircularBuffer.h \
  mbed-os/platform/mbed_critical.h mbed-os/platform/Transaction.h \
  mbed-os/drivers/SPISlave.h mbed-os/drivers/I2C.h mbed-os/hal/i2c_api.h \
- mbed-os/drivers/I2CSlave.h mbed-os/drivers/CAN.h mbed-os/hal/can_api.h \
- mbed-os/hal/can_helper.h mbed-os/drivers/RawSerial.h \
- mbed-os/drivers/UnbufferedSerial.h mbed-os/drivers/UARTSerial.h \
+ mbed-os/drivers/I2CSlave.h mbed-os/drivers/Ethernet.h \
+ mbed-os/drivers/CAN.h mbed-os/hal/can_api.h mbed-os/hal/can_helper.h \
+ mbed-os/drivers/RawSerial.h mbed-os/drivers/UARTSerial.h \
  mbed-os/drivers/InterruptIn.h mbed-os/hal/gpio_irq_api.h \
- mbed-os/drivers/BufferedSerial.h mbed-os/drivers/FlashIAP.h \
- mbed-os/hal/flash_api.h mbed-os/drivers/MbedCRC.h mbed-os/hal/crc_api.h \
- mbed-os/drivers/QSPI.h mbed-os/drivers/Watchdog.h \
+ mbed-os/drivers/FlashIAP.h mbed-os/hal/flash_api.h \
+ mbed-os/drivers/MbedCRC.h mbed-os/drivers/internal/TableCRC.h \
+ mbed-os/hal/crc_api.h mbed-os/drivers/QSPI.h mbed-os/drivers/Watchdog.h \
  mbed-os/hal/watchdog_api.h mbed-os/drivers/ResetReason.h \
  mbed-os/hal/reset_reason_api.h mbed-os/drivers/Timer.h \
  mbed-os/drivers/Ticker.h mbed-os/platform/cxxsupport/mstd_utility \
@@ -248,7 +249,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/N2
  mbed-os/platform/ScopedRomWriteLock.h mbed-os/platform/mbed_mpu_mgmt.h \
  mbed-os/hal/mpu_api.h mbed-os/platform/ScopedRamExecutionLock.h \
  mbed-os/platform/mbed_stats.h mbed-os/platform/Callback.h \
- mbed-os/platform/ScopedLock.h \
+ mbed-os/platform/FunctionPointer.h mbed-os/platform/ScopedLock.h \
  mbed-os/features/cellular/framework/common/CellularLog.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h \
  mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
@@ -259,19 +260,19 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/N2
  mbed-os/features/netsocket/nsapi_types.h \
  mbed-os/features/cellular/framework/common/CellularCommon.h \
  mbed-os/platform/PlatformMutex.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/drivers/BufferedSerial.h mbed-os/rtos/ConditionVariable.h \
- mbed-os/rtos/Thread.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
+ mbed-os/drivers/UARTSerial.h mbed-os/rtos/ConditionVariable.h \
  mbed-os/features/cellular/framework/AT/AT_CellularNetwork.h \
- mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
- mbed-os/features/cellular/framework/targets/UBLOX/N2XX/UBLOX_N2XX_CellularSMS.h \
+ mbed-os/features/cellular/framework/AT/AT_CellularBase.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
+ mbed-os\features\cellular\framework\targets\UBLOX\N2XX\UBLOX_N2XX_CellularSMS.h \
  mbed-os/features/cellular/framework/AT/AT_CellularSMS.h \
- mbed-os/features/cellular/framework/targets/UBLOX/N2XX/UBLOX_N2XX_CellularContext.h \
+ mbed-os/features/cellular/framework/API/CellularSMS.h \
+ mbed-os\features\cellular\framework\targets\UBLOX\N2XX\UBLOX_N2XX_CellularContext.h \
  mbed-os/features/cellular/framework/AT/AT_CellularContext.h \
  mbed-os/features/cellular/framework/API/CellularContext.h \
  mbed-os/features/netsocket/CellularInterface.h \
  mbed-os/features/cellular/framework/API/CellularDevice.h \
  mbed-os/features/cellular/framework/common/CellularUtil.h \
- mbed-os/features/netsocket/ControlPlane_netif.h mbed-os/rtos/Semaphore.h \
- mbed-os/features/cellular/framework/targets/UBLOX/N2XX/UBLOX_N2XX_CellularNetwork.h
+ mbed-os/features/netsocket/cellular/ControlPlane_netif.h \
+ mbed-os/rtos/Semaphore.h

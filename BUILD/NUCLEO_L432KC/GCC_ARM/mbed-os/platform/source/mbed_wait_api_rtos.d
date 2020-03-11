@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/mbed_wait_api_rtos.o: \
- mbed-os/platform/source/mbed_wait_api_rtos.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\platform\source\mbed_wait_api_rtos.o: \
+ mbed-os\platform\source\mbed_wait_api_rtos.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/platform/mbed_wait_api.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/mbed_atomic.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \

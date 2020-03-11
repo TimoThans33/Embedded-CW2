@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/coap-service/source/coap_service_api.o: \
- mbed-os/features/nanostack/coap-service/source/coap_service_api.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\nanostack\coap-service\source\coap_service_api.o: \
+ mbed-os\features\nanostack\coap-service\source\coap_service_api.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_list.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \

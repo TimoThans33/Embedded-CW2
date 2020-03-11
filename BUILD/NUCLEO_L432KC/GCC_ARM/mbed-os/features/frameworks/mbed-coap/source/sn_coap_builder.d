@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/frameworks/mbed-coap/source/sn_coap_builder.o: \
- mbed-os/features/frameworks/mbed-coap/source/sn_coap_builder.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\frameworks\mbed-coap\source\sn_coap_builder.o: \
+ mbed-os\features\frameworks\mbed-coap\source\sn_coap_builder.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \
  mbed-os/features/frameworks/mbed-coap/mbed-coap/sn_coap_header.h \
  mbed-os/features/frameworks/mbed-coap/source/include/sn_coap_header_internal.h \

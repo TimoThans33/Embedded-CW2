@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lwipstack/lwip-sys/lwip_random.o: \
- mbed-os/features/lwipstack/lwip-sys/lwip_random.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\lwipstack\lwip-sys\lwip_random.o: \
+ mbed-os\features\lwipstack\lwip-sys\lwip_random.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/lwipstack/lwip/src/include/lwip/opt.h \
  mbed-os/features/lwipstack/lwipopts.h \
  mbed-os/features/netsocket/nsapi_types.h \
@@ -98,5 +98,5 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lwipstack/lwip-sys/lwip_random.o: \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_wwdg.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
  mbed-os/features/lwipstack/lwip/src/include/lwip/def.h \
- mbed-os/features/lwipstack/lwip-sys/lwip_random.h \
+ mbed-os\features\lwipstack\lwip-sys\lwip_random.h \
  mbed-os/features/frameworks/mbed-client-randlib/mbed-client-randlib/randLIB.h

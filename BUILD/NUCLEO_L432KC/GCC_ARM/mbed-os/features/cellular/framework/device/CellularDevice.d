@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/device/CellularDevice.o: \
- mbed-os/features/cellular/framework/device/CellularDevice.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\cellular\framework\device\CellularDevice.o: \
+ mbed-os\features\cellular\framework\device\CellularDevice.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/cellular/framework/API/CellularDevice.h \
  mbed-os/features/cellular/framework/device/CellularStateMachine.h \
  mbed-os/events/EventQueue.h mbed-os/events/equeue.h \
@@ -22,8 +22,8 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/device/CellularD
  mbed-os/rtos/mbed_rtos_types.h mbed-os/rtos/mbed_rtos1_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx4/cmsis_os.h \
  mbed-os/rtos/mbed_rtos_storage.h mbed-os/platform/ScopedLock.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/platform/mbed_retarget.h mbed-os/drivers/BufferedSerial.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
+ mbed-os/platform/mbed_retarget.h mbed-os/drivers/UARTSerial.h \
  mbed-os/platform/platform.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -135,7 +135,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/device/CellularD
  mbed-os/hal/gpio_irq_api.h mbed-os/platform/mbed_critical.h \
  mbed-os/platform/PlatformMutex.h mbed-os/platform/CircularBuffer.h \
  mbed-os/rtos/ConditionVariable.h mbed-os/rtos/Semaphore.h \
- mbed-os/rtos/Thread.h \
  mbed-os/features/cellular/framework/API/CellularContext.h \
  mbed-os/features/netsocket/CellularInterface.h \
  mbed-os/features/netsocket/NetworkInterface.h \
@@ -145,7 +144,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/device/CellularD
  mbed-os/platform/mbed_toolchain.h mbed-os/features/netsocket/DNS.h \
  mbed-os/features/cellular/framework/API/CellularDevice.h \
  mbed-os/features/cellular/framework/common/CellularUtil.h \
- mbed-os/features/netsocket/ControlPlane_netif.h \
+ mbed-os/features/netsocket/cellular/ControlPlane_netif.h \
  mbed-os/features/cellular/framework/common/CellularLog.h \
- mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h \
- mbed-os/events/mbed_shared_queues.h
+ mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h

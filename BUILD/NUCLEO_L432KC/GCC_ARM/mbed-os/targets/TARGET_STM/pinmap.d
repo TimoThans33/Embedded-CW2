@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/pinmap.o: \
- mbed-os/targets/TARGET_STM/pinmap.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/platform/mbed_assert.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\pinmap.o: \
+ mbed-os\targets\TARGET_STM\pinmap.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/platform/mbed_assert.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/hal/pinmap.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/TARGET_NUCLEO_L432KC/PinNames.h \
@@ -90,7 +90,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/pinmap.o: \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_wwdg.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
  mbed-os/targets/TARGET_STM/PinNamesTypes.h \
- mbed-os/targets/TARGET_STM/PortNames.h mbed-os/platform/mbed_error.h \
+ mbed-os\targets\TARGET_STM\PortNames.h mbed-os/platform/mbed_error.h \
  mbed-os/platform/mbed_retarget.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/pin_device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \

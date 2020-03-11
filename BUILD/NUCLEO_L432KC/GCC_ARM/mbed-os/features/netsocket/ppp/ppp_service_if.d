@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/ppp/ppp_service_if.o: \
- mbed-os/features/netsocket/ppp/ppp_service_if.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\ppp\ppp_service_if.o: \
+ mbed-os\features\netsocket\ppp\ppp_service_if.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/platform/mbed_interface.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
@@ -120,7 +120,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/ppp/ppp_service_if.o: \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ip4string.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ip6string.h \
- mbed-os/features/netsocket/ppp/ppp_service.h mbed-os/platform/Callback.h \
+ mbed-os\features\netsocket\ppp\ppp_service.h mbed-os/platform/Callback.h \
  mbed-os/rtos/Semaphore.h mbed-os/rtos/mbed_rtos_types.h \
  mbed-os/rtos/mbed_rtos1_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx4/cmsis_os.h \
@@ -136,6 +136,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/ppp/ppp_service_if.o: \
  mbed-os/features/netsocket/EthInterface.h \
  mbed-os/features/netsocket/WiFiInterface.h \
  mbed-os/features/netsocket/WiFiAccessPoint.h \
+ mbed-os/features/netsocket/CellularBase.h \
  mbed-os/features/netsocket/CellularInterface.h \
  mbed-os/features/netsocket/MeshInterface.h \
  mbed-os/features/netsocket/Socket.h \

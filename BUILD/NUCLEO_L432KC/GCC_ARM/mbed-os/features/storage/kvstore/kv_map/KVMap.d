@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/kvstore/kv_map/KVMap.o: \
- mbed-os/features/storage/kvstore/kv_map/KVMap.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\storage\kvstore\kv_map\KVMap.o: \
+ mbed-os\features\storage\kvstore\kv_map\KVMap.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/storage/kvstore/include/KVStore.h \
  mbed-os/features/storage/kvstore/kv_map/KVMap.h \
  mbed-os/platform/PlatformMutex.h mbed-os/platform/NonCopyable.h \

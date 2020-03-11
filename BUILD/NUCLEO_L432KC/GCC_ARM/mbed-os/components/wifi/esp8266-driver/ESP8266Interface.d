@@ -1,8 +1,8 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/components/wifi/esp8266-driver/ESP8266Interface.o: \
- mbed-os/components/wifi/esp8266-driver/ESP8266Interface.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\components\wifi\esp8266-driver\ESP8266Interface.o: \
+ mbed-os\components\wifi\esp8266-driver\ESP8266Interface.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/components/wifi/esp8266-driver/ESP8266/ESP8266.h \
- mbed-os/drivers/BufferedSerial.h mbed-os/platform/platform.h \
+ mbed-os/drivers/UARTSerial.h mbed-os/platform/platform.h \
  mbed-os/platform/mbed_retarget.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
@@ -130,21 +130,21 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/components/wifi/esp8266-driver/ESP8266Interf
  mbed-os/features/netsocket/WiFiAccessPoint.h \
  mbed-os/features/netsocket/nsapi_types.h mbed-os/platform/ATCmdParser.h \
  mbed-os/platform/mbed_error.h mbed-os/rtos/ThisThread.h \
- mbed-os/features/netsocket/SocketAddress.h \
- mbed-os/features/netsocket/nsapi_types.h \
- mbed-os/platform/mbed_toolchain.h \
- mbed-os/components/wifi/esp8266-driver/ESP8266Interface.h \
+ mbed-os\components\wifi\esp8266-driver\ESP8266Interface.h \
  mbed-os/drivers/DigitalOut.h mbed-os/drivers/Timer.h \
  mbed-os/hal/ticker_api.h \
- mbed-os/components/wifi/esp8266-driver/ESP8266/ESP8266.h \
+ mbed-os\components\wifi\esp8266-driver\ESP8266/ESP8266.h \
  mbed-os/events/EventQueue.h mbed-os/events/equeue.h \
  mbed-os/events/internal/equeue_platform.h \
  mbed-os/rtos/mbed_rtos_storage.h mbed-os/events/mbed_shared_queues.h \
  mbed-os/features/netsocket/NetworkInterface.h \
- mbed-os/features/netsocket/SocketAddress.h mbed-os/platform/Callback.h \
+ mbed-os/features/netsocket/SocketAddress.h \
+ mbed-os/features/netsocket/nsapi_types.h \
+ mbed-os/platform/mbed_toolchain.h mbed-os/platform/Callback.h \
  mbed-os/features/netsocket/DNS.h \
  mbed-os/features/netsocket/NetworkStack.h \
  mbed-os/features/netsocket/NetworkInterface.h \
+ mbed-os/features/netsocket/SocketAddress.h \
  mbed-os/features/netsocket/WiFiInterface.h \
  mbed-os/features/netsocket/WiFiAccessPoint.h \
  mbed-os/rtos/ConditionVariable.h mbed-os/rtos/Semaphore.h \

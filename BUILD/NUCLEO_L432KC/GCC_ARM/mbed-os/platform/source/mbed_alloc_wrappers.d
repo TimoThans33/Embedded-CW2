@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/mbed_alloc_wrappers.o: \
- mbed-os/platform/source/mbed_alloc_wrappers.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\platform\source\mbed_alloc_wrappers.o: \
+ mbed-os\platform\source\mbed_alloc_wrappers.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/platform/mbed_mem_trace.h mbed-os/platform/mbed_stats.h \
  mbed-os/hal/ticker_api.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \

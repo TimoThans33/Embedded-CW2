@@ -1,11 +1,12 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/system_storage/SystemStorage.o: \
- mbed-os/features/storage/system_storage/SystemStorage.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\storage\system_storage\SystemStorage.o: \
+ mbed-os\features\storage\system_storage\SystemStorage.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\storage\system_storage\SystemStorage.h \
+ mbed-os/platform/mbed_error.h mbed-os/platform/mbed_retarget.h \
+ mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/features/storage/blockdevice/BlockDevice.h \
  mbed-os/features/storage/filesystem/FileSystem.h \
- mbed-os/platform/platform.h mbed-os/platform/mbed_retarget.h \
- mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
- mbed-os/targets/TARGET_STM/device.h \
+ mbed-os/platform/platform.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
@@ -132,5 +133,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/system_storage/SystemStorag
  mbed-os/features/storage/filesystem/fat/ChaN/integer.h \
  mbed-os/features/storage/filesystem/fat/ChaN/ffconf.h \
  mbed-os/features/storage/filesystem/littlefs/LittleFileSystem.h \
- mbed-os/features/storage/filesystem/littlefs/littlefs/lfs.h \
- mbed-os/platform/mbed_error.h
+ mbed-os/features/storage/filesystem/littlefs/littlefs/lfs.h

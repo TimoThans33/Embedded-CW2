@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/UDPSocket.o: \
- mbed-os/features/netsocket/UDPSocket.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/netsocket/UDPSocket.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\UDPSocket.o: \
+ mbed-os\features\netsocket\UDPSocket.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\netsocket\UDPSocket.h \
  mbed-os/features/netsocket/InternetSocket.h \
  mbed-os/features/netsocket/Socket.h \
  mbed-os/features/netsocket/SocketAddress.h \
@@ -134,5 +134,5 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/UDPSocket.o: \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
  mbed-os/features/netsocket/InternetDatagramSocket.h \
- mbed-os/features/netsocket/ICMPSocket.h mbed-os/drivers/Timer.h \
+ mbed-os\features\netsocket\ICMPSocket.h mbed-os/drivers/Timer.h \
  mbed-os/platform/platform.h mbed-os/platform/mbed_retarget.h

@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/TLSSocketWrapper.o: \
- mbed-os/features/netsocket/TLSSocketWrapper.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/netsocket/TLSSocketWrapper.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\TLSSocketWrapper.o: \
+ mbed-os\features\netsocket\TLSSocketWrapper.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\netsocket\TLSSocketWrapper.h \
  mbed-os/features/netsocket/Socket.h \
  mbed-os/features/netsocket/SocketAddress.h \
  mbed-os/features/netsocket/nsapi_types.h \

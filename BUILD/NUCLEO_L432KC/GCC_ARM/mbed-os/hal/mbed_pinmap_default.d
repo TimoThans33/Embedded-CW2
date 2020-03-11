@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/hal/mbed_pinmap_default.o: \
- mbed-os/hal/mbed_pinmap_default.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/hal/pinmap.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\hal\mbed_pinmap_default.o: \
+ mbed-os\hal\mbed_pinmap_default.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/hal/pinmap.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/TARGET_NUCLEO_L432KC/PinNames.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
@@ -104,6 +104,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/hal/mbed_pinmap_default.o: \
  mbed-os/targets/TARGET_STM/PortNames.h \
  mbed-os/targets/TARGET_STM/us_ticker_defines.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/hal/serial_api.h mbed-os/hal/pinmap.h mbed-os/hal/buffer.h \
- mbed-os/hal/dma_api.h
+ mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h

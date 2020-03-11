@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/usb/USBMSD.o: \
- mbed-os/drivers/source/usb/USBMSD.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/drivers/USBMSD.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\usb\USBMSD.o: \
+ mbed-os\drivers\source\usb\USBMSD.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/drivers/USBMSD.h \
  mbed-os/drivers/internal/USBDescriptor.h \
  mbed-os/drivers/internal/USBDevice_Types.h mbed-os/platform/Callback.h \
  mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_toolchain.h \

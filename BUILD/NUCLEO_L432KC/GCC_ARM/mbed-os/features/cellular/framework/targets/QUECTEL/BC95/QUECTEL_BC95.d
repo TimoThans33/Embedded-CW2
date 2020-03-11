@@ -1,14 +1,15 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/QUECTEL/BC95/QUECTEL_BC95.o: \
- mbed-os/features/cellular/framework/targets/QUECTEL/BC95/QUECTEL_BC95.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/cellular/framework/targets/QUECTEL/BC95/QUECTEL_BC95_CellularNetwork.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\cellular\framework\targets\QUECTEL\BC95\QUECTEL_BC95.o: \
+ mbed-os\features\cellular\framework\targets\QUECTEL\BC95\QUECTEL_BC95.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\cellular\framework\targets\QUECTEL\BC95\QUECTEL_BC95_CellularNetwork.h \
  mbed-os/features/cellular/framework/AT/AT_CellularNetwork.h \
  mbed-os/features/cellular/framework/API/CellularNetwork.h \
  mbed-os/features/cellular/framework/common/CellularList.h \
  mbed-os/platform/Callback.h mbed-os/platform/mbed_assert.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/features/netsocket/nsapi_types.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
+ mbed-os/features/cellular/framework/AT/AT_CellularBase.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
  mbed-os/platform/mbed_retarget.h mbed-os/events/EventQueue.h \
  mbed-os/events/equeue.h mbed-os/events/internal/equeue_platform.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
@@ -18,7 +19,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/QUECTEL/
  mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_conf.h \
  mbed-os/targets/TARGET_STM/mbed_rtx.h mbed-os/platform/Callback.h \
  mbed-os/platform/NonCopyable.h mbed-os/platform/mbed_debug.h \
- mbed-os/drivers/BufferedSerial.h mbed-os/platform/platform.h \
+ mbed-os/drivers/UARTSerial.h mbed-os/platform/platform.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -134,14 +135,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/QUECTEL/
  mbed-os/rtos/mbed_rtos_storage.h mbed-os/platform/ScopedLock.h \
  mbed-os/platform/CircularBuffer.h mbed-os/rtos/ConditionVariable.h \
  mbed-os/rtos/Semaphore.h \
- mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
- mbed-os/features/cellular/framework/API/CellularDevice.h \
- mbed-os/features/cellular/framework/device/CellularStateMachine.h \
- mbed-os/features/cellular/framework/common/CellularCommon.h \
- mbed-os/platform/PlatformMutex.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/rtos/Thread.h \
- mbed-os/features/cellular/framework/targets/QUECTEL/BC95/QUECTEL_BC95_CellularContext.h \
+ mbed-os\features\cellular\framework\targets\QUECTEL\BC95\QUECTEL_BC95_CellularContext.h \
  mbed-os/features/cellular/framework/AT/AT_CellularContext.h \
  mbed-os/features/cellular/framework/API/CellularContext.h \
  mbed-os/features/netsocket/CellularInterface.h \
@@ -151,12 +145,18 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/QUECTEL/
  mbed-os/features/netsocket/nsapi_types.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/features/netsocket/DNS.h \
  mbed-os/features/cellular/framework/API/CellularDevice.h \
+ mbed-os/features/cellular/framework/device/CellularStateMachine.h \
+ mbed-os/features/cellular/framework/common/CellularCommon.h \
+ mbed-os/platform/PlatformMutex.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
  mbed-os/features/cellular/framework/common/CellularUtil.h \
- mbed-os/features/netsocket/ControlPlane_netif.h mbed-os/rtos/Semaphore.h \
- mbed-os/features/cellular/framework/targets/QUECTEL/BC95/QUECTEL_BC95_CellularInformation.h \
+ mbed-os/features/netsocket/cellular/ControlPlane_netif.h \
+ mbed-os/rtos/Semaphore.h \
+ mbed-os\features\cellular\framework\targets\QUECTEL\BC95\QUECTEL_BC95_CellularInformation.h \
  mbed-os/features/cellular/framework/AT/AT_CellularInformation.h \
  mbed-os/features/cellular/framework/API/CellularInformation.h \
- mbed-os/features/cellular/framework/targets/QUECTEL/BC95/QUECTEL_BC95.h \
+ mbed-os\features\cellular\framework\targets\QUECTEL\BC95\QUECTEL_BC95.h \
  mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
+ mbed-os/features/cellular/framework/API/CellularDevice.h \
  mbed-os/features/cellular/framework/common/CellularLog.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h

@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/frameworks/mbed-trace/source/mbed_trace.o: \
- mbed-os/features/frameworks/mbed-trace/source/mbed_trace.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\frameworks\mbed-trace\source\mbed_trace.o: \
+ mbed-os\features\frameworks\mbed-trace\source\mbed_trace.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ip6string.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \

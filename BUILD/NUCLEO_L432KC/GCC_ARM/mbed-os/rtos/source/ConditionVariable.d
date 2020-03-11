@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/ConditionVariable.o: \
- mbed-os/rtos/source/ConditionVariable.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\ConditionVariable.o: \
+ mbed-os\rtos\source\ConditionVariable.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/rtos/ConditionVariable.h mbed-os/rtos/mbed_rtos_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
  mbed-os/rtos/Mutex.h mbed-os/rtos/mbed_rtos1_types.h \

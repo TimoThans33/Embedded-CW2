@@ -1,8 +1,8 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/components/wifi/esp8266-driver/ESP8266/ESP8266.o: \
- mbed-os/components/wifi/esp8266-driver/ESP8266/ESP8266.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/components/wifi/esp8266-driver/ESP8266/ESP8266.h \
- mbed-os/drivers/BufferedSerial.h mbed-os/platform/platform.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\components\wifi\esp8266-driver\ESP8266\ESP8266.o: \
+ mbed-os\components\wifi\esp8266-driver\ESP8266\ESP8266.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\components\wifi\esp8266-driver\ESP8266\ESP8266.h \
+ mbed-os/drivers/UARTSerial.h mbed-os/platform/platform.h \
  mbed-os/platform/mbed_retarget.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
@@ -130,8 +130,5 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/components/wifi/esp8266-driver/ESP8266/ESP82
  mbed-os/features/netsocket/WiFiAccessPoint.h \
  mbed-os/features/netsocket/nsapi_types.h mbed-os/platform/ATCmdParser.h \
  mbed-os/platform/mbed_error.h mbed-os/rtos/ThisThread.h \
- mbed-os/features/netsocket/SocketAddress.h \
- mbed-os/features/netsocket/nsapi_types.h \
- mbed-os/platform/mbed_toolchain.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h \
  mbed-os/rtos/Kernel.h

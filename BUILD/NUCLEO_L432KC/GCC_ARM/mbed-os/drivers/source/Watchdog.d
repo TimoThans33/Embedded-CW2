@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/Watchdog.o: \
- mbed-os/drivers/source/Watchdog.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/drivers/Watchdog.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\Watchdog.o: \
+ mbed-os\drivers\source\Watchdog.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/drivers/Watchdog.h \
  mbed-os/platform/mbed_error.h mbed-os/platform/mbed_retarget.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_critical.h \

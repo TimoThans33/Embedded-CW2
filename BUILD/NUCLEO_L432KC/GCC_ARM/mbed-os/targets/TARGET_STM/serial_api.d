@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/serial_api.o: \
- mbed-os/targets/TARGET_STM/serial_api.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/targets/TARGET_STM/serial_api_hal.h mbed-os/hal/serial_api.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\serial_api.o: \
+ mbed-os\targets\TARGET_STM\serial_api.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\targets\TARGET_STM\serial_api_hal.h mbed-os/hal/serial_api.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -109,4 +109,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/serial_api.o: \
  mbed-os/hal/pinmap.h mbed-os/hal/buffer.h mbed-os/hal/dma_api.h \
  mbed-os/platform/mbed_debug.h mbed-os/platform/mbed_error.h \
  mbed-os/platform/mbed_retarget.h \
- mbed-os/targets/TARGET_STM/PeripheralPins.h mbed-os/hal/pinmap.h
+ mbed-os\targets\TARGET_STM\PeripheralPins.h mbed-os/hal/pinmap.h

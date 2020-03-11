@@ -1,5 +1,5 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/Thread.o: \
- mbed-os/rtos/source/Thread.cpp BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\Thread.o: \
+ mbed-os\rtos\source\Thread.cpp BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/rtos/Thread.h mbed-os/rtos/mbed_rtos_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
  mbed-os/rtos/mbed_rtos1_types.h \
@@ -13,6 +13,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/Thread.o: \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/NonCopyable.h \
  mbed-os/platform/mbed_debug.h mbed-os/rtos/Semaphore.h \
  mbed-os/rtos/Mutex.h mbed-os/platform/ScopedLock.h \
- mbed-os/rtos/ThisThread.h mbed-os/rtos/source/rtos_idle.h \
- mbed-os/platform/mbed_toolchain.h mbed-os/rtos/source/rtos_handlers.h \
+ mbed-os/rtos/ThisThread.h mbed-os\rtos\source\rtos_idle.h \
+ mbed-os/platform/mbed_toolchain.h mbed-os\rtos\source\rtos_handlers.h \
  mbed-os/platform/mbed_error.h mbed-os/platform/mbed_retarget.h

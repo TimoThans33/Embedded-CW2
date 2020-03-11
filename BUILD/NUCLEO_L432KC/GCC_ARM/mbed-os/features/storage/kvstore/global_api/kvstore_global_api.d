@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/kvstore/global_api/kvstore_global_api.o: \
- mbed-os/features/storage/kvstore/global_api/kvstore_global_api.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/storage/kvstore/global_api/kvstore_global_api.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\storage\kvstore\global_api\kvstore_global_api.o: \
+ mbed-os\features\storage\kvstore\global_api\kvstore_global_api.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\storage\kvstore\global_api\kvstore_global_api.h \
  mbed-os/features/storage/kvstore/conf/kv_config.h \
  mbed-os/features/storage/kvstore/kv_map/KVMap.h \
  mbed-os/features/storage/kvstore/include/KVStore.h \

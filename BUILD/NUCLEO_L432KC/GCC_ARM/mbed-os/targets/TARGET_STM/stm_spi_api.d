@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/stm_spi_api.o: \
- mbed-os/targets/TARGET_STM/stm_spi_api.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/platform/mbed_assert.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\stm_spi_api.o: \
+ mbed-os\targets\TARGET_STM\stm_spi_api.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/platform/mbed_assert.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/platform/mbed_error.h mbed-os/platform/mbed_retarget.h \
  mbed-os/platform/mbed_debug.h mbed-os/hal/spi_api.h \
@@ -108,6 +108,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/stm_spi_api.o: \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
  mbed-os/hal/pinmap.h mbed-os/hal/dma_api.h mbed-os/hal/buffer.h \
- mbed-os/hal/pinmap.h mbed-os/targets/TARGET_STM/PeripheralPins.h \
+ mbed-os/hal/pinmap.h mbed-os\targets\TARGET_STM\PeripheralPins.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/spi_device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_spi.h

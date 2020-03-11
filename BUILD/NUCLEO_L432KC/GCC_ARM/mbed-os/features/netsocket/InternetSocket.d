@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/InternetSocket.o: \
- mbed-os/features/netsocket/InternetSocket.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/netsocket/InternetSocket.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\InternetSocket.o: \
+ mbed-os\features\netsocket\InternetSocket.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\netsocket\InternetSocket.h \
  mbed-os/features/netsocket/Socket.h \
  mbed-os/features/netsocket/SocketAddress.h \
  mbed-os/features/netsocket/nsapi_types.h \
@@ -111,9 +111,9 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/InternetSocket.o: \
  mbed-os/platform/cxxsupport/mstd_type_traits \
  mbed-os/platform/cxxsupport/mstd_cstddef \
  mbed-os/platform/internal/mbed_atomic_impl.h \
- mbed-os/features/netsocket/SocketStats.h mbed-os/platform/SingletonPtr.h \
+ mbed-os\features\netsocket\SocketStats.h mbed-os/platform/SingletonPtr.h \
  mbed-os/platform/mbed_atomic.h mbed-os/platform/PlatformMutex.h \
- mbed-os/features/netsocket/SocketAddress.h mbed-os/hal/ticker_api.h \
+ mbed-os\features\netsocket\SocketAddress.h mbed-os/hal/ticker_api.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/PortNames.h \

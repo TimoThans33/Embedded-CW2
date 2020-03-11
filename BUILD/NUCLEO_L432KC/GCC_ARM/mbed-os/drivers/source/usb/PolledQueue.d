@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/usb/PolledQueue.o: \
- mbed-os/drivers/source/usb/PolledQueue.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\usb\PolledQueue.o: \
+ mbed-os\drivers\source\usb\PolledQueue.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/drivers/internal/PolledQueue.h \
  mbed-os/drivers/internal/TaskQueue.h mbed-os/drivers/internal/TaskBase.h \
  mbed-os/platform/Callback.h mbed-os/platform/mbed_assert.h \

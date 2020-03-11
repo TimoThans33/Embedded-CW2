@@ -1,6 +1,10 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/MbedCRC.o: \
- mbed-os/drivers/source/MbedCRC.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/drivers/MbedCRC.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\MbedCRC.o: \
+ mbed-os\drivers\source\MbedCRC.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/drivers/MbedCRC.h \
+ mbed-os/drivers/internal/TableCRC.h mbed-os/hal/crc_api.h \
+ mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_toolchain.h \
+ mbed-os/platform/mbed_preprocessor.h mbed-os/platform/SingletonPtr.h \
+ mbed-os/platform/mbed_atomic.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/stm32l432xx.h \
@@ -86,27 +90,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/MbedCRC.o: \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_usart_ex.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_wwdg.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/hal/crc_api.h mbed-os/targets/TARGET_STM/device.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
- mbed-os/targets/TARGET_STM/PortNames.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/TARGET_NUCLEO_L432KC/PeripheralNames.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/TARGET_NUCLEO_L432KC/PinNames.h \
- mbed-os/targets/TARGET_STM/PinNamesTypes.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/common_objects.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_usart.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_lpuart.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_tim.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_rtc.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_pwr.h \
- mbed-os/targets/TARGET_STM/gpio_object.h mbed-os/platform/mbed_assert.h \
- mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
- mbed-os/targets/TARGET_STM/PortNames.h \
- mbed-os/targets/TARGET_STM/us_ticker_defines.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/platform/mbed_assert.h mbed-os/platform/SingletonPtr.h \
- mbed-os/platform/mbed_atomic.h \
  mbed-os/platform/cxxsupport/mstd_type_traits \
  mbed-os/platform/cxxsupport/mstd_cstddef \
  mbed-os/platform/internal/mbed_atomic_impl.h \

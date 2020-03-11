@@ -1,11 +1,12 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularInformation.o: \
- mbed-os/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularInformation.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularInformation.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\cellular\framework\targets\QUECTEL\BG96\QUECTEL_BG96_CellularInformation.o: \
+ mbed-os\features\cellular\framework\targets\QUECTEL\BG96\QUECTEL_BG96_CellularInformation.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\cellular\framework\targets\QUECTEL\BG96\QUECTEL_BG96_CellularInformation.h \
  mbed-os/features/cellular/framework/AT/AT_CellularInformation.h \
  mbed-os/features/cellular/framework/API/CellularInformation.h \
  mbed-os/features/netsocket/nsapi_types.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
+ mbed-os/features/cellular/framework/AT/AT_CellularBase.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
  mbed-os/platform/mbed_retarget.h mbed-os/events/EventQueue.h \
  mbed-os/events/equeue.h mbed-os/events/internal/equeue_platform.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
@@ -17,7 +18,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/QUECTEL/
  mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/NonCopyable.h \
  mbed-os/platform/mbed_debug.h mbed-os/platform/Callback.h \
- mbed-os/drivers/BufferedSerial.h mbed-os/platform/platform.h \
+ mbed-os/drivers/UARTSerial.h mbed-os/platform/platform.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -132,13 +133,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/QUECTEL/
  mbed-os/rtos/source/TARGET_CORTEX/rtx4/cmsis_os.h \
  mbed-os/rtos/mbed_rtos_storage.h mbed-os/platform/ScopedLock.h \
  mbed-os/platform/CircularBuffer.h mbed-os/rtos/ConditionVariable.h \
- mbed-os/rtos/Semaphore.h \
- mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
- mbed-os/features/cellular/framework/API/CellularDevice.h \
- mbed-os/features/cellular/framework/device/CellularStateMachine.h \
- mbed-os/features/cellular/framework/API/CellularNetwork.h \
- mbed-os/features/cellular/framework/common/CellularList.h \
- mbed-os/features/cellular/framework/common/CellularCommon.h \
- mbed-os/platform/PlatformMutex.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/rtos/Thread.h
+ mbed-os/rtos/Semaphore.h

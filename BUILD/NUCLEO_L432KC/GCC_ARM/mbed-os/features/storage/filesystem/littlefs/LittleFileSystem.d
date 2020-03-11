@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/filesystem/littlefs/LittleFileSystem.o: \
- mbed-os/features/storage/filesystem/littlefs/LittleFileSystem.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\storage\filesystem\littlefs\LittleFileSystem.o: \
+ mbed-os\features\storage\filesystem\littlefs\LittleFileSystem.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/storage/filesystem/mbed_filesystem.h \
  mbed-os/platform/platform.h mbed-os/platform/mbed_retarget.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
@@ -133,9 +133,8 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/filesystem/littlefs/LittleF
  mbed-os/features/storage/blockdevice/BlockDevice.h \
  mbed-os/features/storage/blockdevice/SlicingBlockDevice.h \
  mbed-os/features/storage/blockdevice/HeapBlockDevice.h \
- mbed-os/features/storage/filesystem/littlefs/LittleFileSystem.h \
+ mbed-os\features\storage\filesystem\littlefs\LittleFileSystem.h \
  mbed-os/features/storage/filesystem/littlefs/littlefs/lfs.h \
  mbed-os/features/storage/filesystem/littlefs/littlefs/lfs_util.h \
- mbed-os/platform/mbed_debug.h \
- mbed-os/cmsis/TARGET_CORTEX_M/cmsis_compiler.h mbed-os/drivers/MbedCRC.h \
- mbed-os/hal/crc_api.h
+ mbed-os/platform/mbed_debug.h mbed-os/drivers/MbedCRC.h \
+ mbed-os/drivers/internal/TableCRC.h mbed-os/hal/crc_api.h

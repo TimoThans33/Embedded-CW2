@@ -1,8 +1,8 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/blockdevice/FlashSimBlockDevice.o: \
- mbed-os/features/storage/blockdevice/FlashSimBlockDevice.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/storage/blockdevice/FlashSimBlockDevice.h \
- mbed-os/features/storage/blockdevice/BlockDevice.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\storage\blockdevice\FlashSimBlockDevice.o: \
+ mbed-os\features\storage\blockdevice\FlashSimBlockDevice.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\storage\blockdevice\FlashSimBlockDevice.h \
+ mbed-os\features\storage\blockdevice\BlockDevice.h \
  mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/mbed_atomic.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -92,5 +92,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/blockdevice/FlashSimBlockDe
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
  mbed-os/platform/cxxsupport/mstd_type_traits \
  mbed-os/platform/cxxsupport/mstd_cstddef \
- mbed-os/platform/internal/mbed_atomic_impl.h \
- mbed-os/platform/mbed_assert.h
+ mbed-os/platform/internal/mbed_atomic_impl.h

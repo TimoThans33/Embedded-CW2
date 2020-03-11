@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/AT/UBLOX_AT.o: \
- mbed-os/features/cellular/framework/targets/UBLOX/AT/UBLOX_AT.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/cellular/framework/targets/UBLOX/AT/UBLOX_AT.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\cellular\framework\targets\UBLOX\AT\UBLOX_AT.o: \
+ mbed-os\features\cellular\framework\targets\UBLOX\AT\UBLOX_AT.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\cellular\framework\targets\UBLOX\AT\UBLOX_AT.h \
  mbed-os/features/cellular/framework/common/APN_db.h \
  mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
  mbed-os/features/cellular/framework/API/CellularDevice.h \
@@ -25,8 +25,8 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/AT
  mbed-os/rtos/mbed_rtos_types.h mbed-os/rtos/mbed_rtos1_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx4/cmsis_os.h \
  mbed-os/rtos/mbed_rtos_storage.h mbed-os/platform/ScopedLock.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/platform/mbed_retarget.h mbed-os/drivers/BufferedSerial.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
+ mbed-os/platform/mbed_retarget.h mbed-os/drivers/UARTSerial.h \
  mbed-os/platform/platform.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -138,8 +138,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/AT
  mbed-os/hal/gpio_irq_api.h mbed-os/platform/mbed_critical.h \
  mbed-os/platform/PlatformMutex.h mbed-os/platform/CircularBuffer.h \
  mbed-os/rtos/ConditionVariable.h mbed-os/rtos/Semaphore.h \
- mbed-os/rtos/Thread.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
  mbed-os/features/cellular/framework/AT/AT_CellularContext.h \
  mbed-os/features/cellular/framework/API/CellularContext.h \
  mbed-os/features/netsocket/CellularInterface.h \
@@ -150,9 +148,11 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/AT
  mbed-os/platform/mbed_toolchain.h mbed-os/features/netsocket/DNS.h \
  mbed-os/features/cellular/framework/API/CellularDevice.h \
  mbed-os/features/cellular/framework/common/CellularUtil.h \
- mbed-os/features/netsocket/ControlPlane_netif.h mbed-os/rtos/Semaphore.h \
- mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
- mbed-os/features/cellular/framework/targets/UBLOX/AT/UBLOX_AT_CellularNetwork.h \
+ mbed-os/features/netsocket/cellular/ControlPlane_netif.h \
+ mbed-os/features/cellular/framework/AT/AT_CellularBase.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
+ mbed-os/rtos/Semaphore.h \
+ mbed-os\features\cellular\framework\targets\UBLOX\AT\UBLOX_AT_CellularNetwork.h \
  mbed-os/features/cellular/framework/common/CellularLog.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h \
  mbed-os/drivers/Timer.h mbed-os/hal/ticker_api.h \
@@ -161,4 +161,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/UBLOX/AT
  mbed-os/platform/cxxsupport/mstd_cstddef \
  mbed-os/platform/internal/mbed_atomic_impl.h \
  mbed-os/features/cellular/framework/AT/AT_CellularNetwork.h \
- mbed-os/features/cellular/framework/targets/UBLOX/AT/UBLOX_AT_CellularContext.h
+ mbed-os\features\cellular\framework\targets\UBLOX\AT\UBLOX_AT_CellularContext.h

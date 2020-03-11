@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/SerialBase.o: \
- mbed-os/drivers/source/SerialBase.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/drivers/SerialBase.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\SerialBase.o: \
+ mbed-os\drivers\source\SerialBase.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/drivers/SerialBase.h \
  mbed-os/platform/platform.h mbed-os/platform/mbed_retarget.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/targets/TARGET_STM/device.h \

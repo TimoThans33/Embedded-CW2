@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/mbed-mesh-api/source/CallbackHandler.o: \
- mbed-os/features/nanostack/mbed-mesh-api/source/CallbackHandler.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\nanostack\mbed-mesh-api\source\CallbackHandler.o: \
+ mbed-os\features\nanostack\mbed-mesh-api\source\CallbackHandler.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/nanostack/mbed-mesh-api/mbed-mesh-api/MeshInterfaceNanostack.h \
  mbed-os/rtos/Semaphore.h mbed-os/rtos/mbed_rtos_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
@@ -29,6 +29,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/mbed-mesh-api/source/Call
  mbed-os/features/netsocket/EthInterface.h \
  mbed-os/features/netsocket/WiFiInterface.h \
  mbed-os/features/netsocket/WiFiAccessPoint.h \
+ mbed-os/features/netsocket/CellularBase.h \
  mbed-os/features/netsocket/CellularInterface.h \
  mbed-os/features/netsocket/MeshInterface.h \
  mbed-os/features/netsocket/Socket.h \
@@ -197,4 +198,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/mbed-mesh-api/source/Call
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_list.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \
  mbed-os/features/nanostack/mbed-mesh-api/mbed-mesh-api/mesh_interface_types.h \
- mbed-os/features/nanostack/mbed-mesh-api/source/include/callback_handler.h
+ mbed-os\features\nanostack\mbed-mesh-api\source\include/callback_handler.h

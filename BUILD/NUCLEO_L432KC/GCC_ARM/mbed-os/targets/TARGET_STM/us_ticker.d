@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/us_ticker.o: \
- mbed-os/targets/TARGET_STM/us_ticker.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/hal/us_ticker_api.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\us_ticker.o: \
+ mbed-os\targets\TARGET_STM\us_ticker.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/hal/us_ticker_api.h \
  mbed-os/hal/ticker_api.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -104,4 +104,5 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/us_ticker.o: \
  mbed-os/targets/TARGET_STM/PortNames.h \
  mbed-os/targets/TARGET_STM/us_ticker_defines.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h
+ mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
+ mbed-os\targets\TARGET_STM\us_ticker_defines.h

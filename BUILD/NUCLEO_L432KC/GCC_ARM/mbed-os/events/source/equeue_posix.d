@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/events/source/equeue_posix.o: \
- mbed-os/events/source/equeue_posix.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\events\source\equeue_posix.o: \
+ mbed-os\events\source\equeue_posix.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/events/internal/equeue_platform.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
  mbed-os/rtos/mbed_rtos_storage.h \

@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/ws/ws_common.o: \
- mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/ws/ws_common.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\nanostack\sal-stack-nanostack\source\6LoWPAN\ws\ws_common.o: \
+ mbed-os\features\nanostack\sal-stack-nanostack\source\6LoWPAN\ws\ws_common.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/nanostack/sal-stack-nanostack/source/nsconfig.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \
  mbed-os/features/nanostack/sal-stack-nanostack/source/configs/cfg_nanostack_full.h \
@@ -23,8 +23,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/sal-stack-nanostack/sourc
  mbed-os/features/frameworks/mbed-client-randlib/mbed-client-randlib/randLIB.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_list.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/nsdynmemLIB.h \
- mbed-os/features/nanostack/sal-stack-nanostack/source/Common_Protocols/icmpv6.h \
- mbed-os/features/nanostack/sal-stack-nanostack/source/Common_Protocols/icmpv6_prefix.h \
  mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/ws/ws_config.h \
  mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/ws/ws_common_defines.h \
  mbed-os/features/nanostack/sal-stack-nanostack/source/6LoWPAN/ws/ws_common.h \

@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/mbed_thread.o: \
- mbed-os/platform/source/mbed_thread.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/platform/mbed_thread.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\platform\source\mbed_thread.o: \
+ mbed-os\platform\source\mbed_thread.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/platform/mbed_thread.h \
  mbed-os/platform/mbed_critical.h mbed-os/platform/source/mbed_os_timer.h \
  mbed-os/platform/source/SysTimer.h mbed-os/platform/NonCopyable.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \

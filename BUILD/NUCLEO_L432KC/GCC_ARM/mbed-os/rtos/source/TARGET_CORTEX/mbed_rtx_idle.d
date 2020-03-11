@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_idle.o: \
- mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_idle.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\TARGET_CORTEX\mbed_rtx_idle.o: \
+ mbed-os\rtos\source\TARGET_CORTEX\mbed_rtx_idle.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/rtos/source/rtos_idle.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/mbed_power_mgmt.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/hal/ticker_api.h \

@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/TARGET_STM32L4/analogout_device.o: \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/analogout_device.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/platform/mbed_assert.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\TARGET_STM32L4\analogout_device.o: \
+ mbed-os\targets\TARGET_STM\TARGET_STM32L4\analogout_device.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/platform/mbed_assert.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/hal/analogout_api.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
@@ -105,6 +105,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/TARGET_STM32L4/analogout_
  mbed-os/targets/TARGET_STM/us_ticker_defines.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/hal/pinmap.h mbed-os/hal/pinmap.h mbed-os/platform/mbed_error.h \
+ mbed-os/hal/pinmap.h mbed-os\targets\TARGET_STM\TARGET_STM32L4\cmsis.h \
+ mbed-os/hal/pinmap.h mbed-os/platform/mbed_error.h \
  mbed-os/platform/mbed_retarget.h \
  mbed-os/targets/TARGET_STM/PeripheralPins.h

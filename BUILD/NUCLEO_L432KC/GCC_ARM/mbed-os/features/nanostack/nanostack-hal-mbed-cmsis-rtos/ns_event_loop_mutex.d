@@ -1,9 +1,9 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nanostack/nanostack-hal-mbed-cmsis-rtos/ns_event_loop_mutex.o: \
- mbed-os/features/nanostack/nanostack-hal-mbed-cmsis-rtos/ns_event_loop_mutex.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\nanostack\nanostack-hal-mbed-cmsis-rtos\ns_event_loop_mutex.o: \
+ mbed-os\features\nanostack\nanostack-hal-mbed-cmsis-rtos\ns_event_loop_mutex.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/nanostack/sal-stack-nanostack-eventloop/nanostack-event-loop/eventOS_scheduler.h \
  mbed-os/features/frameworks/nanostack-libservice/mbed-client-libservice/ns_types.h \
- mbed-os/features/nanostack/nanostack-hal-mbed-cmsis-rtos/ns_event_loop_mutex.h \
+ mbed-os\features\nanostack\nanostack-hal-mbed-cmsis-rtos\ns_event_loop_mutex.h \
  mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \

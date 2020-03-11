@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/SocketStats.o: \
- mbed-os/features/netsocket/SocketStats.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/netsocket/SocketStats.h mbed-os/platform/SingletonPtr.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\SocketStats.o: \
+ mbed-os\features\netsocket\SocketStats.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\netsocket\SocketStats.h mbed-os/platform/SingletonPtr.h \
  mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/mbed_atomic.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -106,7 +106,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/SocketStats.o: \
  mbed-os/features/netsocket/SocketAddress.h \
  mbed-os/features/netsocket/nsapi_types.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/Callback.h \
- mbed-os/features/netsocket/SocketAddress.h mbed-os/hal/ticker_api.h \
+ mbed-os\features\netsocket\SocketAddress.h mbed-os/hal/ticker_api.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/PortNames.h \

@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lwipstack/lwip_tools.o: \
- mbed-os/features/lwipstack/lwip_tools.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\lwipstack\lwip_tools.o: \
+ mbed-os\features\lwipstack\lwip_tools.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/lwipstack/lwip/src/include/lwip/opt.h \
  mbed-os/features/lwipstack/lwipopts.h \
  mbed-os/features/netsocket/nsapi_types.h \
@@ -125,7 +125,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lwipstack/lwip_tools.o: \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Include/rtx_os.h \
  mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_conf.h \
  mbed-os/targets/TARGET_STM/mbed_rtx.h \
- mbed-os/features/lwipstack/LWIPStack.h \
+ mbed-os\features\lwipstack\LWIPStack.h \
  mbed-os/features/lwipstack/lwip/src/include/lwip/tcpip.h \
  mbed-os/features/lwipstack/lwip/src/include/lwip/timeouts.h \
  mbed-os/features/lwipstack/lwip/src/include/lwip/tcp.h \
@@ -152,6 +152,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lwipstack/lwip_tools.o: \
  mbed-os/features/netsocket/EthInterface.h \
  mbed-os/features/netsocket/WiFiInterface.h \
  mbed-os/features/netsocket/WiFiAccessPoint.h \
+ mbed-os/features/netsocket/CellularBase.h \
  mbed-os/features/netsocket/CellularInterface.h \
  mbed-os/features/netsocket/MeshInterface.h \
  mbed-os/features/netsocket/Socket.h \
@@ -231,6 +232,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lwipstack/lwip_tools.o: \
  mbed-os/features/netsocket/NetworkStack.h \
  mbed-os/features/netsocket/EMAC.h mbed-os/features/netsocket/L3IP.h \
  mbed-os/features/netsocket/PPP.h \
- mbed-os/features/lwipstack/LWIPMemoryManager.h \
+ mbed-os\features\lwipstack\LWIPMemoryManager.h \
  mbed-os/features/netsocket/EMACMemoryManager.h \
- mbed-os/features/lwipstack/lwip_tools.h
+ mbed-os\features\lwipstack\lwip_tools.h

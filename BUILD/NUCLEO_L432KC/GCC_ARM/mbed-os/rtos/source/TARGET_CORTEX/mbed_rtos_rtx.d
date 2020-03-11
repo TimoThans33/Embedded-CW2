@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/TARGET_CORTEX/mbed_rtos_rtx.o: \
- mbed-os/rtos/source/TARGET_CORTEX/mbed_rtos_rtx.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\TARGET_CORTEX\mbed_rtos_rtx.o: \
+ mbed-os\rtos\source\TARGET_CORTEX\mbed_rtos_rtx.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/stm32l432xx.h \
@@ -94,4 +94,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/TARGET_CORTEX/mbed_rtos_rtx.o: \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/platform/mbed_error.h mbed-os/platform/mbed_retarget.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_critical.h \
- mbed-os/rtos/source/TARGET_CORTEX/mbed_boot.h
+ mbed-os\rtos\source\TARGET_CORTEX\mbed_boot.h

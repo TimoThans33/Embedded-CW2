@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/TARGET_CORTEX/rtx5/Source/os_tick_ptim.o: \
- mbed-os/rtos/source/TARGET_CORTEX/rtx5/Source/os_tick_ptim.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/cmsis/RTE_Components.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\TARGET_CORTEX\rtx5\Source\os_tick_ptim.o: \
+ mbed-os\rtos\source\TARGET_CORTEX\rtx5\Source\os_tick_ptim.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/cmsis/RTE_Components.h \
  mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_conf.h \
  mbed-os/targets/TARGET_STM/mbed_rtx.h mbed-os/cmsis/mbed_cmsis_conf.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \

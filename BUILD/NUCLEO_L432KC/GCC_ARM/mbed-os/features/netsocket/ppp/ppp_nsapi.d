@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/ppp/ppp_nsapi.o: \
- mbed-os/features/netsocket/ppp/ppp_nsapi.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/platform/FileHandle.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\ppp\ppp_nsapi.o: \
+ mbed-os\features\netsocket\ppp\ppp_nsapi.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/platform/FileHandle.h \
  mbed-os/platform/Callback.h mbed-os/platform/mbed_assert.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/platform/mbed_poll.h mbed-os/platform/platform.h \
@@ -123,6 +123,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/ppp/ppp_nsapi.o: \
  mbed-os/features/netsocket/EthInterface.h \
  mbed-os/features/netsocket/WiFiInterface.h \
  mbed-os/features/netsocket/WiFiAccessPoint.h \
+ mbed-os/features/netsocket/CellularBase.h \
  mbed-os/features/netsocket/CellularInterface.h \
  mbed-os/features/netsocket/MeshInterface.h \
  mbed-os/features/netsocket/Socket.h \

@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/TARGET_STM32L4/pwmout_device.o: \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/pwmout_device.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\TARGET_STM32L4\pwmout_device.o: \
+ mbed-os\targets\TARGET_STM\TARGET_STM32L4\pwmout_device.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\targets\TARGET_STM\TARGET_STM32L4\cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/stm32l432xx.h \
  mbed-os/cmsis/TARGET_CORTEX_M/core_cm4.h \
@@ -94,6 +94,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/TARGET_STM32L4/pwmout_dev
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/TARGET_NUCLEO_L432KC/PinNames.h \
  mbed-os/targets/TARGET_STM/PinNamesTypes.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/common_objects.h \
+ mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_usart.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_lpuart.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_tim.h \
@@ -106,4 +107,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/TARGET_STM32L4/pwmout_dev
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
  mbed-os/hal/pinmap.h \
- mbed-os/targets/TARGET_STM/TARGET_STM32L4/pwmout_device.h
+ mbed-os\targets\TARGET_STM\TARGET_STM32L4\pwmout_device.h

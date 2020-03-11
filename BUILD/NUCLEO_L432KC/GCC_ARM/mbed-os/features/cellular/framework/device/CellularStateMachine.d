@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/device/CellularStateMachine.o: \
- mbed-os/features/cellular/framework/device/CellularStateMachine.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/cellular/framework/device/CellularStateMachine.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\cellular\framework\device\CellularStateMachine.o: \
+ mbed-os\features\cellular\framework\device\CellularStateMachine.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\cellular\framework\device\CellularStateMachine.h \
  mbed-os/events/EventQueue.h mbed-os/events/equeue.h \
  mbed-os/events/internal/equeue_platform.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
@@ -23,8 +23,8 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/device/CellularS
  mbed-os/rtos/mbed_rtos_storage.h mbed-os/platform/ScopedLock.h \
  mbed-os/features/cellular/framework/API/CellularDevice.h \
  mbed-os/features/cellular/framework/device/CellularStateMachine.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/platform/mbed_retarget.h mbed-os/drivers/BufferedSerial.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
+ mbed-os/platform/mbed_retarget.h mbed-os/drivers/UARTSerial.h \
  mbed-os/platform/platform.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -136,7 +136,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/device/CellularS
  mbed-os/hal/gpio_irq_api.h mbed-os/platform/mbed_critical.h \
  mbed-os/platform/PlatformMutex.h mbed-os/platform/CircularBuffer.h \
  mbed-os/rtos/ConditionVariable.h mbed-os/rtos/Semaphore.h \
- mbed-os/rtos/Thread.h \
  mbed-os/features/cellular/framework/common/CellularLog.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h \
- mbed-os/features/cellular/framework/API/CellularInformation.h
+ mbed-os/rtos/Thread.h mbed-os/events/mbed_shared_queues.h

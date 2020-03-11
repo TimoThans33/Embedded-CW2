@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/components/802.15.4_RF/stm-s2lp-rf-driver/source/at24mac_s2lp.o: \
- mbed-os/components/802.15.4_RF/stm-s2lp-rf-driver/source/at24mac_s2lp.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\components\802.15.4_RF\stm-s2lp-rf-driver\source\at24mac_s2lp.o: \
+ mbed-os\components\802.15.4_RF\stm-s2lp-rf-driver\source\at24mac_s2lp.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/components/802.15.4_RF/stm-s2lp-rf-driver/stm-s2lp-rf-driver/NanostackRfPhys2lp.h \
  mbed-os/features/nanostack/nanostack-interface/NanostackRfPhy.h \
  mbed-os/features/nanostack/nanostack-interface/NanostackMACPhy.h \
@@ -134,4 +134,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/components/802.15.4_RF/stm-s2lp-rf-driver/so
  mbed-os/platform/internal/CThunkBase.h mbed-os/platform/CircularBuffer.h \
  mbed-os/platform/Transaction.h \
  mbed-os/components/802.15.4_RF/stm-s2lp-rf-driver/source/at24mac_s2lp.h \
- mbed-os/components/802.15.4_RF/stm-s2lp-rf-driver/source/at24mac_s2lp.h
+ mbed-os\components\802.15.4_RF\stm-s2lp-rf-driver\source\at24mac_s2lp.h

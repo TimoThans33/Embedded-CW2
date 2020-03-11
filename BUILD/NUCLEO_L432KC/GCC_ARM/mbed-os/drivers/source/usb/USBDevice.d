@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/usb/USBDevice.o: \
- mbed-os/drivers/source/usb/USBDevice.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\usb\USBDevice.o: \
+ mbed-os\drivers\source\usb\USBDevice.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/drivers/internal/USBDevice.h \
  mbed-os/drivers/internal/USBDevice_Types.h mbed-os/hal/usb/USBPhy.h \
  mbed-os/hal/usb/USBPhyTypes.h mbed-os/hal/usb/USBPhyEvents.h \

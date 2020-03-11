@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/kvstore/direct_access_devicekey/DirectAccessDevicekey.o: \
- mbed-os/features/storage/kvstore/direct_access_devicekey/DirectAccessDevicekey.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/storage/kvstore/direct_access_devicekey/DirectAccessDevicekey.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\storage\kvstore\direct_access_devicekey\DirectAccessDevicekey.o: \
+ mbed-os\features\storage\kvstore\direct_access_devicekey\DirectAccessDevicekey.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\storage\kvstore\direct_access_devicekey\DirectAccessDevicekey.h \
  mbed-os/drivers/FlashIAP.h mbed-os/hal/flash_api.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
@@ -124,5 +124,5 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/kvstore/direct_access_devic
  mbed-os/targets/TARGET_STM/mbed_rtx.h mbed-os/platform/ScopedLock.h \
  mbed-os/drivers/FlashIAP.h mbed-os/platform/mbed_error.h \
  mbed-os/platform/mbed_retarget.h mbed-os/drivers/MbedCRC.h \
- mbed-os/hal/crc_api.h \
+ mbed-os/drivers/internal/TableCRC.h mbed-os/hal/crc_api.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h

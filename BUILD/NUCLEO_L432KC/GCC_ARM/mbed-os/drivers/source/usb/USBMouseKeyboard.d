@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/usb/USBMouseKeyboard.o: \
- mbed-os/drivers/source/usb/USBMouseKeyboard.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\usb\USBMouseKeyboard.o: \
+ mbed-os\drivers\source\usb\USBMouseKeyboard.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/drivers/USBMouseKeyboard.h mbed-os/drivers/USBMouse.h \
  mbed-os/drivers/USBHID.h mbed-os/drivers/internal/USBDescriptor.h \
  mbed-os/drivers/internal/USBDevice.h \

@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/kvstore/tdbstore/TDBStore.o: \
- mbed-os/features/storage/kvstore/tdbstore/TDBStore.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/storage/kvstore/tdbstore/TDBStore.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\storage\kvstore\tdbstore\TDBStore.o: \
+ mbed-os\features\storage\kvstore\tdbstore\TDBStore.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\storage\kvstore\tdbstore\TDBStore.h \
  mbed-os/features/storage/kvstore/include/KVStore.h \
  mbed-os/features/storage/blockdevice/BlockDevice.h \
  mbed-os/features/storage/blockdevice/BufferedBlockDevice.h \
@@ -19,8 +19,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/kvstore/tdbstore/TDBStore.o
  mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_conf.h \
  mbed-os/targets/TARGET_STM/mbed_rtx.h mbed-os/platform/ScopedLock.h \
  mbed-os/platform/mbed_error.h mbed-os/platform/mbed_retarget.h \
- mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_wait_api.h \
- mbed-os/platform/mbed_atomic.h \
+ mbed-os/platform/mbed_wait_api.h mbed-os/platform/mbed_atomic.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/stm32l432xx.h \
@@ -122,10 +121,12 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/kvstore/tdbstore/TDBStore.o
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_tim.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_rtc.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_ll_pwr.h \
- mbed-os/targets/TARGET_STM/gpio_object.h \
+ mbed-os/targets/TARGET_STM/gpio_object.h mbed-os/platform/mbed_assert.h \
  mbed-os/targets/TARGET_STM/PortNames.h \
  mbed-os/targets/TARGET_STM/us_ticker_defines.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/drivers/MbedCRC.h mbed-os/hal/crc_api.h \
- mbed-os/platform/SingletonPtr.h mbed-os/platform/PlatformMutex.h
+ mbed-os/drivers/MbedCRC.h mbed-os/drivers/internal/TableCRC.h \
+ mbed-os/hal/crc_api.h mbed-os/platform/SingletonPtr.h \
+ mbed-os/platform/PlatformMutex.h \
+ mbed-os/features/storage/system_storage/SystemStorage.h

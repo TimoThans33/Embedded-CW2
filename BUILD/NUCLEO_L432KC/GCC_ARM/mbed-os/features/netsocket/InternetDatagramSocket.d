@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/netsocket/InternetDatagramSocket.o: \
- mbed-os/features/netsocket/InternetDatagramSocket.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/netsocket/InternetDatagramSocket.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\netsocket\InternetDatagramSocket.o: \
+ mbed-os\features\netsocket\InternetDatagramSocket.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\netsocket\InternetDatagramSocket.h \
  mbed-os/features/netsocket/InternetSocket.h \
  mbed-os/features/netsocket/Socket.h \
  mbed-os/features/netsocket/SocketAddress.h \

@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/usb/USBMIDI.o: \
- mbed-os/drivers/source/usb/USBMIDI.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/drivers/USBMIDI.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\usb\USBMIDI.o: \
+ mbed-os\drivers\source\usb\USBMIDI.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/drivers/USBMIDI.h \
  mbed-os/drivers/internal/USBDescriptor.h \
  mbed-os/drivers/internal/USBDevice_Types.h \
  mbed-os/drivers/internal/USBDevice.h \

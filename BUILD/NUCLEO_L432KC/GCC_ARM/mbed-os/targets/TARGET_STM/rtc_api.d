@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/targets/TARGET_STM/rtc_api.o: \
- mbed-os/targets/TARGET_STM/rtc_api.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/targets/TARGET_STM/rtc_api_hal.h mbed-os/hal/rtc_api.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\targets\TARGET_STM\rtc_api.o: \
+ mbed-os\targets\TARGET_STM\rtc_api.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\targets\TARGET_STM\rtc_api_hal.h mbed-os/hal/rtc_api.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \

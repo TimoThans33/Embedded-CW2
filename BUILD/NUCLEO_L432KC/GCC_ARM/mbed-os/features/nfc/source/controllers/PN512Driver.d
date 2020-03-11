@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/nfc/source/controllers/PN512Driver.o: \
- mbed-os/features/nfc/source/controllers/PN512Driver.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\nfc\source\controllers\PN512Driver.o: \
+ mbed-os\features\nfc\source\controllers\PN512Driver.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/nfc/controllers/PN512Driver.h \
  mbed-os/features/nfc/nfc/NFCControllerDriver.h \
  mbed-os/events/EventQueue.h mbed-os/events/equeue.h \

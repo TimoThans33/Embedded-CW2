@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/RiotMicro/AT/RM1000_AT_CellularNetwork.o: \
- mbed-os/features/cellular/framework/targets/RiotMicro/AT/RM1000_AT_CellularNetwork.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/rtos/rtos.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\cellular\framework\targets\RiotMicro\AT\RM1000_AT_CellularNetwork.o: \
+ mbed-os\features\cellular\framework\targets\RiotMicro\AT\RM1000_AT_CellularNetwork.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/rtos/rtos.h \
  mbed-os/rtos/mbed_rtos_storage.h \
  mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_storage.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Include/rtx_os.h \
@@ -21,15 +21,16 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/RiotMicr
  mbed-os/rtos/EventFlags.h mbed-os/rtos/ConditionVariable.h \
  mbed-os/features/cellular/framework/common/CellularCommon.h \
  mbed-os/features/netsocket/nsapi_types.h \
- mbed-os/features/cellular/framework/targets/RiotMicro/AT/RM1000_AT_CellularNetwork.h \
+ mbed-os\features\cellular\framework\targets\RiotMicro\AT\RM1000_AT_CellularNetwork.h \
  mbed-os/features/cellular/framework/AT/AT_CellularNetwork.h \
  mbed-os/features/cellular/framework/API/CellularNetwork.h \
  mbed-os/features/cellular/framework/common/CellularList.h \
  mbed-os/platform/Callback.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
+ mbed-os/features/cellular/framework/AT/AT_CellularBase.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
  mbed-os/events/EventQueue.h mbed-os/events/equeue.h \
  mbed-os/events/internal/equeue_platform.h \
- mbed-os/rtos/mbed_rtos_storage.h mbed-os/drivers/BufferedSerial.h \
+ mbed-os/rtos/mbed_rtos_storage.h mbed-os/drivers/UARTSerial.h \
  mbed-os/platform/platform.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -140,16 +141,9 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/RiotMicr
  mbed-os/drivers/InterruptIn.h mbed-os/hal/gpio_api.h \
  mbed-os/hal/gpio_irq_api.h mbed-os/platform/mbed_critical.h \
  mbed-os/platform/PlatformMutex.h mbed-os/platform/CircularBuffer.h \
- mbed-os/rtos/ConditionVariable.h \
- mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
- mbed-os/features/cellular/framework/API/CellularDevice.h \
- mbed-os/features/cellular/framework/device/CellularStateMachine.h \
- mbed-os/platform/PlatformMutex.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/rtos/Thread.h mbed-os/platform/mbed_wait_api.h \
+ mbed-os/rtos/ConditionVariable.h mbed-os/platform/mbed_wait_api.h \
  mbed-os/platform/mbed_atomic.h \
  mbed-os/platform/cxxsupport/mstd_type_traits \
  mbed-os/platform/cxxsupport/mstd_cstddef \
  mbed-os/platform/internal/mbed_atomic_impl.h \
- mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
  mbed-os/features/frameworks/mbed-trace/mbed-trace/mbed_trace.h

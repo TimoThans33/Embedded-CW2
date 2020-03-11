@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_handlers.o: \
- mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_handlers.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\TARGET_CORTEX\mbed_rtx_handlers.o: \
+ mbed-os\rtos\source\TARGET_CORTEX\mbed_rtx_handlers.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/cmsis/TARGET_CORTEX_M/cmsis_compiler.h \
  mbed-os/cmsis/TARGET_CORTEX_M/cmsis_gcc.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Include/rtx_os.h \

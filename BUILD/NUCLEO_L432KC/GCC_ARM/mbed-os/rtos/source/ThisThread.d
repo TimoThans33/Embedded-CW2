@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/ThisThread.o: \
- mbed-os/rtos/source/ThisThread.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/rtos/ThisThread.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\ThisThread.o: \
+ mbed-os\rtos\source\ThisThread.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/rtos/ThisThread.h \
  mbed-os/rtos/mbed_rtos_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \

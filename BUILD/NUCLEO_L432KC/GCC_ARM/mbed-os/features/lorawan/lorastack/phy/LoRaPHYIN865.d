@@ -1,8 +1,8 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lorawan/lorastack/phy/LoRaPHYIN865.o: \
- mbed-os/features/lorawan/lorastack/phy/LoRaPHYIN865.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/lorawan/lorastack/phy/LoRaPHYIN865.h \
- mbed-os/features/lorawan/lorastack/phy/LoRaPHY.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\lorawan\lorastack\phy\LoRaPHYIN865.o: \
+ mbed-os\features\lorawan\lorastack\phy\LoRaPHYIN865.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\lorawan\lorastack\phy\LoRaPHYIN865.h \
+ mbed-os\features\lorawan\lorastack\phy\LoRaPHY.h \
  mbed-os/platform/NonCopyable.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/mbed_debug.h \
  mbed-os/features/lorawan/system/LoRaWANTimer.h \
@@ -105,5 +105,5 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/lorawan/lorastack/phy/LoRaPHYIN865.
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_wwdg.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
  mbed-os/targets/TARGET_STM/PinNamesTypes.h \
- mbed-os/features/lorawan/lorastack/phy/lora_phy_ds.h \
+ mbed-os\features\lorawan\lorastack\phy\lora_phy_ds.h \
  mbed-os/features/lorawan/system/lorawan_data_structures.h

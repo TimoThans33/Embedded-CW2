@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/usb/AsyncOp.o: \
- mbed-os/drivers/source/usb/AsyncOp.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\usb\AsyncOp.o: \
+ mbed-os\drivers\source\usb\AsyncOp.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/drivers/internal/AsyncOp.h mbed-os/rtos/Mutex.h \
  mbed-os/rtos/mbed_rtos_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \

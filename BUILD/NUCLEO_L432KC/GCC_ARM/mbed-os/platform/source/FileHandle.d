@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/FileHandle.o: \
- mbed-os/platform/source/FileHandle.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/platform/FileHandle.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\platform\source\FileHandle.o: \
+ mbed-os\platform\source\FileHandle.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/platform/FileHandle.h \
  mbed-os/platform/Callback.h mbed-os/platform/mbed_assert.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
  mbed-os/platform/mbed_poll.h mbed-os/platform/platform.h \

@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/mbed_error.o: \
- mbed-os/platform/source/mbed_error.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\platform\source\mbed_error.o: \
+ mbed-os\platform\source\mbed_error.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
@@ -114,7 +114,6 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/mbed_error.o: \
  mbed-os/platform/mbed_interface.h mbed-os/platform/mbed_power_mgmt.h \
  mbed-os/hal/ticker_api.h mbed-os/platform/mbed_stats.h \
  mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.h \
- mbed-os/drivers/MbedCRC.h mbed-os/hal/crc_api.h \
  mbed-os/targets/TARGET_STM/mbed_rtx.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Include/rtx_os.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h

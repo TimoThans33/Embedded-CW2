@@ -1,8 +1,8 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/hal/static_pinmap.o: \
- mbed-os/hal/static_pinmap.cpp BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\hal\static_pinmap.o: \
+ mbed-os\hal\static_pinmap.cpp BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/platform/mbed_error.h mbed-os/platform/mbed_retarget.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_preprocessor.h \
- mbed-os/hal/static_pinmap.h \
+ mbed-os\hal\static_pinmap.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/TARGET_NUCLEO_L432KC/PinNames.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \
@@ -89,7 +89,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/hal/static_pinmap.o: \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_usart_ex.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_wwdg.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/targets/TARGET_STM/PinNamesTypes.h mbed-os/hal/spi_api.h \
+ mbed-os/targets/TARGET_STM/PinNamesTypes.h mbed-os\hal\spi_api.h \
  mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/PortNames.h \
@@ -106,8 +106,8 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/hal/static_pinmap.o: \
  mbed-os/targets/TARGET_STM/us_ticker_defines.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/us_ticker_data.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/hal/pinmap.h mbed-os/hal/dma_api.h mbed-os/hal/buffer.h \
- mbed-os/hal/pwmout_api.h mbed-os/hal/analogin_api.h \
- mbed-os/hal/analogout_api.h mbed-os/hal/i2c_api.h \
- mbed-os/hal/serial_api.h mbed-os/hal/qspi_api.h mbed-os/hal/can_api.h \
+ mbed-os\hal\pinmap.h mbed-os/hal/dma_api.h mbed-os/hal/buffer.h \
+ mbed-os\hal\pwmout_api.h mbed-os\hal\analogin_api.h \
+ mbed-os\hal\analogout_api.h mbed-os\hal\i2c_api.h \
+ mbed-os\hal\serial_api.h mbed-os\hal\qspi_api.h mbed-os\hal\can_api.h \
  mbed-os/hal/can_helper.h mbed-os/platform/cxxsupport/mstd_cstddef

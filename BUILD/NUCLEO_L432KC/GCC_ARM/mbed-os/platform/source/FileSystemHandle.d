@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/FileSystemHandle.o: \
- mbed-os/platform/source/FileSystemHandle.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\platform\source\FileSystemHandle.o: \
+ mbed-os\platform\source\FileSystemHandle.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/platform/FileSystemHandle.h mbed-os/platform/platform.h \
  mbed-os/platform/mbed_retarget.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/targets/TARGET_STM/device.h \

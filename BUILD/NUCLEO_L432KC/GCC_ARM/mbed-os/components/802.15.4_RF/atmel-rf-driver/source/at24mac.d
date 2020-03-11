@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/components/802.15.4_RF/atmel-rf-driver/source/at24mac.o: \
- mbed-os/components/802.15.4_RF/atmel-rf-driver/source/at24mac.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/components/802.15.4_RF/atmel-rf-driver/source/at24mac.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\components\802.15.4_RF\atmel-rf-driver\source\at24mac.o: \
+ mbed-os\components\802.15.4_RF\atmel-rf-driver\source\at24mac.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\components\802.15.4_RF\atmel-rf-driver\source\at24mac.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/TARGET_NUCLEO_L432KC/PinNames.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \

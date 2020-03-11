@@ -1,8 +1,8 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/storage/blockdevice/ExhaustibleBlockDevice.o: \
- mbed-os/features/storage/blockdevice/ExhaustibleBlockDevice.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/storage/blockdevice/ExhaustibleBlockDevice.h \
- mbed-os/features/storage/blockdevice/BlockDevice.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\storage\blockdevice\ExhaustibleBlockDevice.o: \
+ mbed-os\features\storage\blockdevice\ExhaustibleBlockDevice.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\storage\blockdevice\ExhaustibleBlockDevice.h \
+ mbed-os\features\storage\blockdevice\BlockDevice.h \
  mbed-os/platform/mbed_atomic.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx.h \

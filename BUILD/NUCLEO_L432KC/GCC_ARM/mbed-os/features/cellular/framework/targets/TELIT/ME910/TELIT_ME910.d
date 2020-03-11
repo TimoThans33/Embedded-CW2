@@ -1,7 +1,7 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/TELIT/ME910/TELIT_ME910.o: \
- mbed-os/features/cellular/framework/targets/TELIT/ME910/TELIT_ME910.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/features/cellular/framework/targets/TELIT/ME910/TELIT_ME910.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\cellular\framework\targets\TELIT\ME910\TELIT_ME910.o: \
+ mbed-os\features\cellular\framework\targets\TELIT\ME910\TELIT_ME910.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\features\cellular\framework\targets\TELIT\ME910\TELIT_ME910.h \
  mbed-os/drivers/DigitalOut.h mbed-os/platform/platform.h \
  mbed-os/platform/mbed_retarget.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/targets/TARGET_STM/device.h \
@@ -129,17 +129,16 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/TELIT/ME
  mbed-os/rtos/mbed_rtos_types.h mbed-os/rtos/mbed_rtos1_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx4/cmsis_os.h \
  mbed-os/rtos/mbed_rtos_storage.h mbed-os/platform/ScopedLock.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/drivers/BufferedSerial.h mbed-os/platform/FileHandle.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
+ mbed-os/drivers/UARTSerial.h mbed-os/platform/FileHandle.h \
  mbed-os/platform/mbed_poll.h mbed-os/drivers/SerialBase.h \
  mbed-os/hal/serial_api.h mbed-os/hal/buffer.h mbed-os/hal/dma_api.h \
  mbed-os/platform/CThunk.h mbed-os/platform/internal/CThunkBase.h \
  mbed-os/drivers/InterruptIn.h mbed-os/hal/gpio_irq_api.h \
  mbed-os/platform/mbed_critical.h mbed-os/platform/PlatformMutex.h \
  mbed-os/platform/CircularBuffer.h mbed-os/rtos/ConditionVariable.h \
- mbed-os/rtos/Semaphore.h mbed-os/rtos/Thread.h \
- mbed-os/features/cellular/framework/API/ATHandler.h \
- mbed-os/features/cellular/framework/targets/TELIT/ME910/TELIT_ME910_CellularContext.h \
+ mbed-os/rtos/Semaphore.h \
+ mbed-os\features\cellular\framework\targets\TELIT\ME910\TELIT_ME910_CellularContext.h \
  mbed-os/features/cellular/framework/AT/AT_CellularContext.h \
  mbed-os/features/cellular/framework/API/CellularContext.h \
  mbed-os/features/netsocket/CellularInterface.h \
@@ -150,8 +149,9 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/cellular/framework/targets/TELIT/ME
  mbed-os/platform/mbed_toolchain.h mbed-os/features/netsocket/DNS.h \
  mbed-os/features/cellular/framework/API/CellularDevice.h \
  mbed-os/features/cellular/framework/common/CellularUtil.h \
- mbed-os/features/netsocket/ControlPlane_netif.h mbed-os/rtos/Semaphore.h \
- mbed-os/features/cellular/framework/AT/AT_CellularDevice.h \
- mbed-os/features/cellular/framework/targets/TELIT/ME910/TELIT_ME910_CellularNetwork.h \
+ mbed-os/features/netsocket/cellular/ControlPlane_netif.h \
+ mbed-os/features/cellular/framework/AT/AT_CellularBase.h \
+ mbed-os/features/cellular/framework/AT/ATHandler.h \
+ mbed-os/rtos/Semaphore.h \
  mbed-os/features/cellular/framework/AT/AT_CellularNetwork.h \
  mbed-os/rtos/ThisThread.h

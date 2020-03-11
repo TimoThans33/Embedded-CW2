@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/Ticker.o: \
- mbed-os/drivers/source/Ticker.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/drivers/Ticker.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\Ticker.o: \
+ mbed-os\drivers\source\Ticker.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/drivers/Ticker.h \
  mbed-os/platform/cxxsupport/mstd_utility mbed-os/drivers/TimerEvent.h \
  mbed-os/hal/ticker_api.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
@@ -108,5 +108,5 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/Ticker.o: \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
  mbed-os/platform/NonCopyable.h mbed-os/platform/mbed_debug.h \
  mbed-os/platform/Callback.h mbed-os/platform/mbed_assert.h \
- mbed-os/hal/lp_ticker_api.h mbed-os/platform/mbed_critical.h \
- mbed-os/platform/mbed_power_mgmt.h
+ mbed-os/hal/lp_ticker_api.h mbed-os/platform/FunctionPointer.h \
+ mbed-os/platform/mbed_critical.h mbed-os/platform/mbed_power_mgmt.h

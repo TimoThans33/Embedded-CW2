@@ -1,11 +1,12 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/mbedtls/src/ssl_srv.o: \
- mbed-os/features/mbedtls/src/ssl_srv.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\features\mbedtls\src\ssl_srv.o: \
+ mbed-os\features\mbedtls\src\ssl_srv.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/features/mbedtls/inc/mbedtls/config.h \
  mbed-os/features/mbedtls/platform/inc/platform_mbed.h \
  mbed-os/features/mbedtls/inc/mbedtls/check_config.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/platform.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/platform_time.h \
+ mbed-os/features/mbedtls/inc/mbedtls/debug.h \
  mbed-os/features/mbedtls/inc/mbedtls/ssl.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/bignum.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/ecp.h \
@@ -23,6 +24,4 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/features/mbedtls/src/ssl_srv.o: \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/ecdh.h \
  mbed-os/features/mbedtls/inc/mbedtls/ssl_internal.h \
  mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/sha256.h \
- mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/sha512.h \
- mbed-os/features/mbedtls/inc/mbedtls/debug.h \
- mbed-os/features/mbedtls/inc/mbedtls/error.h
+ mbed-os/features/mbedtls/mbed-crypto/inc/mbedtls/sha512.h

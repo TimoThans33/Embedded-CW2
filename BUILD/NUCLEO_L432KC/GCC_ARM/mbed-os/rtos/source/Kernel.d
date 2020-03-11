@@ -1,9 +1,9 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/Kernel.o: \
- mbed-os/rtos/source/Kernel.cpp BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\Kernel.o: \
+ mbed-os\rtos\source\Kernel.cpp BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/rtos/Kernel.h mbed-os/rtos/mbed_rtos_types.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
- mbed-os/rtos/source/rtos_idle.h mbed-os/platform/mbed_toolchain.h \
- mbed-os/platform/mbed_preprocessor.h mbed-os/rtos/source/rtos_handlers.h \
+ mbed-os\rtos\source\rtos_idle.h mbed-os/platform/mbed_toolchain.h \
+ mbed-os/platform/mbed_preprocessor.h mbed-os\rtos\source\rtos_handlers.h \
  mbed-os/platform/mbed_critical.h mbed-os/platform/source/mbed_os_timer.h \
  mbed-os/platform/source/SysTimer.h mbed-os/platform/NonCopyable.h \
  mbed-os/platform/mbed_toolchain.h mbed-os/platform/mbed_debug.h \

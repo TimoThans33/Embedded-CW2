@@ -1,8 +1,8 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Source/rtx_mempool.o: \
- mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Source/rtx_mempool.c \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
- mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Source/rtx_lib.h \
- mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Source/rtx_core_c.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\rtos\source\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.o: \
+ mbed-os\rtos\source\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.c \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
+ mbed-os\rtos\source\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.h \
+ mbed-os\rtos\source\TARGET_CORTEX\rtx5\RTX\Source\rtx_core_c.h \
  mbed-os/cmsis/RTE_Components.h \
  mbed-os/rtos/source/TARGET_CORTEX/mbed_rtx_conf.h \
  mbed-os/targets/TARGET_STM/mbed_rtx.h mbed-os/cmsis/mbed_cmsis_conf.h \
@@ -91,7 +91,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Source/rt
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_usart_ex.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/device/stm32l4xx_hal_wwdg.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/device/cmsis_nvic.h \
- mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Source/rtx_core_cm.h \
+ mbed-os\rtos\source\TARGET_CORTEX\rtx5\RTX\Source\rtx_core_cm.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/os_tick.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/Include/cmsis_os2.h \
  mbed-os/rtos/source/TARGET_CORTEX/rtx5/RTX/Config/RTX_Config.h \

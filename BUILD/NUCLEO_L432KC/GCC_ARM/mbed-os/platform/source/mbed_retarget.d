@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/mbed_retarget.o: \
- mbed-os/platform/source/mbed_retarget.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\platform\source\mbed_retarget.o: \
+ mbed-os\platform\source\mbed_retarget.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h \
  mbed-os/platform/cxxsupport/mstd_mutex mbed-os/platform/SingletonPtr.h \
  mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/mbed_atomic.h \
@@ -134,7 +134,7 @@ BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/platform/source/mbed_retarget.o: \
  mbed-os/hal/dma_api.h mbed-os/hal/us_ticker_api.h \
  mbed-os/hal/ticker_api.h mbed-os/platform/mbed_semihost_api.h \
  mbed-os/platform/mbed_interface.h mbed-os/platform/mbed_error.h \
- mbed-os/platform/mbed_critical.h mbed-os/drivers/BufferedSerial.h \
+ mbed-os/platform/mbed_critical.h mbed-os/drivers/UARTSerial.h \
  mbed-os/drivers/SerialBase.h mbed-os/platform/CThunk.h \
  mbed-os/platform/internal/CThunkBase.h mbed-os/drivers/InterruptIn.h \
  mbed-os/hal/gpio_api.h mbed-os/hal/gpio_irq_api.h \

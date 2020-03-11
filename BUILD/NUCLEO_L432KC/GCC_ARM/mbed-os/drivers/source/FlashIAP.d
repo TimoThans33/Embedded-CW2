@@ -1,6 +1,6 @@
-BUILD/NUCLEO_L432KC/GCC_ARM/mbed-os/drivers/source/FlashIAP.o: \
- mbed-os/drivers/source/FlashIAP.cpp \
- BUILD/NUCLEO_L432KC/GCC_ARM/mbed_config.h mbed-os/drivers/FlashIAP.h \
+BUILD\NUCLEO_L432KC\GCC_ARM\mbed-os\drivers\source\FlashIAP.o: \
+ mbed-os\drivers\source\FlashIAP.cpp \
+ BUILD\NUCLEO_L432KC\GCC_ARM\mbed_config.h mbed-os/drivers/FlashIAP.h \
  mbed-os/hal/flash_api.h mbed-os/targets/TARGET_STM/device.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h \
  mbed-os/targets/TARGET_STM/TARGET_STM32L4/cmsis.h \
