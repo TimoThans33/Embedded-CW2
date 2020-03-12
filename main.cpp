@@ -69,6 +69,7 @@ int main()
     setMail(START, 0);
 
     ISRPhotoSensors();
+    //PWMPeriod(2000);
 
     messagethread.start(getMail);
     decodethread.start(callback(decode));
