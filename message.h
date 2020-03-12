@@ -1,22 +1,21 @@
 #ifndef _message_h_
 #define _message_h_
-
- #include "rtos.h"
+#include "rtos.h"
+#include "mbed.h"
 
  // The output codes
+#define START  0
 
- #define START  0
 
+extern RawSerial pc;
 
- extern RawSerial pc;
-
- typedef struct {
+typedef struct {
    uint8_t command;
    int32_t data;
- }message_struct
+ }message_struct;
 
- void getMail();
+void getMail();
 
- extern void setMail(uint8_t command, int32_t data);
+extern void setMail(uint8_t command, int32_t data);
 
- #endif
+#endif

@@ -1,16 +1,16 @@
-
+#include "message.h"
 // Mail handles all incoming messages
-Mail<message_t, 16> outMail;
+Mail<message_struct, 16> outMail;
 
 // Enable writing to the serial port
 RawSerial pc(SERIAL_TX, SERIAL_RX);
 
 // Function to set the incoming data and code into the mail queue
-void setMail(uint8_t command, int32_t data){
+void setMail(uint8_t command, uint32_t data){
     message_struct *mail = outMail.alloc();
     mail->data = data;
     mail->command = command;
-    mail_box.put(mail);
+    outMail.put(mail);
 }
 
 // Function which checks the mail queue after new commands
