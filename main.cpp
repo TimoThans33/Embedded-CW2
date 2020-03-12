@@ -229,8 +229,7 @@ void update (uint64_t nonce, uint8_t hashCount, bool state){
     mail->state = state;
     // This places the message pointer in the que
     mail_box.put(mail);
-    //wait(0.1);
-  }
+}
 
 void pull_thread (void){
   while (true) {
@@ -261,7 +260,9 @@ void serial_queue(void){
   while (true){
     osEvent newEvent = inCharQ.get();
     uint8_t* newChar = (uint8_t*)newEvent.value.p;
+
     inCharQ.free(newChar);
+
   }
 }
 
