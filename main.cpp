@@ -111,12 +111,14 @@ void update(uint64_t nonce, uint8_t hashCount, bool state);
 void pull_thread(void);
 void serialISR(void);
 void serial_queue(void);
+void computeHash(void);
 //*****************************************************************************
 
 Mutex key_mutex
 
 Mail<mail_t, 16> mail_box;
-Mail<uint8_t, 8> inCharQ;
+
+//Queue<uint8_t, 8> inCharQ;
 
 Thread decodethread;
 Thread outthread;
@@ -159,21 +161,7 @@ int main()
     *nonce = 0;
     *key = 0;
     while (true) {
-        newKey_mutex.lock();
-        *key = newKey;
-        newKey_mutex.unlock();
-        SHA256::computeHash(hash2, sequence, 64);
-        if ((hash2[0]==0) && (hash2[1]==0)) {
-                update(*nonce, HashCount, true);
-        }
-        HashCount += 1;
-        if (t >= 1){
-          update(*nonce, HashCount, false);
-          HashCount = 0;
-          t.reset();
-        }
-        *nonce+=1;
-
+      computeHash();
     }
 }
 
@@ -271,22 +259,27 @@ void serialISR(){
 void serial_queue(void){
   pc.attach(&serialISR);
   while (true){
-    *key = newKey;
     osEvent newEvent = inCharQ.get();
-    *key = newKey;
-    newKey_mutex.unlock();
-    SHA256::computeHash(hash2, sequence, 64);
-    if ((hash2[0]==0) && (hash2[1]==0)) {
-            update(*nonce, HashCount, true);
-    }
-    HashCount += 1;
-    if (t >= 1){
-      update(*nonce, HashCount, false);
-      HashCount = 0;
-      t.reset();
-    }
-    *nonce+=1;
     uint8_t* newChar = (uint8_t*)newEvent.value.p;
     inCharQ.free(newChar);
   }
+}
+
+void computeHash(){
+  *key = newkey;
+  newkey_mutex.unlock();
+
+  SHA256::computeHash(hash2, sequence, 64);
+  if ((hash2[0]==0) && (hash2[1]==0)) {
+          update(*nonce, HashCount, true);
+  }
+
+  HashCount += 1;
+
+  if (t >= 1){
+    update(*nonce, HashCount, false);
+    HashCount = 0;
+    t.reset();
+  }
+  *nonce+=1;
 }
