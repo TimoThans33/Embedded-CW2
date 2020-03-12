@@ -2,7 +2,7 @@
 #include "SHA256.h"
 #include <Thread.h>
 #include "rtos.h"
-//#include <message.h>
+#include <message.h>
 
 //Photointerrupter input pins
 #define I1pin D3
@@ -68,9 +68,7 @@ uint64_t* key = (uint64_t*)&sequence[48];
 uint64_t* nonce = (uint64_t*)&sequence[56];
 uint8_t hash2[32];
 
-
-//initiate pointer
-int pointer = 0;
+char charbuf[17];
 
 //Status LED
 DigitalOut led1(LED1);
@@ -97,6 +95,8 @@ volatile int _count;
 int8_t orState = 0;
 int8_t intState = 0;
 int8_t intStateOld = 0;
+volatile newKey_mutex;
+volatile newKey;
 
 //**************************Function prototypes********************************
 void motorOut(void);
@@ -104,28 +104,28 @@ int8_t motorHome();
 inline int8_t readRotorstate();
 void drive(void);
 void setOrState(int8_t state);
-//void serialISR(void);
+void serialISR(void);
 //void serial_queue(void);
-//void computeHash(void);
+void computeHash(void);
 //*****************************************************************************
 
 Mutex key_mutex;
 // Create a global instance of class Queue
 //Queue<uint8_t, 8> inCharQ;
 
-//Thread decodethread;
+Thread decodethread;
 Thread messagethread;
 
 int main()
 {
-    //setMail(START, 0);
+    setMail(START, 0);
 
     const int32_t PWM_PRD = 2500;
     MotorPWM.period_us(PWM_PRD);
     MotorPWM.pulsewidth_us(PWM_PRD);
 
-    //messagethread.start(getMa);
-    //decodethread.start(callback(serial_queue));
+    messagethread.start(getMail);
+    decodethread.start(callback(decode));
     //Initialise the serial port
     RawSerial pc(SERIAL_TX, SERIAL_RX);
     //Run the motor synchronisation
@@ -148,19 +148,7 @@ int main()
     *nonce = 0;
     *key = 0;
     while (true) {
-      /*
-      SHA256::computeHash(hash2, sequence, 64);
-      if ((hash2[0]==0) && (hash2[1]==0)) {
-              setMail(*nonce, HashCount);
-      }
-      HashCount += 1;
-      if (t >= 1){
-        setMail(*nonce, HashCount);
-        HashCount = 0;
-        t.reset();
-      }
-      *nonce+=1;
-      */
+      computeHash();
     }
 }
 
@@ -218,31 +206,48 @@ void setOrState(int8_t state){
     orState = state;
 }
 
-
-
-
-
+//
 void serialISR(){
   uint8_t* newChar = inCharQ.alloc();
   *newChar = pc.getc();
   inCharQ.put(newChar);
 }
 
-void serial_queue(void){
+void decode(void){
+  // Attach the ISR to serial port events
   pc.attach(&serialISR);
+  int counter = 0;
+
   while (1){
+    if(counter >18){
+      counter = 0;
+    }
     osEvent newEvent = inCharQ.get();
     uint8_t* newChar = (uint8_t*)newEvent.value.p;
     charbuf[counter] = newChar;
-    if(newChar == /r){
-      switch(charbuf[0]){
-      case 'K':
-              key_mutex.lock();
-              sscanf(charbuf, K, &new_key);
-              key_mutex.unlock();
-              setMail(KEY, new_key);
-    }
-  }
     inCharQ.free(newChar);
+    if(newChar == '\r'){
+      newKey_mutex.lock();
+      // Read formatted input from a string
+      sscanf(charbuf,"K%x",&new_key);
+      newKey = receivedKey;
+      newKey_mutex.unlock();
+  }
+  counter++;
+  }
+}
+
+void hash(void){
+    SHA256::computeHash(hash2, sequence, 64);
+    if ((hash2[0]==0) && (hash2[1]==0)) {
+            setMail(*nonce, HashCount);
+    }
+    HashCount += 1;
+    if (t >= 1){
+      setMail(*nonce, HashCount);
+      HashCount = 0;
+      t.reset();
+    }
+    *nonce+=1;
 
   }
