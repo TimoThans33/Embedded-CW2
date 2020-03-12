@@ -6,8 +6,8 @@ Mail<message_t, 16> outMail;
 RawSerial pc(SERIAL_TX, SERIAL_RX);
 
 // Function to set the incoming data and code into the mail queue
-void setMail(uint32_t data, uint8_t command){
-    message_t *mail = outMail.alloc();
+void setMail(uint8_t command, int32_t data){
+    message_struct *mail = outMail.alloc();
     mail->data = data;
     mail->command = command;
     mail_box.put(mail);
@@ -17,7 +17,7 @@ void setMail(uint32_t data, uint8_t command){
 void getMail(){
   while (1) {
       osEvent newEvent = outMail.get();
-      message_t *mail = (message_t*)newEvent.value.p;
+      message_struct *mail = (message_struct*)newEvent.value.p;
       switch (mail->command) {
         case (START):
             pc.printf("Start %d, %d, \r\n", mail->command, mail->data);
