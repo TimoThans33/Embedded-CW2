@@ -115,8 +115,7 @@ void serial_queue(void);
 
 Mutex key_mutex
 
-Mail<mail_t, 16> mail_box;
-Mail<uint8_t, 8> inCharQ;
+Mail<message_t, 16> inCharQ;
 
 Thread decodethread;
 Thread outthread;
@@ -231,35 +230,9 @@ void setOrState(int8_t state){
     orState = state;
 }
 
-// This function adds message to the queue
-void update (uint64_t nonce, uint8_t hashCount, bool state){
-    // Returns a pointer to the memory that will be used to store the message
-    mail_t *mail = mail_box.alloc();
-    //The code and data are written into that data structure
-    mail->nounce = (int)(nonce);
-    mail->hashCount = hashCount;
-    mail->state = state;
-    // This places the message pointer in the que
-    mail_box.put(mail);
-}
 
-void pull_thread (void){
-  while (true) {
-    osEvent evt = mail_box.get();
-    if (evt.status == osEventMail) {
-      mail_t *mail = (mail_t*)evt.value.p;
-      if (mail->state == true){
-        printf("(HIT!) ");
-        printf("hashcount: %d   " , mail->hashCount);
-        printf("nonce: %d \n", mail->nounce);
-      }
-      else{
-        printf("hashcount: %d \n", mail->hashCount);
-      }
-      mail_box.free(mail);
-    }
-  }
-}
+
+
 
 void serialISR(){
   uint8_t* newChar = inCharQ.alloc();
