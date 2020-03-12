@@ -23,13 +23,16 @@ InterruptIn I2(I2pin);
 InterruptIn I3(I3pin);
 
 //Motor Drive outputs
-DigitalOut L1L(L1Lpin);
+PwmOut L1L(L1Lpin);
 DigitalOut L1H(L1Hpin);
-DigitalOut L2L(L2Lpin);
+PwmOut L2L(L2Lpin);
 DigitalOut L2H(L2Hpin);
-DigitalOut L3L(L3Lpin);
+PwmOut L3L(L3Lpin);
 DigitalOut L3H(L3Hpin);
 
+PwmOut PWMCtrl(PWMpin);
+
+uint32_t motorPWM=1000;
 
 
 //Set a given drive state
@@ -73,13 +76,17 @@ void ISRPhotoSensors() {
   I3.fall(&driveISR);
 }
 
+void PWMPeriod(int period) {
+  L1L.period_us(period);
+  L2L.period_us(period);
+  L3L.period_us(period);
+}
+
 //Basic synchronisation routine
 void motorHome(){
     //Put the motor in drive state 0 and wait for it to stabilise
     motorOut(0);
     ThisThread::sleep_for(2.0);
-
-    //Get the rotor state
     orState = readRotorState();
 }
 
@@ -98,7 +105,7 @@ void driveCtrl() {
   motorHome();
 
 
-  
+
 
   while (1) {
 

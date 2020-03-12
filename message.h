@@ -4,7 +4,7 @@
 #include "mbed.h"
 
  // The output codes
-#define START  0
+#define START  13
 
 
 extern RawSerial pc;

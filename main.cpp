@@ -67,9 +67,10 @@ Thread controllerThread;
 
 int main()
 {
-    //setMail(START, 0);
+    setMail(START, 13);
 
     ISRPhotoSensors();
+    //PWMPeriod(2000);
 
     messagethread.start(getMail);
     //decodethread.start(callback(serial_queue));

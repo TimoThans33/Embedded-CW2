@@ -34,7 +34,7 @@
 #define TP2pin A2
 
 
-
+#define PWM_LIMIT 1000
 
 
 void motorOut(int8_t driveState);
@@ -46,6 +46,8 @@ extern void motorHome();
 extern void driveISR();
 
 extern void driveCtrl();
+
+void PWMPeriod(int period);
 
 //extern Thread controllerThread;
 
