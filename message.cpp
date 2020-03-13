@@ -21,6 +21,10 @@ void getMail(){
       switch (mail->command) {
         case (START):
             pc.printf("Start %d, %d, \r\n", mail->command, mail->data);
+        case (HIT):
+            pc.printf("Nonce: %d  \r\n", mail->command, mail->data);
+        case (SEC):
+            pc.printf("Hash count: %d   \r\n", mail->command, mail->data);
       }
       outMail.free(mail);
     }

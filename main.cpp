@@ -40,7 +40,7 @@ uint64_t* key = (uint64_t*)&sequence[48];
 uint64_t* nonce = (uint64_t*)&sequence[56];
 uint8_t hash2[32];
 
-Queue<void, 8> inCharQ;
+Queue<char, 8> inCharQ;
 
 char charbuf[17];
 
@@ -53,7 +53,7 @@ uint8_t HashCount = 0;
 //**************************Function prototypes********************************
 void serialISR(void);
 void decode(void);
-void computeHash(void);
+void computehash(void);
 //*****************************************************************************
 
 Mutex newKey_mutex;
@@ -77,18 +77,18 @@ int main()
     //Run the motor synchronisation
     //orState is subtracted from future rotor state inputs to align rotor and motor states
     //Poll the rotor state and set the motor outputs accordingly to spin the motor
-
+    driveISR();
     t.start();
     *nonce = 0;
     *key = 0;
-    while (true) {
-      computeHash();
+    while (1) {
+      computehash();
     }
 }
 
 void serialISR(){
-  uint8_t newChar = pc.getc();
-  inCharQ.put((void*)newChar);
+  char newChar = pc.getc();
+  inCharQ.put((char*)newChar);
 }
 
 void decode(void){
@@ -101,7 +101,7 @@ void decode(void){
       counter = 0;
     }
     osEvent newEvent = inCharQ.get();
-    uint8_t newChar = (void*)newEvent.value.p;
+    char newChar = *((char*)newEvent.value.p);
     charbuf[counter] = newChar;
     if(newChar == '\r'){
       newKey_mutex.lock();
@@ -114,14 +114,14 @@ void decode(void){
   }
 }
 
-void hash(void){
+void computehash(void){
     SHA256::computeHash(hash2, sequence, 64);
     if ((hash2[0]==0) && (hash2[1]==0)) {
-            setMail(*nonce, HashCount);
+            setMail(HIT, *nonce); //HIT
     }
     HashCount += 1;
     if (t >= 1){
-      setMail(*nonce, HashCount);
+      setMail(SEC, HashCount); //SEC
       HashCount = 0;
       t.reset();
     }

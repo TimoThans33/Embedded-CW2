@@ -5,6 +5,8 @@
 
  // The output codes
 #define START  13
+#define SEC 12
+#define HIT 11
 
 
 extern RawSerial pc;
