@@ -1,10 +1,14 @@
 #ifndef _message_h_
 #define _message_h_
+
 #include "rtos.h"
 #include "mbed.h"
 
  // The output codes
-#define START  13
+#define START  0
+#define MOTOR  1
+#define VELOCITY 2
+#define SET_VELOCITY 3
 
 
 extern RawSerial pc;

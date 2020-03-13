@@ -4,6 +4,7 @@
 #include "mbed.h"
 #include "rtos.h"
 #include "message.h"
+#include "decode.h"
 
 //Photointerrupter input pins
 #define I1pin D3
@@ -35,6 +36,7 @@
 
 
 #define PWM_LIMIT 1000
+#define VEL_CONST 25
 
 
 void motorOut(int8_t driveState);
@@ -45,10 +47,16 @@ extern void motorHome();
 
 extern void driveISR();
 
-extern void driveCtrl();
+extern void motorCtrlFn();
+
+extern void motorCtrlTick();
+
+uint32_t velocityController();
 
 void PWMPeriod(int period);
 
-//extern Thread controllerThread;
+extern Thread controllerThread;
+
+extern int32_t rotorPosition;
 
 #endif

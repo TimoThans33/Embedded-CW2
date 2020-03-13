@@ -4,6 +4,7 @@
 #include "rtos.h"
 #include "message.h"
 #include "controller.h"
+#include "decode.h"
 
 
 
@@ -22,8 +23,6 @@ State   L1  L2  L3
 7       -   -   -
 */
 
-//const int8_t stateMap[] = {0x07,0x01,0x03,0x02,0x05,0x00,0x04,0x07}; //Alternative if phase order of input or drive is reversed
-
 
 
 // Declare and initialise the input sequency, key, nonce and hash
@@ -40,79 +39,48 @@ uint64_t* key = (uint64_t*)&sequence[48];
 uint64_t* nonce = (uint64_t*)&sequence[56];
 uint8_t hash2[32];
 
-Queue<void, 8> inCharQ;
 
-char charbuf[17];
 
 // Declarations
-volatile int _count;
-volatile uint64_t newKey;
+
 uint8_t HashCount = 0;
 
 
+
+
 //**************************Function prototypes********************************
-void serialISR(void);
-void decode(void);
 void computeHash(void);
 //*****************************************************************************
 
-Mutex newKey_mutex;
 Timer t;
 // Create a global instance of class Queue
 
 Thread decodethread;
 Thread messagethread;
-Thread controllerThread;
+Thread controllerThread(osPriorityNormal,1024);
 
 int main()
 {
     setMail(START, 0);
 
     ISRPhotoSensors();
-    //PWMPeriod(2000);
+    PWMPeriod(2000);
 
     messagethread.start(getMail);
-    decodethread.start(callback(decode));
-    controllerThread.start(driveCtrl);
-    //Run the motor synchronisation
-    //orState is subtracted from future rotor state inputs to align rotor and motor states
-    //Poll the rotor state and set the motor outputs accordingly to spin the motor
+    //decodethread.start(callback(decode));
+    controllerThread.start(motorCtrlFn);
+
 
     t.start();
     *nonce = 0;
     *key = 0;
     while (true) {
-      computeHash();
+      //computeHash();
     }
 }
 
-void serialISR(){
-  uint8_t newChar = pc.getc();
-  inCharQ.put((void*)newChar);
-}
 
-void decode(void){
-  // Attach the ISR to serial port events
-  pc.attach(&serialISR);
-  int counter = 0;
 
-  while (1){
-    if(counter >18){
-      counter = 0;
-    }
-    osEvent newEvent = inCharQ.get();
-    uint8_t newChar = (void*)newEvent.value.p;
-    charbuf[counter] = newChar;
-    if(newChar == '\r'){
-      newKey_mutex.lock();
-      // Read formatted input from a string
-      sscanf(charbuf,"K%x",&newKey);
-
-      newKey_mutex.unlock();
-  }
-  counter++;
-  }
-}
 
 void hash(void){
     SHA256::computeHash(hash2, sequence, 64);

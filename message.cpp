@@ -21,6 +21,13 @@ void getMail(){
       switch (mail->command) {
         case (START):
             pc.printf("Start %d, %d, \r\n", mail->command, mail->data);
+        case (MOTOR):
+            pc.printf("Motor Position %d\r\n",mail->data);
+        case (VELOCITY):
+            pc.printf("Velocity of motor %d\r\n", mail->data);
+        case (SET_VELOCITY):
+            pc.printf("Target velocity of motor %d\r\n", mail->data);
+
       }
       outMail.free(mail);
     }
