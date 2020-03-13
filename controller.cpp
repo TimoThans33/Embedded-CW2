@@ -13,6 +13,7 @@ volatile int8_t lead = 2;  //2 for forwards, -2 for backwards
 
 
 int32_t rotorPosition = 0;
+int32_t rotation = 0;
 int8_t orState = 0;
 
 //Status LED
@@ -35,8 +36,12 @@ PwmOut PWMCtrl(PWMpin);
 
 uint32_t motorPWM=1000;
 
-
+int32_t velPWM = 0;
+int32_t rotPWM = 0;
 int32_t vel = 0;
+int32_t rot = 0;
+int32_t dt = 0.1;
+int32_t oldE_r = 0;
 
 
 //Set a given drive state
@@ -129,7 +134,23 @@ uint32_t velocityController(){
 
 uint32_t positionController(){
   // y_r = k_p *E_r + k_d dE_r/dt
-  
+  float y_r;
+
+  float E_r = rotTarget-rot;
+
+  float dE_r = (E_r - oldE_r)/dt;
+
+  oldE_r = E_r;
+
+  y_r = VEL_CONST*E_r + POS_CONST*(dE_r);
+
+  if (y_r<0) lead = -2;
+  else lead = 2;
+
+  y_r = abs(y_r);
+  if (y_r > PWM_LIMIT) y_r = PWM_LIMIT;
+
+  return y_r;
 
 }
 
@@ -146,24 +167,34 @@ void motorCtrlFn() {
 
 
 
-  int8_t velCounter = 0;
+  int8_t counter = 0;
   int32_t oldRotorPosition = 0;
 
   while (1) {
     controllerThread.signal_wait(0x1);
+    vel = 10*(rotorPosition - oldRotorPosition);
+    rotation = rotorPosition;
+    oldRotorPosition = rotorPosition;
 
-    velCounter += 1;
-    if (velCounter == 10){
-      vel = 10*(rotorPosition - oldRotorPosition);
-      oldRotorPosition = rotorPosition;
-      setMail(VELOCITY, vel);
-      velCounter = 0;
+    if (velTarget && rotTarget) {
+      velPWM = velocityController();
+      rotPWM = positionController();
+      if (vel < 0) {
+        motorPWM = max(velPWM, rotPWM);
+      } else {
+        motorPWM = min(velPWM, rotPWM);
+      }
+
     }
 
+    if (counter == 10){
+      setMail(VELOCITY, vel);
+      setMail(SET_VELOCITY, velTarget);
+      setMail(ROTOR, rot);
 
-
-
-
-
+      counter = 0;
+    } else{
+      counter += 1;
+    }
   }
 }

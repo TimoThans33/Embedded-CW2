@@ -37,6 +37,7 @@
 
 #define PWM_LIMIT 1000
 #define VEL_CONST 25
+#define POS_CONST 20
 
 
 void motorOut(int8_t driveState);
@@ -52,6 +53,8 @@ extern void motorCtrlFn();
 extern void motorCtrlTick();
 
 uint32_t velocityController();
+
+uint32_t positionController();
 
 void PWMPeriod(int period);
 

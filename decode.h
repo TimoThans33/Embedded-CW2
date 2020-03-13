@@ -8,6 +8,8 @@
 
 extern volatile float velTarget;
 
+extern volatile float rotTarget;
+
 extern volatile uint64_t newKey;
 
 extern Mutex newKey_mutex;

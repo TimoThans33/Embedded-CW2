@@ -9,6 +9,9 @@
 #define MOTOR  1
 #define VELOCITY 2
 #define SET_VELOCITY 3
+#define ROTOR 4
+#define SEC 12
+#define HIT 11
 
 
 extern RawSerial pc;

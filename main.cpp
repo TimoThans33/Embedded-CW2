@@ -49,7 +49,7 @@ uint8_t HashCount = 0;
 
 
 //**************************Function prototypes********************************
-void computeHash(void);
+void computehash(void);
 //*****************************************************************************
 
 Timer t;
@@ -67,7 +67,7 @@ int main()
     PWMPeriod(2000);
 
     messagethread.start(getMail);
-    //decodethread.start(callback(decode));
+    decodethread.start(decode);
     controllerThread.start(motorCtrlFn);
 
 
@@ -75,21 +75,21 @@ int main()
     *nonce = 0;
     *key = 0;
     while (true) {
-      //computeHash();
+      computehash();
     }
 }
 
 
 
 
-void hash(void){
+void computehash(void){
     SHA256::computeHash(hash2, sequence, 64);
     if ((hash2[0]==0) && (hash2[1]==0)) {
-            setMail(*nonce, HashCount);
+            setMail(HIT, *nonce); //HIT
     }
     HashCount += 1;
     if (t >= 1){
-      setMail(*nonce, HashCount);
+      setMail(SEC, HashCount); //SEC
       HashCount = 0;
       t.reset();
     }

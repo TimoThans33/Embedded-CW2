@@ -27,6 +27,12 @@ void getMail(){
             pc.printf("Velocity of motor %d\r\n", mail->data);
         case (SET_VELOCITY):
             pc.printf("Target velocity of motor %d\r\n", mail->data);
+        case (ROTOR):
+            pc.printf("Velocity of motor %d\r\n", mail->data);
+        case (HIT):
+            pc.printf("Nonce: %d  \r\n", mail->command, mail->data);
+        case (SEC):
+            pc.printf("Hash count: %d   \r\n", mail->command, mail->data);
 
       }
       outMail.free(mail);

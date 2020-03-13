@@ -1,11 +1,12 @@
 #include "decode.h"
 
 
-Queue<uint8_t, 8> inCharQ;
+Queue<char, 8> inCharQ;
 
 char charbuf[17];
 
-volatile float velTarget = 0.0;
+volatile float velTarget = 2.0;
+volatile float rotTarget = 2.0;
 
 int _count;
 volatile uint64_t newKey;
@@ -16,8 +17,8 @@ Mutex newKey_mutex;
 
 
 void serialISR(){
-  uint8_t newChar = pc.getc();
-  inCharQ.put(newChar);
+  char newChar = pc.getc();
+  inCharQ.put((char*)newChar);
 }
 
 
@@ -25,11 +26,11 @@ void decode(void){
   // Attach the ISR to serial port events
   pc.attach(&serialISR);
   int counter = 0;
- /*
+
   while (1){
 
     osEvent newEvent = inCharQ.get();
-    uint8_t newChar = (uint8_t)newEvent.value.p;
+    char newChar = *((char*)newEvent.value.p);
 
     if(counter >18){
       counter = 0;
@@ -42,8 +43,8 @@ void decode(void){
       switch (charbuf[0]) {
 
         case 'V':
-          sscanf(charbuf, "V%f", &vel_target);
-          setMail(SET_VELOCITY, vel_target);
+          sscanf(charbuf, "V%f", &velTarget);
+          setMail(SET_VELOCITY, velTarget);
 
         case 'K':
         newKey_mutex.lock();
@@ -58,5 +59,5 @@ void decode(void){
       counter++;
     }
   }
-  */
+
 }
