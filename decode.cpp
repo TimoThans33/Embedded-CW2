@@ -5,8 +5,8 @@ Queue<char, 8> inCharQ;
 
 char charbuf[17];
 
-volatile float velTarget = 2.0;
-volatile float rotTarget = 2.0;
+volatile float velTarget = 0.0;
+volatile float rotTarget = 0.0;
 
 int _count;
 volatile uint64_t newKey;
@@ -26,6 +26,7 @@ void decode(void){
   // Attach the ISR to serial port events
   pc.attach(&serialISR);
   int counter = 0;
+  
 
   while (1){
 
@@ -44,14 +45,19 @@ void decode(void){
 
         case 'V':
           sscanf(charbuf, "V%f", &velTarget);
-          setMail(SET_VELOCITY, velTarget);
-
+          setMail(SET_VELOCITY, *(int32_t*)&velTarget);
+          break;
+        case 'R':
+          sscanf(charbuf, "R%f", &rotTarget);
+          setMail(SET_ROTATION, *(int32_t*)&rotTarget);
+          break;
         case 'K':
         newKey_mutex.lock();
         // Read formatted input from a string
         sscanf(charbuf,"K%x",&newKey);
 
         newKey_mutex.unlock();
+        break;
       }
 
     }
@@ -59,5 +65,4 @@ void decode(void){
       counter++;
     }
   }
-
 }

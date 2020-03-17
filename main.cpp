@@ -62,9 +62,10 @@ Thread controllerThread(osPriorityNormal,1024);
 int main()
 {
     setMail(START, 0);
-
-    ISRPhotoSensors();
+    const int32_t PWM_PRD = 2500;
     PWMPeriod(2000);
+    ISRPhotoSensors();
+
 
     messagethread.start(getMail);
     decodethread.start(decode);
@@ -85,11 +86,11 @@ int main()
 void computehash(void){
     SHA256::computeHash(hash2, sequence, 64);
     if ((hash2[0]==0) && (hash2[1]==0)) {
-            setMail(HIT, *nonce); //HIT
+            //setMail(HIT, *nonce); //HIT
     }
     HashCount += 1;
     if (t >= 1){
-      setMail(SEC, HashCount); //SEC
+      //setMail(SEC, HashCount); //SEC
       HashCount = 0;
       t.reset();
     }

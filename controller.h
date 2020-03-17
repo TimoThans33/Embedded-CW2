@@ -36,7 +36,7 @@
 
 
 #define PWM_LIMIT 1000
-#define VEL_CONST 25
+#define VEL_CONST 65
 #define POS_CONST 20
 
 
@@ -56,10 +56,12 @@ uint32_t velocityController();
 
 uint32_t positionController();
 
-void PWMPeriod(int period);
+extern void PWMPeriod(int32_t period);
+
+extern void PWMTorque(uint32_t torque);
 
 extern Thread controllerThread;
 
-extern int32_t rotorPosition;
+extern volatile int32_t rotorPosition;
 
 #endif

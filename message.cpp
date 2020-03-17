@@ -21,18 +21,31 @@ void getMail(){
       switch (mail->command) {
         case (START):
             pc.printf("Start %d, %d, \r\n", mail->command, mail->data);
+            break;
         case (MOTOR):
-            pc.printf("Motor Position %d\r\n",mail->data);
+            pc.printf("Motor power %d\r\n",mail->data);
+            break;
         case (VELOCITY):
             pc.printf("Velocity of motor %d\r\n", mail->data);
+            break;
         case (SET_VELOCITY):
             pc.printf("Target velocity of motor %d\r\n", mail->data);
+            break;
+        case (SET_ROTATION):
+            pc.printf("Target rotation: %d\r\n", mail->data);
+            break;
         case (ROTOR):
             pc.printf("Velocity of motor %d\r\n", mail->data);
+            break;
         case (HIT):
-            pc.printf("Nonce: %d  \r\n", mail->command, mail->data);
+            pc.printf("Nonce: %d  \r\n", mail->data);
+            break;
         case (SEC):
-            pc.printf("Hash count: %d   \r\n", mail->command, mail->data);
+            pc.printf("Hash count: %d   \r\n", mail->data);
+            break;
+        case (ERROR):
+            pc.printf("Error code: %d   \r\n", mail->data);
+            break;
 
       }
       outMail.free(mail);
