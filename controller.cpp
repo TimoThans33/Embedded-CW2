@@ -13,6 +13,13 @@ volatile int8_t lead = 2;  //2 for forwards, -2 for backwards
 
 
 volatile int32_t rotorPosition = 0;
+float diffVelError = 0;
+float intVelError = 0;
+float diffRotError = 0;
+float intRotError = 0;
+float oldVelError = 0;
+float oldRotError = 0;
+
 int32_t rotation = 0;
 uint32_t orState = 0;
 
@@ -25,31 +32,32 @@ InterruptIn I2(I2pin);
 InterruptIn I3(I3pin);
 
 //Motor Drive outputs
-PwmOut L1L(L1Lpin);
+DigitalOut L1L(L1Lpin);
 DigitalOut L1H(L1Hpin);
-PwmOut L2L(L2Lpin);
+DigitalOut L2L(L2Lpin);
 DigitalOut L2H(L2Hpin);
-PwmOut L3L(L3Lpin);
+DigitalOut L3L(L3Lpin);
 DigitalOut L3H(L3Hpin);
 
 PwmOut PWMRotorControl(PWMpin);
 
-uint32_t motorPWM = 100;
+uint32_t motorPWM = 0;
+bool rotateTrue = false;
 
-int32_t velPWM = 0;
-int32_t rotPWM = 0;
-int32_t vel = 0;
-int32_t rot = 0;
-int32_t dt = 0.1;
-int32_t oldE_r = 0;
+volatile float velPWM = 0;
+volatile float rotPWM = 0;
+volatile float vel = 0;
+volatile float rot = 0;
+
 
 
 //Set a given drive state
-void motorOut(int8_t driveState)
+void motorOut(int8_t driveState, uint32_t torque)
 {
-
+    led1 = !led1;
     //Lookup the output byte from the drive state.
     int8_t driveOut = driveTable[driveState & 0x07];
+    PWMRotorControl.pulsewidth_us(torque);
 
     //Turn off first
     if (~driveOut & 0x01) L1L = 0;
@@ -89,27 +97,21 @@ void PWMPeriod(int32_t period) {
   PWMRotorControl.period_us(period);
 }
 
-void PWMTorque(uint32_t torque) {
-  PWMRotorControl.pulsewidth_us(torque);
-}
 
 //Basic synchronisation routine
 void motorHome(){
     //Put the motor in drive state 0 and wait for it to stabilise
-    PWMTorque(PWM_LIMIT);
-    motorOut(0);
+    motorOut(0,PWM_LIMIT);
     ThisThread::sleep_for(2.0);
     orState = readRotorState();
 }
 
 void driveISR() {
-    led1 = !led1;
+
     static int8_t oldState = 0;
     int8_t currentState = readRotorState();
-    int8_t driveState = (currentState-orState+lead+6)%6;
-    //PWMTorque(motorPWM);
-    motorOut(driveState);
-
+    int8_t outState = (currentState-orState+lead+6)%6;
+    motorOut(outState,motorPWM);
 
     // Calculate rotor position change
     if (oldState - currentState == 5) rotorPosition ++;
@@ -127,20 +129,30 @@ uint32_t velocityController(){
   // y_s = k_p(s-v)
   float y_s;
 
-  float E_r = velTarget-vel;
+  float velError = velTarget-vel;
+
+  float diffVelError = velError - oldVelError;
+
+  oldVelError = velError;
+
+  intVelError += 10*velError;
+  if (intVelError > VEL_DIFF_MAX) intVelError =  VEL_DIFF_MAX;
+  if (intVelError < -VEL_DIFF_MAX) intVelError = -VEL_DIFF_MAX;
+
   int8_t sgn = 0;
   // Revers direction if vel_target negative
-  if (velTarget<0) lead = 2;
-  else lead = -2;
+  if (velTarget<0) lead = -2;
+  else lead = 2;
 
-  if (E_r > 0) sgn = 1;
-  else if (E_r < 0) sgn = -1;
+  if (velError > 0) sgn = 1;
+  else if (velError < 0) sgn = -1;
   else sgn = 0;
 
-  y_s = VEL_CONST*(abs(sgn*velTarget-vel));
+  y_s = VEL_CONST*(sgn*velTarget-vel);// + intVelError;
 
 
-  if (y_s > PWM_LIMIT) y_s = PWM_LIMIT;
+  if (y_s > PWM_LIMIT+ 10) y_s = PWM_LIMIT+10;
+  else if (y_s < 0) y_s = 0;
 
   return y_s;
 }
@@ -149,16 +161,21 @@ uint32_t positionController(){
   // y_r = k_p *E_r + k_d dE_r/dt
   float y_r;
 
-  float E_r = rotTarget-rot;
+  float rotError = rotTarget-rot;
 
-  float dE_r = (E_r - oldE_r)/dt;
+  float diffRotError = (rotError - oldRotError);
 
-  oldE_r = E_r;
+  oldRotError = rotError;
 
-  y_r = VEL_CONST*E_r + POS_CONST*(dE_r);
+  intRotError += 10*rotError;
+  if (intRotError > 15) intRotError =  15;
+  if (intRotError < -15) intRotError = -15;
 
-  if (y_r<0) lead = 2;
-  else lead = -2;
+  y_r = POS_CONST*rotError + POS_DIFF_CONST*diffRotError;// + POS_INT_CONST*intRotError;
+
+  // For overshot reverse
+  if (y_r<0) lead = -2;
+  else lead = 2;
 
   y_r = abs(y_r);
   if (y_r > PWM_LIMIT) y_r = PWM_LIMIT;
@@ -172,53 +189,63 @@ uint32_t positionController(){
 
 void motorCtrlFn() {
 
+
   // Set home position
   motorHome();
 
   Ticker motorCtrlTicker;
   motorCtrlTicker.attach_us(&motorCtrlTick,100000);
 
+
   int8_t counter = 0;
-  int32_t oldRotorPosition = 0;
+  float oldRotorPosition = 0.0;
   velTarget = 100;
-
-
-
+  rotTarget = 500;
 
   while (1) {
 
-    controllerThread.signal_wait(0x1);
-    vel = 10*(rotorPosition - oldRotorPosition);
-    rotation = rotorPosition;
-    oldRotorPosition = rotorPosition;
 
-    if (vel == 0 && (velTarget != 0)) {
+
+    controllerThread.signal_wait(0x1);
+
+    vel = 10*((float)rotorPosition/6 - oldRotorPosition);
+    oldRotorPosition = (float)rotorPosition/6;
+    // Full rotations
+    rot = rotorPosition/6;
+
+
+    if (abs(vel) < 2 && velTarget != 0 && rotateTrue) {
       int8_t currentState = readRotorState();
-      int8_t startDriveState = (currentState-orState+lead+6)%6;
-      //PWMTorque(motorPWM);
-      motorOut(startDriveState);
-      if (counter == 10){
-        //setMail(MOTOR, currentState);
-      }
+      motorOut((currentState-orState+lead+6)%6,motorPWM);
     }
     if (velTarget != 0) {
-      motorPWM = velocityController();
-      if (counter == 10){
-        setMail(MOTOR, rotorPosition);
-        setMail(VELOCITY, vel);
-        setMail(SET_VELOCITY, velTarget);
-      }
-    }
-
-    if (velTarget && rotTarget) {
-
       velPWM = velocityController();
       rotPWM = positionController();
       if (vel < 0) {
-        motorPWM = max(velPWM, rotPWM);
+        motorPWM = (velPWM > rotPWM) ? velPWM : rotPWM;
       } else {
-        motorPWM = min(velPWM, rotPWM);
+        motorPWM = (velPWM < rotPWM) ? velPWM : rotPWM;
       }
+      if (counter == 10){
+        setMail(MOTOR, motorPWM);
+        setMail(ROTOR, rot);
+        setMail(VELOCITY,vel);
+        //setMail(SET_VELOCITY, velTarget);
+      }
+    }
+
+    if (rotTarget != 0) {
+      if (!rotateTrue) {
+        rotTarget = rotTarget + rot;
+        rotateTrue = true;
+      }
+
+      if (counter == 10){
+        //setMail(ROTOR, rot);
+        //setMail(ROTOR, rot);
+      }
+
+
 
     }
     if (counter == 10){

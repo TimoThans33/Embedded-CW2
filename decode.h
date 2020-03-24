@@ -12,6 +12,12 @@ extern volatile float rotTarget;
 
 extern volatile uint64_t newKey;
 
+extern volatile bool newKeyAdded;
+
+extern volatile char tone[18];
+
+extern volatile bool newTone;
+
 extern Mutex newKey_mutex;
 
 void serialISR();

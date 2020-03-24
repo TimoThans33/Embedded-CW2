@@ -5,15 +5,18 @@ Queue<char, 8> inCharQ;
 
 char charbuf[17];
 
+float setRotTarget = 0;
 volatile float velTarget = 0.0;
 volatile float rotTarget = 0.0;
 
 int _count;
 volatile uint64_t newKey;
+volatile bool newKeyAdded;
 
 Mutex newKey_mutex;
 
-
+volatile char tone[18];
+volatile bool newTone;
 
 
 void serialISR(){
@@ -26,7 +29,7 @@ void decode(void){
   // Attach the ISR to serial port events
   pc.attach(&serialISR);
   int counter = 0;
-  
+
 
   while (1){
 
@@ -45,19 +48,26 @@ void decode(void){
 
         case 'V':
           sscanf(charbuf, "V%f", &velTarget);
-          setMail(SET_VELOCITY, *(int32_t*)&velTarget);
+          setMail(SET_VELOCITY,  *(int32_t*)&velTarget);
+
           break;
         case 'R':
-          sscanf(charbuf, "R%f", &rotTarget);
-          setMail(SET_ROTATION, *(int32_t*)&rotTarget);
+          sscanf(charbuf, "R%f", &setRotTarget);
+          setMail(SET_ROTATION,  *(int32_t*)&setRotTarget);
+          rotTarget = rot + setRotTarget;
           break;
         case 'K':
-        newKey_mutex.lock();
-        // Read formatted input from a string
-        sscanf(charbuf,"K%x",&newKey);
-
-        newKey_mutex.unlock();
-        break;
+          newKey_mutex.lock();
+          // Read formatted input from a string
+          sscanf(charbuf,"K%x", &newKey);
+          setMail(KEY_UPPER, (uint32_t)((newKey>>32)&0xFFFFFFFF));
+          newKey_mutex.unlock();
+          newKeyAdded = true;
+          break;
+        case 'T':
+          //sscanf(charbuf, "T%s", &tone);
+          //setMail(TONE, *(int32_t*)&tone);
+          newTone = true;
       }
 
     }

@@ -35,12 +35,17 @@
 #define TP2pin A2
 
 
-#define PWM_LIMIT 1000
-#define VEL_CONST 65
-#define POS_CONST 20
+#define PWM_LIMIT 2000
+#define VEL_CONST 35
+#define VEL_DIFF_MAX 600
+#define POS_CONST 40
+#define POS_DIFF_CONST 55
+#define POS_INT_CONST 2
+
+extern volatile float rot;
 
 
-void motorOut(int8_t driveState);
+void motorOut(int8_t driveState, uint32_t torque);
 
 extern void ISRPhotoSensors();
 
@@ -57,8 +62,6 @@ uint32_t velocityController();
 uint32_t positionController();
 
 extern void PWMPeriod(int32_t period);
-
-extern void PWMTorque(uint32_t torque);
 
 extern Thread controllerThread;
 

@@ -5,6 +5,7 @@
 #include "message.h"
 #include "controller.h"
 #include "decode.h"
+#include "melody.h"
 
 
 
@@ -55,14 +56,14 @@ void computehash(void);
 Timer t;
 // Create a global instance of class Queue
 
-Thread decodethread;
-Thread messagethread;
+Thread decodethread(osPriorityNormal,1024);
+Thread messagethread(osPriorityNormal,1024);
+Thread melodythread(osPriorityNormal,1024);
 Thread controllerThread(osPriorityNormal,1024);
 
 int main()
 {
     setMail(START, 0);
-    const int32_t PWM_PRD = 2500;
     PWMPeriod(2000);
     ISRPhotoSensors();
 
@@ -70,6 +71,7 @@ int main()
     messagethread.start(getMail);
     decodethread.start(decode);
     controllerThread.start(motorCtrlFn);
+    melodythread.start(melodyFN);
 
 
     t.start();
@@ -84,13 +86,19 @@ int main()
 
 
 void computehash(void){
+    if (newKeyAdded){
+      newKey_mutex.lock();
+      *key = newKey;
+      newKey_mutex.unlock();
+      newKeyAdded = false;
+    }
     SHA256::computeHash(hash2, sequence, 64);
     if ((hash2[0]==0) && (hash2[1]==0)) {
-            //setMail(HIT, *nonce); //HIT
+            setMail(HIT, *nonce); //HIT
     }
     HashCount += 1;
     if (t >= 1){
-      //setMail(SEC, HashCount); //SEC
+      setMail(SEC, HashCount); //SEC
       HashCount = 0;
       t.reset();
     }

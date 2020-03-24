@@ -35,7 +35,7 @@ void getMail(){
             pc.printf("Target rotation: %d\r\n", mail->data);
             break;
         case (ROTOR):
-            pc.printf("Velocity of motor %d\r\n", mail->data);
+            pc.printf("Position of rotor %d\r\n", mail->data);
             break;
         case (HIT):
             pc.printf("Nonce: %d  \r\n", mail->data);
@@ -46,6 +46,10 @@ void getMail(){
         case (ERROR):
             pc.printf("Error code: %d   \r\n", mail->data);
             break;
+        case (KEY_UPPER):
+            pc.printf("Key is: %x\r\n", mail->data);
+        case (TONE):
+            pc.printf("Music tone is: %d\r\n", mail->data);
 
       }
       outMail.free(mail);

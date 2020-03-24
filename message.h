@@ -13,6 +13,8 @@
 #define ROTOR 5
 #define SEC 12
 #define HIT 11
+#define KEY_UPPER 6
+#define TONE 10
 #define ERROR 99
 
 
