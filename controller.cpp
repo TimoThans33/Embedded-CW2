@@ -227,9 +227,9 @@ void motorCtrlFn() {
         motorPWM = (velPWM < rotPWM) ? velPWM : rotPWM;
       }
       if (counter == 10){
-        setMail(MOTOR, motorPWM);
-        setMail(ROTOR, rot);
-        setMail(VELOCITY,vel);
+        //setMail(MOTOR, motorPWM);
+        //setMail(ROTOR, rot);
+        //setMail(VELOCITY,vel);
         //setMail(SET_VELOCITY, velTarget);
       }
     }

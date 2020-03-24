@@ -15,7 +15,7 @@ volatile bool newKeyAdded;
 
 Mutex newKey_mutex;
 
-volatile char tone[18];
+volatile char tone[50];
 volatile bool newTone;
 
 
@@ -65,9 +65,10 @@ void decode(void){
           newKeyAdded = true;
           break;
         case 'T':
-          //sscanf(charbuf, "T%s", &tone);
-          //setMail(TONE, *(int32_t*)&tone);
+          sscanf(charbuf, "T%s", tone);
+          setMail(TONE, *(int32_t*)&tone);
           newTone = true;
+          break;
       }
 
     }

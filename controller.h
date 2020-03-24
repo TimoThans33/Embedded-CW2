@@ -35,7 +35,7 @@
 #define TP2pin A2
 
 
-#define PWM_LIMIT 2000
+#define PWM_LIMIT 2500
 #define VEL_CONST 35
 #define VEL_DIFF_MAX 600
 #define POS_CONST 40
