@@ -8,16 +8,16 @@ For this project we have used the NUCLEO L432KC hardware component.
 ## Specification
 
 Main functions of this code:
-* [Spin for a defined number of rotations and stop without overshooting]
-* [Spin at a defined angular velocity]
-* [Execute a bitcoin mining kernel in the background]
-* [Make the motor play a tune as it works]
+* Spin for a defined number of rotations and stop without overshooting
+* Spin at a defined angular velocity
+* Execute a bitcoin mining kernel in the background
+* Make the motor play a tune as it works
 
-### Prerequisites
+## Prerequisites
 
 We have used the mbed cli as IDE because this was more efficient for testing code. Here are the install instructions. It is advised to install and build the project in a virtual environment. Assuming you have pip and python installed already
 
-##Linux
+## Linux
 '''
 sudo apt install mercurial
 '''
