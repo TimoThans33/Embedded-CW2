@@ -1,2 +1,3 @@
 #ignore all
 BUILD/
+mbed-os/
