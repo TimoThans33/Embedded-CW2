@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Embedded-CW2
 This project includes the code for the second coursework of the module Embedded Systems at Imperial College. The goal was to implement a motor controller which controlled a brushless motor.
 This is an example of a real time task and therefore the aim was to make efficient code. This is why we did bitcoin mining
@@ -13,8 +13,10 @@ Main functions of this code:
 * [Execute a bitcoin mining kernel in the background]
 * [Make the motor play a tune as it works]
 
-## Prerequisites
-We have used the mbed cli as IDE because this was more efficient for testing code. Here are the install instructions. It is advised to install and build the project in a virtual environment (Assuming you have pip and python installed already)
+### Prerequisites
+
+We have used the mbed cli as IDE because this was more efficient for testing code. Here are the install instructions. It is advised to install and build the project in a virtual environment. Assuming you have pip and python installed already
+
 ###Linux
 """
 sudo apt install mercurial
