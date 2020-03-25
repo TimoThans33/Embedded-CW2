@@ -1,7 +1,7 @@
 #include "decode.h"
 
 
-Queue<char, 8> inCharQ;
+Queue<void, 8> inCharQ;
 
 char charbuf[17];
 
@@ -20,8 +20,10 @@ volatile bool newTone;
 
 
 void serialISR(){
-  char newChar = pc.getc();
-  inCharQ.put((char*)newChar);
+  char inputs = (char)pc.getc();
+  uint8_t test = 'V';
+  pc.printf("input:  %d == %d\r\n", inputs, test);
+  inCharQ.put((void*)inputs);
 }
 
 
@@ -29,21 +31,24 @@ void decode(void){
   // Attach the ISR to serial port events
   pc.attach(&serialISR);
   int counter = 0;
-
-
   while (1){
 
     osEvent newEvent = inCharQ.get();
-    char newChar = *((char*)newEvent.value.p);
+    char intChar = (char)((uint8_t)newEvent.value.p);
 
-    if(counter >18){
+    if(counter == 18){
       counter = 0;
     }
-    charbuf[counter] = newChar;
+    charbuf[counter] = intChar;
+    char test = 'V';
+    pc.printf("input:  %d == %d\r\n", intChar, test);
 
-    if(newChar == '\r'){
+    if(intChar == '\r'){
       charbuf[counter] = '\0';
       counter = 0;
+      //setMail(ERROR,  &charbuf);
+      //setMail(ERROR, charbuf[0]);
+
       switch (charbuf[0]) {
 
         case 'V':
@@ -75,5 +80,6 @@ void decode(void){
     else{
       counter++;
     }
+
   }
 }
