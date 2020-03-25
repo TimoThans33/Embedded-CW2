@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Embedded-CW2
 This project includes the code for the second coursework of the module Embedded Systems at Imperial College. The goal was to implement a motor controller which controlled a brushless motor.
 This is an example of a real time task and therefore the aim was to make efficient code. This is why we did bitcoin mining
@@ -50,3 +51,6 @@ Now you are ready for launch.... just run below and the data from the board is s
 """
 mbed compile -f --sterm
 """
+=======
+# Embedded-CW2
+>>>>>>> fb170a3a58436737142775f378e7f4f10a5c3dd1
