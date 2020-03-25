@@ -22,7 +22,7 @@ volatile bool newTone;
 void serialISR(){
   char inputs = (char)pc.getc();
   uint8_t test = 'V';
-  pc.printf("input:  %d == %d\r\n", inputs, test);
+  //pc.printf("input:  %d == %d\r\n", inputs, test);
   inCharQ.put((void*)inputs);
 }
 
@@ -34,7 +34,7 @@ void decode(void){
   while (1){
 
     osEvent newEvent = inCharQ.get();
-    char intChar = (char)((uint8_t)newEvent.value.p);
+    char intChar = *((char*)newEvent.value.p);
 
     if(counter == 18){
       counter = 0;
@@ -42,7 +42,7 @@ void decode(void){
     charbuf[counter] = intChar;
     char test = 'V';
     pc.printf("input:  %d == %d\r\n", intChar, test);
-
+    /*
     if(intChar == '\r'){
       charbuf[counter] = '\0';
       counter = 0;
@@ -80,6 +80,7 @@ void decode(void){
     else{
       counter++;
     }
+    */
 
   }
 }
