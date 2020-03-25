@@ -1,3 +1,4 @@
 #ignore all
 BUILD/
 mbed-os/
+.mbed
