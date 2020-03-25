@@ -18,38 +18,38 @@ Main functions of this code:
 We have used the mbed cli as IDE because this was more efficient for testing code. Here are the install instructions. It is advised to install and build the project in a virtual environment. Assuming you have pip and python installed already
 
 ## Linux
-'''
+```
 sudo apt install mercurial
-'''
-'''
+```
+```
 pip install mbed-cli
-'''
+```
 Install the GCC_ARM compiler
-'''
+```
 sudo apt-get install gcc-arm-none-eabi binutils-arm-none-eabi gdb-arm-none-eabi openocd
-'''
+```
 Configure the compiler location
-'''
+```
 mbed config -G ARM_PATH "C:\Program Files\ARM"
-'''
+```
 Then to make this directory active you might get away with
-'''
+```
 mbed deploy
 mbed new .
-'''
+```
 If that does not work try this
-'''
+```
 mbed new your_own_env
 cd your_own_env
 mbed add http://os.mbed.com/users/Geremia/code/Crypto
 cp Embedded-CW2/* your_own_env
-'''
+```
 Plug in the L432KC board and configure your mbed workspace
-'''
+```
 mbed target detect
 mbed toolchain GCC_ARM
-'''
+```
 Now you are ready for launch.... just run below and the data from the board is shown in the terminal
-'''
+```
 mbed compile -f --sterm
-'''
+```
