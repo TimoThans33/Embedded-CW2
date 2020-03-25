@@ -17,7 +17,7 @@ Main functions of this code:
 
 We have used the mbed cli as IDE because this was more efficient for testing code. Here are the install instructions. It is advised to install and build the project in a virtual environment. Assuming you have pip and python installed already
 
-###Linux
+##Linux
 """
 sudo apt install mercurial
 """
@@ -53,6 +53,3 @@ Now you are ready for launch.... just run below and the data from the board is s
 """
 mbed compile -f --sterm
 """
-=======
-# Embedded-CW2
->>>>>>> fb170a3a58436737142775f378e7f4f10a5c3dd1
