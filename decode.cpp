@@ -1,9 +1,15 @@
 #include "decode.h"
 
+typedef struct {
+  uint8_t input;
+} mail_t;
 
-Queue<void, 8> inCharQ;
+//we should be abe to use Queue here as we are only using pointers but it doesn't seem to work
+//So now use mail instead and define a uint8_t (does not have to be a pointer anymore)
+Mail<mail_t, 16> inCharQ;
 
-char charbuf[17];
+
+uint8_t charbuf[18];
 
 float setRotTarget = 0;
 volatile float velTarget = 0.0;
@@ -20,10 +26,14 @@ volatile bool newTone;
 
 
 void serialISR(){
-  char inputs = (char)pc.getc();
-  uint8_t test = 'V';
+  //Allocate a block from the memory for this mail
+  mail_t *mail = inCharQ.alloc();
+  //get serial input
+  mail->input = pc.getc();
+  //uint8_t test = 'V';
   //pc.printf("input:  %d == %d\r\n", inputs, test);
-  inCharQ.put((void*)inputs);
+  //Put the pointer to the respective memory block in the queue
+  inCharQ.put(mail);
 }
 
 
@@ -32,16 +42,30 @@ void decode(void){
   pc.attach(&serialISR);
   int counter = 0;
   while (1){
-
     osEvent newEvent = inCharQ.get();
-    char intChar = *((char*)newEvent.value.p);
+    //check for serial input...
+    if (newEvent.status == osEventMail){
+      mail_t *mail = (mail_t*)newEvent.value.p;
+      //check for overflow of charbuf
+      if(counter > 18){
+        counter = 0;
+      }
 
-    if(counter == 18){
-      counter = 0;
+      //store serial input in buffer
+      charbuf[counter] = mail->input;
+
+      //convert to int so compiler can read from ASCII table and print characters
+      unsigned char i = (int) mail->input;
+      unsigned char k = (int)charbuf[counter];
+      pc.printf("input:  %c == %c\r\n", i, k);
+
+      counter += 1;
+      //Free a block from the memory
+      inCharQ.free(mail);
     }
-    charbuf[counter] = intChar;
-    char test = 'V';
-    pc.printf("input:  %d == %d\r\n", intChar, test);
+
+
+
     /*
     if(intChar == '\r'){
       charbuf[counter] = '\0';
@@ -80,7 +104,6 @@ void decode(void){
     else{
       counter++;
     }
-    */
-
+*/
   }
 }
