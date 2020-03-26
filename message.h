@@ -16,6 +16,7 @@
 #define KEY 6
 #define TONE 10
 #define ERROR 99
+#define SERIAL 13
 
 
 extern RawSerial pc;

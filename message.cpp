@@ -47,7 +47,10 @@ void getMail(){
             pc.printf("Error code: %d   \r\n", mail->data);
             break;
         case (KEY):
-            pc.printf("Created key: 0x%lx", mail->data);
+            pc.printf("Created key: 0x%lx \r\n", mail->data);
+            break;
+        case (SERIAL):
+            pc.printf("Input : %c \r\n", mail->data);
             break;
         case (TONE):
             pc.printf("Music tone is: %d\r\n", mail->data);
