@@ -78,6 +78,9 @@ void decode(void){
         }
       }
     }
+  }
+}
+
     /*
     if(intChar == '\r'){
       charbuf[counter] = '\0';
@@ -110,12 +113,4 @@ void decode(void){
           setMail(TONE, *(int32_t*)&tone);
           newTone = true;
           break;
-      }
-
-    }
-    else{
-      counter++;
-    }
-*/
-  }
-}
+          */
