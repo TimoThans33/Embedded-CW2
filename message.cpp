@@ -38,7 +38,7 @@ void getMail(){
             pc.printf("Position of rotor %d\r\n", mail->data);
             break;
         case (NONCE):
-            pc.printf("Nonce: 0x%lx", mail->data);
+            pc.printf("Nonce: 0x%lx \r\n", mail->data);
             break;
         case (SEC):
             pc.printf("Hash count: %d   \r\n", mail->data);
