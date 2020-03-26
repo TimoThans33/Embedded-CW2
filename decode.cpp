@@ -56,54 +56,47 @@ void decode(void){
 
       //convert to int so compiler can read from ASCII table and print characters
       unsigned char i = (int) mail->input;
-      unsigned char k = (int)charbuf[counter];
-      pc.printf("input:  %c == %c\r\n", i, k);
+      pc.printf("input:  %d == %s\r\n", i, charbuf);
 
-      counter += 1;
       //Free a block from the memory
       inCharQ.free(mail);
-    }
 
+      if((int)charbuf[counter] == 13 || (int)charbuf[counter] == 32){
 
+        charbuf[counter] = '\0';
+        counter = 0;
+        setMail(ERROR,  *(int32_t*)&charbuf);
+        setMail(ERROR, *(int32_t*)&charbuf[0]);
 
-    /*
-    if(intChar == '\r'){
-      charbuf[counter] = '\0';
-      counter = 0;
-      //setMail(ERROR,  &charbuf);
-      //setMail(ERROR, charbuf[0]);
+        switch (charbuf[0]) {
 
-      switch (charbuf[0]) {
-
-        case 'V':
-          sscanf(charbuf, "V%f", &velTarget);
-          setMail(SET_VELOCITY,  *(int32_t*)&velTarget);
-
-          break;
-        case 'R':
-          sscanf(charbuf, "R%f", &setRotTarget);
-          setMail(SET_ROTATION,  *(int32_t*)&setRotTarget);
-          rotTarget = rot + setRotTarget;
-          break;
-        case 'K':
-          newKey_mutex.lock();
-          // Read formatted input from a string
-          sscanf(charbuf,"K%x", &newKey);
-          setMail(KEY_UPPER, (uint32_t)((newKey>>32)&0xFFFFFFFF));
-          newKey_mutex.unlock();
-          newKeyAdded = true;
-          break;
-        case 'T':
-          sscanf(charbuf, "T%s", tone);
-          setMail(TONE, *(int32_t*)&tone);
-          newTone = true;
-          break;
+          case 'V':
+            //sscanf(charbuf, "V%f", &velTarget);
+            //setMail(SET_VELOCITY,  *(int32_t*)&velTarget);
+            break;
+            /*
+          case 'R':
+            sscanf(charbuf, "R%f", &setRotTarget);
+            setMail(SET_ROTATION,  *(int32_t*)&setRotTarget);
+            rotTarget = rot + setRotTarget;
+            break;
+          case 'K':
+            newKey_mutex.lock();
+            // Read formatted input from a string
+            sscanf(charbuf,"K%x", &newKey);
+            setMail(KEY_UPPER, (uint32_t)((newKey>>32)&0xFFFFFFFF));
+            newKey_mutex.unlock();
+            newKeyAdded = true;
+            break;
+          case 'T':
+            sscanf(charbuf, "T%s", tone);
+            setMail(TONE, *(int32_t*)&tone);
+            newTone = true;
+            break;
+            */
+        }
       }
-
+      else counter += 1;
     }
-    else{
-      counter++;
-    }
-*/
   }
 }
