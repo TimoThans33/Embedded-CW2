@@ -9,7 +9,7 @@ typedef struct {
 Mail<mail_t, 16> inCharQ;
 
 
-uint8_t charbuf[18];
+char charbuf[18];
 
 float setRotTarget = 0;
 volatile float velTarget = 0.0;
@@ -50,22 +50,34 @@ void decode(void){
       if(counter > 18){
         counter = 0;
       }
-
       //store serial input in buffer
       charbuf[counter] = mail->input;
-
-      //convert to int so compiler can read from ASCII table and print characters
-      unsigned char i = (int) mail->input;
-      unsigned char k = (int)charbuf[counter];
-      pc.printf("input:  %c == %c\r\n", i, k);
-
       counter += 1;
-      //Free a block from the memory
       inCharQ.free(mail);
+      //convert to int so compiler can read from ASCII table and print characters
+      unsigned char k = (int)charbuf[0];
+      unsigned char q = (int)charbuf[1];
+      unsigned char i = (int)charbuf[2];
+      unsigned char f = (int)charbuf[3];
+      pc.printf("input:  %c & %c & %c & %c \n", k, q, i, f);
+
+      //Begin decoding
+      if(mail->input == '\r')
+      {
+        charbuf[counter-1] = '\0';
+        counter = 0;
+        switch(charbuf[1]){
+          //key
+          case 'k':
+                newKey_mutex.lock();
+                sscanf(charbuf, "K%x",&newKey);
+                newKey_mutex.unlock();
+                setMail(KEY, (uint64_t)(newKey&0xFFFFFFFF));
+                newKeyAdded = true;
+                break;
+        }
+      }
     }
-
-
-
     /*
     if(intChar == '\r'){
       charbuf[counter] = '\0';
