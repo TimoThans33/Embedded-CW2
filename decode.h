@@ -14,7 +14,7 @@ extern volatile uint64_t newKey;
 
 extern volatile bool newKeyAdded;
 
-extern volatile char tone[50];
+extern volatile char tone;
 
 extern volatile bool newTone;
 

@@ -11,19 +11,31 @@ Mail<mail_t, 32> inCharQ;
 
 uint8_t charbuf[17];
 
-float setRotTarget = 0;
+//initiate the global variables
+volatile float setRotTarget = 0;
 volatile float velTarget = 0.0;
 volatile float rotTarget = 0.0;
 
-int _count;
 volatile uint64_t newKey;
 volatile bool newKeyAdded;
 
-Mutex newKey_mutex;
-
-volatile char tone[50];
+volatile char tone;
 volatile bool newTone;
 
+//Define frequencies of some notes
+#define C3 130
+#define D3 146
+#define E3 164
+#define F3 174
+#define G3 196
+#define A3 220
+#define B3 246
+
+//initial local variables
+int _count;
+
+//initiate classes
+Mutex newKey_mutex;
 
 void serialISR(){
   //Allocate a block from the memory for this mail
@@ -66,14 +78,19 @@ void decode(void){
       {
         switch(charbuf[0]){
           //key
-          case 'k':
-                printf("I heard you!");
+          case 'K':
                 newKey_mutex.lock();
                 sscanf((char*)charbuf, "k%x",&newKey);
                 newKey_mutex.unlock();
+                //Same as KEY_UPPER and KEY_LOWER implementations
                 setMail(KEY, (uint64_t)(newKey&0xFFFFFFFF));
                 newKeyAdded = true;
                 break;
+          case 'T':
+                sscanf((char*)charbuf, "T%c%d",&tone);
+                setMail(TONE, (int) tone);
+                newTone = true;
+
         }
         counter = 0;
         for (int i=0; i<18; i++){

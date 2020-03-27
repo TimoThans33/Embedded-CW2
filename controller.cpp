@@ -39,6 +39,15 @@ DigitalOut L2H(L2Hpin);
 DigitalOut L3L(L3Lpin);
 DigitalOut L3H(L3Hpin);
 
+//Define frequencies of some notes
+#define C3 130
+#define D3 146
+#define E3 164
+#define F3 174
+#define G3 196
+#define A3 220
+#define B3 246
+
 PwmOut PWMRotorControl(PWMpin);
 
 uint32_t motorPWM = 0;

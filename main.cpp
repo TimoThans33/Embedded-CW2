@@ -54,8 +54,8 @@ void counthash(void);
 
 // Create a global instance of class Queue
 
-Thread decodethread(osPriorityNormal,1536);
-Thread messagethread(osPriorityNormal,1536);
+Thread decodethread(osPriorityLow,1536);
+Thread messagethread(osPriorityLow,1536);
 //Thread melodythread(osPriorityNormal,1024);
 Thread controllerThread(osPriorityNormal,1024);
 

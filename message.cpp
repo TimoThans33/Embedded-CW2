@@ -53,7 +53,7 @@ void getMail(){
             pc.printf("Input : %c \r\n", mail->data);
             break;
         case (TONE):
-            pc.printf("Music tone is: %d\r\n", mail->data);
+            pc.printf("Music tone is: %c\r\n", mail->data);
             break;
 
       }
