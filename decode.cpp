@@ -30,8 +30,6 @@ void serialISR(){
   mail_t *mail = inCharQ.alloc();
   //get serial input
   mail->input = pc.getc();
-  //uint8_t test = 'V';
-  //pc.printf("input:  %d == %d\r\n", inputs, test);
   //Put the pointer to the respective memory block in the queue
   inCharQ.put(mail);
 }
@@ -54,26 +52,37 @@ void decode(void){
       charbuf[counter] = mail->input;
       //counter += 1;
       inCharQ.free(mail);
-      //convert to int so compiler can read from ASCII table and print characters
-      unsigned char k = (int)charbuf[0];
-      //unsigned char q = (int)charbuf[1];
-      //unsigned char i = (int)charbuf[2];
-      //unsigned char f = (int)charbuf[3];
-      //pc.printf("input:  %c \r\n", k);
-      setMail(SERIAL, (uint32_t)k);
+
       //Begin decoding
       if(charbuf[counter] == '\r')
       {
+        charbuf[counter] = '\0';
         switch(charbuf[0]){
+          // velocity
+          case 'V':
+            sscanf((char*)charbuf, "V%f", &velTarget);
+            setMail(SET_VELOCITY,  velTarget);
+            break;
+          // rotation
+          case 'R':
+            sscanf((char*)charbuf, "R%f", &setRotTarget);
+            setMail(SET_ROTATION,  setRotTarget);
+            rotTarget = rot + setRotTarget;
+            break;
           //key
-          case 'k':
-                printf("I heard you!");
-                newKey_mutex.lock();
-                sscanf((char*)charbuf, "k%x",&newKey);
-                newKey_mutex.unlock();
-                setMail(KEY, (uint64_t)(newKey&0xFFFFFFFF));
-                newKeyAdded = true;
-                break;
+          case 'K':
+            newKey_mutex.lock();
+            sscanf((char*)charbuf, "K%x",&newKey);
+            newKey_mutex.unlock();
+            setMail(KEY, (uint64_t)(newKey&0xFFFFFFFF));
+            newKeyAdded = true;
+            break;
+          // melody
+          case 'T':
+            sscanf((char*)charbuf, "T%s", tone);
+            setMail(TONE, *(int32_t*)&tone);
+            newTone = true;
+            break;
         }
         counter = 0;
         for (int i=0; i<18; i++){
@@ -86,37 +95,3 @@ void decode(void){
     }
   }
 }
-
-    /*
-    if(intChar == '\r'){
-      charbuf[counter] = '\0';
-      counter = 0;
-      //setMail(ERROR,  &charbuf);
-      //setMail(ERROR, charbuf[0]);
-
-      switch (charbuf[0]) {
-
-        case 'V':
-          sscanf(charbuf, "V%f", &velTarget);
-          setMail(SET_VELOCITY,  *(int32_t*)&velTarget);
-
-          break;
-        case 'R':
-          sscanf(charbuf, "R%f", &setRotTarget);
-          setMail(SET_ROTATION,  *(int32_t*)&setRotTarget);
-          rotTarget = rot + setRotTarget;
-          break;
-        case 'K':
-          newKey_mutex.lock();
-          // Read formatted input from a string
-          sscanf(charbuf,"K%x", &newKey);
-          setMail(KEY_UPPER, (uint32_t)((newKey>>32)&0xFFFFFFFF));
-          newKey_mutex.unlock();
-          newKeyAdded = true;
-          break;
-        case 'T':
-          sscanf(charbuf, "T%s", tone);
-          setMail(TONE, *(int32_t*)&tone);
-          newTone = true;
-          break;
-          */
