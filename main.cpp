@@ -94,11 +94,11 @@ void computehash(void){
     }
     SHA256::computeHash(hash2, sequence, 64);
     if ((hash2[0]==0) && (hash2[1]==0)) {
-            setMail(HIT, *nonce); //HIT
+            //setMail(HIT, *nonce); //HIT
     }
     HashCount += 1;
     if (t >= 1){
-      setMail(SEC, HashCount); //SEC
+      //setMail(SEC, HashCount); //SEC
       HashCount = 0;
       t.reset();
     }

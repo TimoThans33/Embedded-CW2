@@ -135,7 +135,7 @@ uint32_t velocityController(){
 
   oldVelError = velError;
 
-  intVelError += 10*velError;
+  intVelError += velError;
   if (intVelError > VEL_DIFF_MAX) intVelError =  VEL_DIFF_MAX;
   if (intVelError < -VEL_DIFF_MAX) intVelError = -VEL_DIFF_MAX;
 
@@ -148,7 +148,7 @@ uint32_t velocityController(){
   else if (velError < 0) sgn = -1;
   else sgn = 0;
 
-  y_s = VEL_CONST*(sgn*velTarget-vel);// + intVelError;
+  y_s = VEL_CONST*(sgn*(velTarget)-vel) + VEL_INT_CONST*intVelError;
 
 
   if (y_s > PWM_LIMIT+ 10) y_s = PWM_LIMIT+10;
@@ -167,11 +167,11 @@ uint32_t positionController(){
 
   oldRotError = rotError;
 
-  intRotError += 10*rotError;
-  if (intRotError > 15) intRotError =  15;
-  if (intRotError < -15) intRotError = -15;
+  intRotError += rotError;
+  if (intRotError >  POS_DIFF_MAX) intRotError =  POS_DIFF_MAX;
+  if (intRotError < -POS_DIFF_MAX) intRotError = -POS_DIFF_MAX;
 
-  y_r = POS_CONST*rotError + POS_DIFF_CONST*diffRotError;// + POS_INT_CONST*intRotError;
+  y_r = POS_CONST*rotError + POS_DIFF_CONST*diffRotError + POS_INT_CONST*intRotError;
 
   // For overshot reverse
   if (y_r<0) lead = -2;
@@ -183,8 +183,6 @@ uint32_t positionController(){
   return y_r;
 
 }
-
-
 
 
 void motorCtrlFn() {
@@ -199,12 +197,9 @@ void motorCtrlFn() {
 
   int8_t counter = 0;
   float oldRotorPosition = 0.0;
-  velTarget = 100;
-  rotTarget = 500;
+  int8_t oldState = 0;
 
   while (1) {
-
-
 
     controllerThread.signal_wait(0x1);
 
@@ -214,37 +209,34 @@ void motorCtrlFn() {
     rot = rotorPosition/6;
 
 
-    if (abs(vel) < 2 && velTarget != 0 && rotateTrue) {
+    if (abs(vel) < 2 && velTarget != 0 && rotTarget-rot != 0) {
+      // Starting the motor if not moving
       int8_t currentState = readRotorState();
-      motorOut((currentState-orState+lead+6)%6,motorPWM);
+        if (currentState != oldState) {
+            motorOut((currentState-orState+lead+6)%6,motorPWM);
+            oldState = currentState;
+        }
+      if (counter == 0) {
+        setMail(ERROR, lead);
+      }
     }
-    if (velTarget != 0) {
+    if (velTarget-vel != 0) {
+      // Set motor PWM
       velPWM = velocityController();
       rotPWM = positionController();
-      if (vel < 0) {
-        motorPWM = (velPWM > rotPWM) ? velPWM : rotPWM;
-      } else {
-        motorPWM = (velPWM < rotPWM) ? velPWM : rotPWM;
-      }
+      if (vel < 0) motorPWM = (velPWM > rotPWM) ? velPWM : rotPWM;
+      else motorPWM = (velPWM < rotPWM) ? velPWM : rotPWM;
+
       if (counter == 10){
-        //setMail(MOTOR, motorPWM);
-        //setMail(ROTOR, rot);
-        //setMail(VELOCITY,vel);
-        //setMail(SET_VELOCITY, velTarget);
+        setMail(ROTOR, rot);
       }
     }
 
-    if (rotTarget != 0) {
-      if (!rotateTrue) {
-        rotTarget = rotTarget + rot;
-        rotateTrue = true;
-      }
+    if (rotTarget-rot != 0 && counter == 10) {
 
-      if (counter == 10){
-        //setMail(ROTOR, rot);
-        //setMail(ROTOR, rot);
-      }
-
+      setMail(MOTOR, motorPWM);
+      setMail(VELOCITY,vel);
+      setMail(SET_VELOCITY, velTarget);
 
 
     }
