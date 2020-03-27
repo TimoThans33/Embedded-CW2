@@ -6,10 +6,10 @@ typedef struct {
 
 //we should be abe to use Queue here as we are only using pointers but it doesn't seem to work
 //So now use mail instead and define a uint8_t (does not have to be a pointer anymore)
-Mail<mail_t, 16> inCharQ;
+Mail<mail_t, 32> inCharQ;
 
 
-uint8_t charbuf[18];
+char charbuf[18];
 
 float setRotTarget = 0;
 volatile float velTarget = 0.0;
@@ -67,6 +67,9 @@ void decode(void){
         counter = 0;
         setMail(ERROR,  *(int32_t*)&charbuf);
         setMail(ERROR, *(int32_t*)&charbuf[0]);
+
+        velTarget = 50;
+        rotTarget = rot + 300;
 
         switch (charbuf[0]) {
 
