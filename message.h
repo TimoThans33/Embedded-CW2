@@ -12,10 +12,11 @@
 #define SET_ROTATION 4
 #define ROTOR 5
 #define SEC 12
-#define HIT 11
-#define KEY_UPPER 6
+#define NONCE 11
+#define KEY 6
 #define TONE 10
 #define ERROR 99
+#define SERIAL 13
 
 
 extern RawSerial pc;

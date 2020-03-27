@@ -35,7 +35,6 @@ uint8_t sequence[] = {0x45,0x6D,0x62,0x65,0x64,0x64,0x65,0x64,
                       0x74,0x68,0x69,0x6E,0x67,0x73,0x21,0x20,
                       0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
                       0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
-
 uint64_t* key = (uint64_t*)&sequence[48];
 uint64_t* nonce = (uint64_t*)&sequence[56];
 uint8_t hash2[32];
@@ -47,19 +46,20 @@ uint8_t hash2[32];
 uint8_t HashCount = 0;
 
 
-
-
 //**************************Function prototypes********************************
 void computehash(void);
+void counthash(void);
 //*****************************************************************************
 
-Timer t;
+
 // Create a global instance of class Queue
 
-Thread decodethread(osPriorityNormal,1024);
-Thread messagethread(osPriorityNormal,1024);
-Thread melodythread(osPriorityNormal,1024);
+Thread decodethread(osPriorityNormal,1536);
+Thread messagethread(osPriorityNormal,1536);
+//Thread melodythread(osPriorityNormal,1024);
 Thread controllerThread(osPriorityNormal,1024);
+
+Ticker t;
 
 int main()
 {
@@ -71,12 +71,11 @@ int main()
     messagethread.start(getMail);
     decodethread.start(decode);
     controllerThread.start(motorCtrlFn);
-    melodythread.start(melodyFN);
+    //melodythread.start(melodyFN);
 
 
-    t.start();
     *nonce = 0;
-    *key = 0;
+    t.attach(&counthash, 1.0);
     while (true) {
       computehash();
     }
@@ -84,6 +83,10 @@ int main()
 
 
 
+void counthash(void){
+  setMail(SEC, HashCount);
+  HashCount = 0;
+}
 
 void computehash(void){
     if (newKeyAdded){
@@ -94,14 +97,9 @@ void computehash(void){
     }
     SHA256::computeHash(hash2, sequence, 64);
     if ((hash2[0]==0) && (hash2[1]==0)) {
-            //setMail(HIT, *nonce); //HIT
+            setMail(NONCE, (uint64_t)(*nonce&0xFFFFFFFF));
     }
     HashCount += 1;
-    if (t >= 1){
-      //setMail(SEC, HashCount); //SEC
-      HashCount = 0;
-      t.reset();
-    }
     *nonce+=1;
 
   }

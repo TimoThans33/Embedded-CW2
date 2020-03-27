@@ -37,8 +37,8 @@ void getMail(){
         case (ROTOR):
             pc.printf("Position of rotor %d\r\n", mail->data);
             break;
-        case (HIT):
-            pc.printf("Nonce: %d  \r\n", mail->data);
+        case (NONCE):
+            pc.printf("Nonce: 0x%lx \r\n", mail->data);
             break;
         case (SEC):
             pc.printf("Hash count: %d   \r\n", mail->data);
@@ -46,10 +46,15 @@ void getMail(){
         case (ERROR):
             pc.printf("Error code: %d   \r\n", mail->data);
             break;
-        case (KEY_UPPER):
-            pc.printf("Key is: %x\r\n", mail->data);
+        case (KEY):
+            pc.printf("Created key: 0x%lx \r\n", mail->data);
+            break;
+        case (SERIAL):
+            pc.printf("Input : %c \r\n", mail->data);
+            break;
         case (TONE):
             pc.printf("Music tone is: %d\r\n", mail->data);
+            break;
 
       }
       outMail.free(mail);
