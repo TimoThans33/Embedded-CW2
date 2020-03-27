@@ -36,13 +36,14 @@
 
 
 #define PWM_LIMIT 2500
-#define VEL_CONST 45
-#define VEL_INT_CONST 10
-#define VEL_DIFF_MAX 80
+#define PWM_LIMIT2 2000
+#define VEL_CONST 50
+#define VEL_INT_CONST 15
+#define VEL_DIFF_MAX 110
 #define POS_CONST 20
-#define POS_DIFF_CONST 40
-#define POS_INT_CONST 5
-#define POS_DIFF_MAX 30
+#define POS_DIFF_CONST 60
+#define POS_INT_CONST 15
+#define POS_DIFF_MAX 40
 
 extern volatile float rot;
 
