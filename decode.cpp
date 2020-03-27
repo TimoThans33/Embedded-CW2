@@ -6,7 +6,7 @@ typedef struct {
 
 //we should be abe to use Queue here as we are only using pointers but it doesn't seem to work
 //So now use mail instead and define a uint8_t (does not have to be a pointer anymore)
-Mail<mail_t, 32> inCharQ;
+Mail<mail_t, 8> inCharQ;
 
 
 uint8_t charbuf[17];
@@ -19,35 +19,34 @@ volatile float rotTarget = 0.0;
 volatile uint64_t newKey;
 volatile bool newKeyAdded;
 
-volatile char tone;
+volatile uint8_t tone;
 volatile bool newTone;
 
-//Define frequencies of some notes
-#define C3 130
-#define D3 146
-#define E3 164
-#define F3 174
-#define G3 196
-#define A3 220
-#define B3 246
+volatile uint32_t frequency;
+
+//Define frequencies of some notes.. check ASCII table
+uint8_t notes[7] = {67, 68, 69, 70, 71, 65, 66};
+uint8_t notes_flat[5] = {67, 68, 70, 71, 65};
+int octaves_flat[3][5] = {{34, 38, 46, 52, 58},
+                          {69, 77, 92, 104, 116},
+                          {138, 155, 185, 208, 233}};
+int octaves[3][7] = {{32, 36, 41, 43, 49, 55, 61},
+                     {65, 73, 82, 87, 98, 110, 123},
+                     {130, 146, 164, 174, 196, 220, 246}};
+
 
 //initial local variables
 int _count;
+int octave;
+char unknown;
 
 //initiate classes
 Mutex newKey_mutex;
 
-void serialISR(){
-  //Allocate a block from the memory for this mail
-  mail_t *mail = inCharQ.alloc();
-  //get serial input
-  mail->input = pc.getc();
-  //uint8_t test = 'V';
-  //pc.printf("input:  %d == %d\r\n", inputs, test);
-  //Put the pointer to the respective memory block in the queue
-  inCharQ.put(mail);
-}
-
+//****************************FUNCTION PROTOTYPES*****************************
+void NoteToFreq(void);
+void serialISR(void);
+//*****************************************************************************
 
 void decode(void){
   // Attach the ISR to serial port events
@@ -66,31 +65,41 @@ void decode(void){
       charbuf[counter] = mail->input;
       //counter += 1;
       inCharQ.free(mail);
-      //convert to int so compiler can read from ASCII table and print characters
-      unsigned char k = (int)charbuf[0];
-      //unsigned char q = (int)charbuf[1];
-      //unsigned char i = (int)charbuf[2];
-      //unsigned char f = (int)charbuf[3];
-      //pc.printf("input:  %c \r\n", k);
-      setMail(SERIAL, (uint32_t)k);
+
       //Begin decoding
       if(charbuf[counter] == '\r')
       {
+        charbuf[counter] = '\0';
         switch(charbuf[0]){
+          // velocity
+          case 'V':
+            sscanf((char*)charbuf, "V%f", &velTarget);
+            setMail(SET_VELOCITY,  velTarget);
+            break;
+          // rotation
+          case 'R':
+            sscanf((char*)charbuf, "R%f", &setRotTarget);
+            setMail(SET_ROTATION,  setRotTarget);
+            rotTarget = rot + setRotTarget;
+            break;
           //key
           case 'K':
-                newKey_mutex.lock();
-                sscanf((char*)charbuf, "k%x",&newKey);
-                newKey_mutex.unlock();
-                //Same as KEY_UPPER and KEY_LOWER implementations
-                setMail(KEY, (uint64_t)(newKey&0xFFFFFFFF));
-                newKeyAdded = true;
-                break;
+            newKey_mutex.lock();
+            sscanf((char*)charbuf, "k%x",&newKey);
+            newKey_mutex.unlock();
+            //Same as KEY_UPPER and KEY_LOWER implementations
+            setMail(KEY, (uint64_t)(newKey&0xFFFFFFFF));
+            newKeyAdded = true;
+            break;
           case 'T':
-                sscanf((char*)charbuf, "T%c%d",&tone);
-                setMail(TONE, (int) tone);
-                newTone = true;
-
+            //Playing user defined notes
+            sscanf((char*)charbuf, "T%c %c %d",&tone,&unknown,&octave);
+            printf("Tone: %d\r\n",tone);
+            NoteToFreq();
+            //print for debugging purposes
+            setMail(TONE, frequency);
+            newTone = true;
+            break;
         }
         counter = 0;
         for (int i=0; i<18; i++){
@@ -104,36 +113,39 @@ void decode(void){
   }
 }
 
-    /*
-    if(intChar == '\r'){
-      charbuf[counter] = '\0';
-      counter = 0;
-      //setMail(ERROR,  &charbuf);
-      //setMail(ERROR, charbuf[0]);
 
-      switch (charbuf[0]) {
+void NoteToFreq(void){
+  int index;
+  //check for flat notes
+  if ((int) unknown == 35){
+    //Iterate through data to find matching flat note
+    for (int i = 0; i < 7; i++){
+      if ( (int) tone == (int) notes_flat[i])
+      {
+        index = i;
+      }
+    }
+    //Take the frequency for user defined octave
+    frequency = (int) octaves_flat[octave-1][index];
+  }
+  //Normal notes
+  else{
+    for (int i = 0; i < 7; i++){
+      //Iterate through data to find matching note
+      if( (int) tone == (int) notes[i]){
+        index = i;
+      }
+    }
+      //Take the frequency for user defined octave
+      frequency = (int) octaves[(int)unknown-49][index];
+    }
+}
 
-        case 'V':
-          sscanf(charbuf, "V%f", &velTarget);
-          setMail(SET_VELOCITY,  *(int32_t*)&velTarget);
-
-          break;
-        case 'R':
-          sscanf(charbuf, "R%f", &setRotTarget);
-          setMail(SET_ROTATION,  *(int32_t*)&setRotTarget);
-          rotTarget = rot + setRotTarget;
-          break;
-        case 'K':
-          newKey_mutex.lock();
-          // Read formatted input from a string
-          sscanf(charbuf,"K%x", &newKey);
-          setMail(KEY_UPPER, (uint32_t)((newKey>>32)&0xFFFFFFFF));
-          newKey_mutex.unlock();
-          newKeyAdded = true;
-          break;
-        case 'T':
-          sscanf(charbuf, "T%s", tone);
-          setMail(TONE, *(int32_t*)&tone);
-          newTone = true;
-          break;
-          */
+void serialISR(){
+  //Allocate a block from the memory for this mail
+  mail_t *mail = inCharQ.alloc();
+  //get serial input
+  mail->input = pc.getc();
+  //Put the pointer to the respective memory block in the queue
+  inCharQ.put(mail);
+}

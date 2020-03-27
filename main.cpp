@@ -54,8 +54,8 @@ void counthash(void);
 
 // Create a global instance of class Queue
 
-Thread decodethread(osPriorityLow,1536);
-Thread messagethread(osPriorityLow,1536);
+Thread decodethread(osPriorityNormal,1024);
+Thread messagethread(osPriorityNormal,1024);
 //Thread melodythread(osPriorityNormal,1024);
 Thread controllerThread(osPriorityNormal,1024);
 
@@ -97,7 +97,7 @@ void computehash(void){
     }
     SHA256::computeHash(hash2, sequence, 64);
     if ((hash2[0]==0) && (hash2[1]==0)) {
-            setMail(NONCE, (uint64_t)(*nonce&0xFFFFFFFF));
+      //setMail(NONCE, (uint64_t)(*nonce&0xFFFFFFFF));
     }
     HashCount += 1;
     *nonce+=1;

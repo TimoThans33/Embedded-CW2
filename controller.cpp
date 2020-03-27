@@ -218,15 +218,12 @@ void motorCtrlFn() {
     rot = rotorPosition/6;
 
 
-    if (abs(vel) < 2 && velTarget != 0 && rotTarget-rot != 0) {
+    if (abs(vel) < 1 && velTarget != 0 && rotTarget-rot != 0) {
       // Starting the motor if not moving
       int8_t currentState = readRotorState();
-        if (currentState != oldState) {
-            motorOut((currentState-orState+lead+6)%6,motorPWM);
-            oldState = currentState;
-        }
+      motorOut((currentState-orState+lead+6)%6,1500);
       if (counter == 0) {
-        setMail(ERROR, lead);
+        setMail(ERROR, currentState);
       }
     }
     if (velTarget-vel != 0) {
@@ -245,7 +242,6 @@ void motorCtrlFn() {
 
       setMail(MOTOR, motorPWM);
       setMail(VELOCITY,vel);
-      setMail(SET_VELOCITY, velTarget);
 
 
     }
