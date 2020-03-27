@@ -129,32 +129,23 @@ uint32_t velocityController(){
   // y_s = k_p(s-v)
   float y_s;
 
-  float velError = velTarget-vel;
+  float velError = abs(velTarget)-abs(vel);
 
-  float diffVelError = velError - oldVelError;
-
-  oldVelError = velError;
+  // For reverse
+  if (velTarget<0) lead = -2;
+  else lead = 2;
 
   intVelError += velError;
   if (intVelError > VEL_DIFF_MAX) intVelError =  VEL_DIFF_MAX;
   if (intVelError < -VEL_DIFF_MAX) intVelError = -VEL_DIFF_MAX;
 
-  int8_t sgn = 0;
-  // Revers direction if vel_target negative
-  if (velTarget<0) lead = -2;
-  else lead = 2;
-
-  if (velError > 0) sgn = 1;
-  else if (velError < 0) sgn = -1;
-  else sgn = 0;
-
-  y_s = VEL_CONST*(sgn*(velTarget)-vel) + VEL_INT_CONST*intVelError;
+  y_s = VEL_CONST*velError + VEL_INT_CONST*intVelError;
 
 
-  if (y_s > PWM_LIMIT+ 10) y_s = PWM_LIMIT+10;
+  if (y_s > PWM_LIMIT) y_s = PWM_LIMIT;
   else if (y_s < 0) y_s = 0;
 
-  return y_s;
+  return (uint32_t)y_s;
 }
 
 uint32_t positionController(){
@@ -173,14 +164,14 @@ uint32_t positionController(){
 
   y_r = POS_CONST*rotError + POS_DIFF_CONST*diffRotError + POS_INT_CONST*intRotError;
 
-  // For overshot reverse
+  // For reverse
   if (y_r<0) lead = -2;
   else lead = 2;
 
   y_r = abs(y_r);
-  if (y_r > PWM_LIMIT) y_r = PWM_LIMIT;
+  if (y_r > PWM_LIMIT2) y_r = PWM_LIMIT2;
 
-  return y_r;
+  return (uint32_t)y_r;
 
 }
 
@@ -212,10 +203,8 @@ void motorCtrlFn() {
     if (abs(vel) < 1 && velTarget != 0 && rotTarget-rot != 0) {
       // Starting the motor if not moving
       int8_t currentState = readRotorState();
-      motorOut((currentState-orState+lead+6)%6,1500);
-      if (counter == 0) {
-        setMail(ERROR, currentState);
-      }
+      motorOut((currentState-orState+lead+6)%6,motorPWM);
+
     }
     if (velTarget-vel != 0) {
       // Set motor PWM
@@ -224,15 +213,14 @@ void motorCtrlFn() {
       if (vel < 0) motorPWM = (velPWM > rotPWM) ? velPWM : rotPWM;
       else motorPWM = (velPWM < rotPWM) ? velPWM : rotPWM;
 
-      if (counter == 10){
-        setMail(ROTOR, rot);
-      }
     }
 
-    if (rotTarget-rot != 0 && counter == 10) {
+    if (rotTarget-rot != 0 && velTarget != 0 && counter == 10) {
 
       setMail(MOTOR, motorPWM);
       setMail(VELOCITY,vel);
+      setMail(ROTOR, rot);
+      setMail(ERROR,lead);
 
 
     }
