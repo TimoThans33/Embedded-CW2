@@ -19,10 +19,8 @@ volatile float rotTarget = 0.0;
 volatile uint64_t newKey;
 volatile bool newKeyAdded;
 
-volatile uint8_t tone;
+volatile uint16_t frequency[4];
 volatile bool newTone;
-
-volatile uint32_t frequency;
 
 //Define frequencies of some notes.. check ASCII table
 uint8_t notes[7] = {67, 68, 69, 70, 71, 65, 66};
@@ -39,6 +37,7 @@ int octaves[3][7] = {{32, 36, 41, 43, 49, 55, 61},
 int _count;
 int octave;
 char unknown;
+uint8_t tone;
 
 //initiate classes
 Mutex newKey_mutex;
@@ -92,12 +91,8 @@ void decode(void){
             newKeyAdded = true;
             break;
           case 'T':
-            //Playing user defined notes
-            sscanf((char*)charbuf, "T%c %c %d",&tone,&unknown,&octave);
-            printf("Tone: %d\r\n",tone);
+            //Playing user defined melody
             NoteToFreq();
-            //print for debugging purposes
-            setMail(TONE, frequency);
             newTone = true;
             break;
         }
@@ -116,29 +111,33 @@ void decode(void){
 
 void NoteToFreq(void){
   int index;
-  //check for flat notes
-  if ((int) unknown == 35){
-    //Iterate through data to find matching flat note
-    for (int i = 0; i < 7; i++){
-      if ( (int) tone == (int) notes_flat[i])
-      {
-        index = i;
+  int counter = 0;
+  for (int i=1; i<18; i++){
+    //check for first number (then we know that a note is finished)
+    if((int) charbuf[i] <= 57 && charbuf[i] >= 49){ //ASCII
+      if((int) charbuf[i-1] == 35){
+        //iterate through data to find matching flat note
+        for (int k = 0; k < 5; k++){
+          if ((int) charbuf[i-2] == (int) notes_flat[k]){
+            index = k;
+          }
+          else{break;}
+        }
+        frequency[counter] = octaves_flat[(int)(charbuf[i])-48][index-1];
       }
+      else{
+        //Iterate through data to find matching note
+        for (int k=0; k<7; k++){
+          if ((int) charbuf[i-1] == (int) notes[k]){
+            index = k;
+          }
+          else{break;}
+        }
+        frequency[counter] = octaves[(int)(charbuf[i])-48][index-1];
+      }
+      counter++;
     }
-    //Take the frequency for user defined octave
-    frequency = (int) octaves_flat[octave-1][index];
   }
-  //Normal notes
-  else{
-    for (int i = 0; i < 7; i++){
-      //Iterate through data to find matching note
-      if( (int) tone == (int) notes[i]){
-        index = i;
-      }
-    }
-      //Take the frequency for user defined octave
-      frequency = (int) octaves[(int)unknown-49][index];
-    }
 }
 
 void serialISR(){

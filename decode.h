@@ -14,9 +14,7 @@ extern volatile uint64_t newKey;
 
 extern volatile bool newKeyAdded;
 
-extern volatile uint8_t tone;
-
-extern volatile uint32_t frequency;
+extern volatile uint16_t frequency[4];
 
 extern volatile bool newTone;
 

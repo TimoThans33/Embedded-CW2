@@ -48,11 +48,16 @@ DigitalOut L3H(L3Hpin);
 #define A3 220
 #define B3 246
 
+//initiate classes
 PwmOut PWMRotorControl(PWMpin);
+Ticker motorCtrlTicker;
+Timer timer;
 
+//define local variables
 uint32_t motorPWM = 0;
 bool rotateTrue = false;
 
+//define global variables
 volatile float velPWM = 0;
 volatile float rotPWM = 0;
 volatile float vel = 0;
@@ -104,6 +109,11 @@ void ISRPhotoSensors() {
 
 void PWMPeriod(int32_t period) {
   PWMRotorControl.period_us(period);
+}
+
+void set_PWMPeriod_back(){
+  PWMRotorControl.period_us(2000);
+  newTone = false;
 }
 
 
@@ -191,13 +201,15 @@ void motorCtrlFn() {
   // Set home position
   motorHome();
 
-  Ticker motorCtrlTicker;
   motorCtrlTicker.attach_us(&motorCtrlTick,100000);
 
 
-  int8_t counter = 0;
+  int16_t counter = 0;
   float oldRotorPosition = 0.0;
   int8_t oldState = 0;
+  uint8_t pointer = 0;
+
+  //set PWM back to 2000 after every 20s of playing note
 
   while (1) {
 
@@ -215,13 +227,30 @@ void motorCtrlFn() {
       motorOut((currentState-orState+lead+6)%6,motorPWM);
 
     }
+
     if (velTarget-vel != 0) {
       // Set motor PWM
       velPWM = velocityController();
       rotPWM = positionController();
       if (vel < 0) motorPWM = (velPWM > rotPWM) ? velPWM : rotPWM;
       else motorPWM = (velPWM < rotPWM) ? velPWM : rotPWM;
+    }
 
+    if (newTone == true){
+      if (pointer == 0){
+        timer.start();
+      }
+      if (timer.read_ms() >= 400){
+        timer.reset();
+        PWMPeriod(1e+6/frequency[pointer]);
+        setMail(TONE, frequency[pointer]);
+        pointer++;
+      }
+      if (pointer == 4){
+        pointer = 0;
+        timer.stop();
+        newTone = false;
+      }
     }
 
     if (rotTarget-rot != 0 && velTarget != 0 && counter == 10) {
