@@ -123,7 +123,7 @@ void NoteToFreq(void){
           }
           else{break;}
         }
-        frequency[counter] = octaves_flat[(int)(charbuf[i])-48][index-1];
+        frequency[counter] = octaves_flat[(int)(charbuf[i])-49][index];
       }
       else{
         //Iterate through data to find matching note
@@ -133,7 +133,7 @@ void NoteToFreq(void){
           }
           else{break;}
         }
-        frequency[counter] = octaves[(int)(charbuf[i])-48][index-1];
+        frequency[counter] = octaves[(int)(charbuf[i])-49][index];
       }
       counter++;
     }
