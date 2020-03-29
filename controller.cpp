@@ -236,7 +236,7 @@ void motorCtrlFn() {
       else motorPWM = (velPWM < rotPWM) ? velPWM : rotPWM;
     }
 
-    if (newTone == true){
+    if (newTone){
       if (pointer == 0){
         timer.start();
       }

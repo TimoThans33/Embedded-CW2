@@ -37,13 +37,13 @@ uint8_t sequence[] = {0x45,0x6D,0x62,0x65,0x64,0x64,0x65,0x64,
                       0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
 uint64_t* key = (uint64_t*)&sequence[48];
 uint64_t* nonce = (uint64_t*)&sequence[56];
-uint8_t hash2[32];
+uint8_t hashABLE[32];
 
 
 
 // Declarations
 
-uint8_t HashCount = 0;
+uint32_t HashCount = 0;
 
 
 //**************************Function prototypes********************************
@@ -51,8 +51,6 @@ void computehash(void);
 void counthash(void);
 //*****************************************************************************
 
-
-// Create a global instance of class Queue
 
 Thread decodethread(osPriorityNormal,1024);
 Thread messagethread(osPriorityNormal,1024);
@@ -95,11 +93,12 @@ void computehash(void){
       newKey_mutex.unlock();
       newKeyAdded = false;
     }
-    SHA256::computeHash(hash2, sequence, 64);
-    if ((hash2[0]==0) && (hash2[1]==0)) {
-      setMail(NONCE, (uint64_t)(*nonce&0xFFFFFFFF));
-    }
-    HashCount += 1;
-    *nonce+=1;
-
+    if(HashCount < 5000){
+      SHA256::computeHash(hashABLE, sequence, 64);
+      if ((hashABLE[0]==0) && (hashABLE[1]==0)) {
+        setMail(NONCE, (uint64_t)(*nonce&0xFFFFFFFF));
+      }
+      HashCount++;
+      *nonce+=1;
   }
+}
