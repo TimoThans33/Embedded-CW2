@@ -209,7 +209,6 @@ void motorCtrlFn() {
   int8_t oldState = 0;
   uint8_t pointer = 0;
 
-  //set PWM back to 2000 after every 20s of playing note
 
   while (1) {
 
