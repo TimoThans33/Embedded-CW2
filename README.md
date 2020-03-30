@@ -3,7 +3,7 @@ This project includes the code for the second coursework of the module Embedded 
 This is an example of a real time task and therefore the aim was to make efficient code. This is why we did bitcoin mining alongside controlling the motor.
 For this project we have used the NUCLEO L432KC hardware component.
 
-Due to the COVID-19 outbreak in Europe both Colaborators (alexwillie and TimoThans33) had to go back to their home countries, respectively Sweden and The Netherlands. This unfortunately forced us to work on the last part of the code without the motor. Specifically playing the melody has not been tested on the motor.
+Due to the COVID-19 outbreak in Europe both Colaborators (alexwillie and TimoThans33) had to go back to their home countries, respectively Sweden and The Netherlands. This unfortunately forced us to work on the last part of the code without the motor. Specifically playing the melody has not been tested on the motor and therefore we can not guarantee that it works.
 ## Specification
 
 Main functions of this code:
@@ -14,7 +14,7 @@ Main functions of this code:
 
 ## Serial output
 
-[![Serial output](Pictures/output_serial.png)]
+[(Pictures/output_serial.png)]
 
 ## Commands
 This code takes in some serial commands the format of these serial commands is as follows. All the commands have to finish with an enter.
