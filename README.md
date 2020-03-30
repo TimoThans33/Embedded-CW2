@@ -14,7 +14,7 @@ Main functions of this code:
 
 ## Serial output
 
-[![IMAGE ALT TEXT HERE](Figures/output_serial.png)]
+[![Serial output](Pictures/output_serial.png)]
 
 ## Commands
 This code takes in some serial commands the format of these serial commands is as follows. All the commands have to finish with an enter.
@@ -23,6 +23,7 @@ This code takes in some serial commands the format of these serial commands is a
 * T{?} (Takes in a melody of four notes in 5 different octaves and plays every note for 0.4 seconds)
 * K{16} (Defines a new key for the hashing algorithm)
 ## Structure
+```
 ├── Pictures
      └── output_serial.png
 ├── src
@@ -31,7 +32,7 @@ This code takes in some serial commands the format of these serial commands is a
      ├── main.cpp
      └── message.cpp
  └── Readme.md
- 
+ ```
 ## Prerequisites
 
 We have used the mbed cli as IDE because this was more efficient for testing code. Here are the install instructions. Assuming you have pip and python installed already. It is advised to install and build the project in a virtual environment.
