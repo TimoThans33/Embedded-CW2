@@ -6,7 +6,7 @@
 #include "message.h"
 #include "controller.h"
 
-extern volatile float velTarget;
+extern volatile int velTarget;
 
 extern volatile float rotTarget;
 

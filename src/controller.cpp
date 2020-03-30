@@ -213,7 +213,6 @@ void motorCtrlFn() {
   while (1) {
 
     controllerThread.signal_wait(0x1);
-
     vel = 10*((float)rotorPosition/6 - oldRotorPosition);
     oldRotorPosition = (float)rotorPosition/6;
     // Full rotations
@@ -236,18 +235,17 @@ void motorCtrlFn() {
     }
 
     if (newTone){
+
       if (pointer == 0){
         timer.start();
       }
       if (timer.read_ms() >= 400){
-        timer.reset();
         PWMPeriod(1e+6/frequency[pointer]);
         setMail(TONE, frequency[pointer]);
         pointer++;
       }
       if (pointer == 4){
         pointer = 0;
-        timer.stop();
         newTone = false;
       }
     }

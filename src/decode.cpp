@@ -12,8 +12,7 @@ Mail<mail_t, 8> inCharQ;
 
 
 //initiate the global variables
-volatile float setRotTarget = 0;
-volatile float velTarget = 0.0;
+volatile int velTarget = 0;
 volatile float rotTarget = 0.0;
 
 volatile uint64_t newKey;
@@ -43,6 +42,9 @@ int octave;
 char unknown;
 uint8_t tone;
 uint8_t charbuf[17];
+int setRotTarget_low;
+int setRotTarget_high;
+int setRotTarget;
 
 //initiate classes
 Mutex newKey_mutex;
@@ -79,14 +81,16 @@ void decode(void){
         switch(charbuf[0]){
           // velocity
           case 'V':
-            sscanf((char*)charbuf, "V%f", &velTarget);
+            sscanf((char*)charbuf, "V%d", &velTarget);
             setMail(SET_VELOCITY,  velTarget);
             break;
           // rotation
           case 'R':
-            sscanf((char*)charbuf, "R-%f", &setRotTarget);
-            setMail(SET_ROTATION,  setRotTarget);
-            rotTarget = rot + setRotTarget;
+            sscanf((char*)charbuf, "R-%d.%d",&setRotTarget_high,&setRotTarget_low);
+            setRotTarget =  setRotTarget_high*10 + setRotTarget_low;
+            setMail(SET_ROTATION_UP, setRotTarget_high);
+            setMail(SET_ROTATION_DOWN, setRotTarget_low);
+            rotTarget = rot + setRotTarget/10.0;
             break;
           // Key
           case 'K':
@@ -111,7 +115,9 @@ void decode(void){
       else{
         counter++;
       }
+
     }
+
   }
 }
 

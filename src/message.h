@@ -9,7 +9,8 @@
 #define MOTOR  1
 #define VELOCITY 2
 #define SET_VELOCITY 3
-#define SET_ROTATION 4
+#define SET_ROTATION_UP 4
+#define SET_ROTATION_DOWN 7
 #define ROTOR 5
 #define SEC 12
 #define NONCE 11
@@ -17,6 +18,7 @@
 #define TONE 10
 #define ERROR 99
 #define SERIAL 13
+#define TIME 14
 
 
 extern RawSerial pc;

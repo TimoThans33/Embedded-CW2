@@ -2,12 +2,7 @@
 BUILD/
 mbed-os/
 .mbed
-<<<<<<< HEAD
 Crypto/
-mbed-os.lib
 mbed_app.json
 mbed_settings.py
 mbed_settings.pyc
-Crypto.lib
-=======
->>>>>>> fb170a3a58436737142775f378e7f4f10a5c3dd1

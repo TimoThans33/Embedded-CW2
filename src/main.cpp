@@ -5,7 +5,6 @@
 #include "message.h"
 #include "controller.h"
 #include "decode.h"
-#include "melody.h"
 
 
 
@@ -93,12 +92,12 @@ void computehash(void){
       newKey_mutex.unlock();
       newKeyAdded = false;
     }
-    if(HashCount < 5000){
+    if(HashCount <= 4999){
       SHA256::computeHash(hashABLE, sequence, 64);
       if ((hashABLE[0]==0) && (hashABLE[1]==0)) {
         setMail(NONCE, (uint64_t)(*nonce&0xFFFFFFFF));
       }
       HashCount++;
       *nonce+=1;
+    }
   }
-}

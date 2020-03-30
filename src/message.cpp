@@ -4,7 +4,7 @@ Mail<message_struct, 16> outMail;
 
 // Enable writing to the serial port
 RawSerial pc(SERIAL_TX, SERIAL_RX);
-
+Timer timer4;
 // Function to set the incoming data and code into the mail queue
 void setMail(uint8_t command, int32_t data){
     message_struct *mail = outMail.alloc();
@@ -31,8 +31,11 @@ void getMail(){
         case (SET_VELOCITY):
             pc.printf("Target velocity of motor %d\r\n", mail->data);
             break;
-        case (SET_ROTATION):
-            pc.printf("Target rotation: %d\r\n", mail->data);
+        case (SET_ROTATION_UP):
+            pc.printf("Target rotation: %d.", mail->data);
+            break;
+        case (SET_ROTATION_DOWN):
+            pc.printf("%d\r\n", mail->data);
             break;
         case (ROTOR):
             pc.printf("Position of rotor %d\r\n", mail->data);
@@ -55,7 +58,9 @@ void getMail(){
         case (TONE):
             pc.printf("Music tone is: %d Hz\r\n", mail->data);
             break;
-
+        case (TIME):
+            pc.printf("Execution time is: %d s \r\n", mail->data);
+            break;
       }
       outMail.free(mail);
     }
