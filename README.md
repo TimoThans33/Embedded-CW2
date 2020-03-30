@@ -14,7 +14,7 @@ Main functions of this code:
 
 ## Serial output
 
-[(Pictures/output_serial.png)]
+![output of the serial monitor](Pictures/output_serial.png)]
 
 ## Commands
 This code takes in some serial commands the format of these serial commands is as follows. All the commands have to finish with an enter.
